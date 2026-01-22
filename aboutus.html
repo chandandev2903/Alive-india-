@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html class="scroll-smooth dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About | Music Co-Operative</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Lexend:wght@300;400;500;600;700;800&family=Inter:wght@400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&family=Material+Icons&display=swap"
+        rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#ec4899",
+                        secondary: "#1A43FF",
+                        "brand-blue": "#3036FF",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0a0a0a",
+                        "matte-black": "#050505",
+                        "accent-pink": "#FF0080",
+                        "accent-purple": "#7928CA",
+                        "accent-orange": "#FF4D4D",
+                        "brand-pink": "#ff0080",
+                        "brand-orange": "#ff8c42",
+                        "dark-tile": "#14081c",
+                        "cta-blue": "#2563eb",
+                        "certificate-gold": "#8c6b3e",
+                        "border-blue": "#1a1e4a",
+                    },
+                    fontFamily: {
+                        display: ["Montserrat", "Lexend", "Inter", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                        'pill': '9999px',
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        /* Header Neon Bars */
+        .neon-bar { filter: blur(40px); opacity: 0.6; }
+        .music-gradient-text {
+            background: linear-gradient(to right, #ec4899, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .music-gradient-icon {
+            background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Vision Section Eye Clip */
+        .eye-clip {
+            clip-path: ellipse(50% 45% at 50% 50%);
+        }
+        @media (max-width: 768px) {
+            .eye-clip {
+                clip-path: ellipse(80% 40% at 50% 50%);
+            }
+        }
+
+        /* Stats Cards Styles */
+        .stat-card-border-pink {
+            border: 1px solid transparent;
+            background: linear-gradient(#0A0A0A, #0A0A0A) padding-box, linear-gradient(to right, #FF0080, #7928CA) border-box;
+        }
+        .stat-card-border-orange {
+            border: 1px solid transparent;
+            background: linear-gradient(#0A0A0A, #0A0A0A) padding-box, linear-gradient(to right, #FF4D4D, #FF0080) border-box;
+        }
+        .text-gradient-stats {
+            background: linear-gradient(to right, #FF0080, #FF4D4D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-pink { background: linear-gradient(135deg, #FF0080 0%, #7928CA 100%); }
+        .gradient-orange { background: linear-gradient(135deg, #FF4D4D 0%, #FF0080 100%); }
+
+        /* Bento Grid Specific Styles */
+        .outline-text {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+            color: transparent;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 768px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        }
+        @media (min-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: minmax(180px, auto); }
+            .span-2-cols { grid-column: span 2; }
+            .span-2-rows { grid-row: span 2; }
+        }
+        .nebula-glow-intense {
+            background: radial-gradient(circle at 30% 50%, rgba(139, 92, 246, 0.3) 0%, rgba(0, 0, 0, 0) 50%),
+                        radial-gradient(circle at 70% 50%, rgba(236, 72, 153, 0.25) 0%, rgba(0, 0, 0, 0) 50%);
+        }
+        .header-gradient-text {
+            background: linear-gradient(to right, #ff0080, #ff8c42);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Journey Styles Integrated */
+        .sound-wave-bar {
+            width: 3px;
+            background-color: #e5e7eb;
+            border-radius: 2px;
+            opacity: 0.6;
+            flex-shrink: 0;
+        }
+        @media (min-width: 768px) {
+            .sound-wave-bar { width: 4px; opacity: 0.8; }
+        }
+        .neon-pink-line {
+            background-color: #ec4899;
+            box-shadow: 0 0 8px rgba(236, 72, 153, 0.4);
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* award */
+        .text-gradient {
+    background: linear-gradient(90deg, #ec4899 0%, #f97316 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.card-gradient-border {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(236, 72, 153, 0.3);
+}
+.custom-scrollbar::-webkit-scrollbar {
+    height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+        /* award */
+
+        .outline-text {
+        /* This creates the thin white border */
+        -webkit-text-stroke: 2.5px white; 
+        /* This makes the inside of the letters transparent */
+        color: transparent; 
+        /* Fallback for browsers that don't support text-stroke */
+        paint-order: stroke fill;
+        
+    }
+    </style>
+</head>
+
+<body class="bg-background-dark font-display text-white antialiased overflow-x-hidden">
+    <nav class="fixed top-0 left-0 w-full z-[100] px-4 py-4 sm:px-6">
+        <div class="relative group">
+
+            <div
+                class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000">
+            </div>
+
+            <div
+                class="relative flex items-center justify-between bg-[#020617]/80 backdrop-blur-xl border border-white/10 px-6 py-3 rounded-2xl shadow-2xl">
+
+                <div class="flex items-center gap-2 cursor-pointer">
+                    <div
+                        class="w-9 h-9 bg-gradient-to-tr from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20">
+                        <span class="material-symbols-outlined text-white text-xl">bolt</span>
+                    </div>
+                    <span class="text-white font-bold tracking-tighter text-xl uppercase hidden sm:block">ALIVE INIDA<span
+                            class="text-blue-500">.</span></span>
+                </div>
+
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="relative group/link text-2xl font-medium tracking-wide text-white transition-colors duration-300  ">
+                        Home
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover/link:w-full"></span>
+                    </a>
+                    <a href="aboutus.html"
+                        class="relative group/link text-2xl font-medium tracking-wide text-slate-400 hover:text-white transition-colors duration-300">
+                        About
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover/link:w-full"></span>
+                    </a>
+                    <a href="service.html"
+                        class="relative group/link text-2xl font-medium tracking-wide text-slate-400 hover:text-white transition-colors duration-300">
+                        Services
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover/link:w-full"></span>
+                    </a>
+                    <a href="#projects"
+                        class="relative group/link text-2xl font-medium tracking-wide text-slate-400 hover:text-white transition-colors duration-300">
+                        Projects
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover/link:w-full"></span>
+                    </a>
+                    
+                </div>
+
+                <div class="flex items-center gap-4">
+                    
+                    <button
+                        class="relative group/btn flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 p-[1px] rounded-xl transition-transform active:scale-95 shadow-lg shadow-blue-500/20">
+                        <div
+                            class="bg-[#020617] group-hover:bg-transparent transition-colors duration-300 px-5 py-2 rounded-[11px]">
+                            <span class="text-sm font-bold text-white uppercase tracking-wider">Get Started</span>
+                        </div>
+                    </button>
+
+                    <button id="nav-toggle" class="lg:hidden text-white/80 hover:text-white p-1">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-nav"
+                class="hidden absolute top-full left-0 w-full mt-2 bg-[#020617]/95 backdrop-blur-2xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl lg:hidden">
+                <div class="flex flex-col p-4 gap-2">
+                    <a href="#"
+                        class="p-3 text-white font-medium hover:bg-white/5 rounded-xl transition-colors">Home</a>
+                    <a href="#"
+                        class="p-3 text-slate-400 hover:text-white font-medium hover:bg-white/5 rounded-xl transition-colors">Services</a>
+                    <a href="#"
+                        class="p-3 text-slate-400 hover:text-white font-medium hover:bg-white/5 rounded-xl transition-colors">Projects</a>
+                    <a href="#"
+                        class="p-3 text-white font-medium hover:bg-white/5 rounded-xl transition-colors">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section
+        class=" lg:mt-10 relative min-h-[85vh] flex flex-col justify-start overflow-hidden bg-black bg-[url('./about.png')] bg-cover bg-center ">
+        <div class="absolute inset-0 pointer-events-none select-none flex justify-around items-start pt-[-10%] z-0 ">
+            <!-- <div class="neon-bar w-16 h-[120%] bg-pink-500 transform -translate-y-20"></div>
+            <div class="neon-bar w-16 h-[120%] bg-rose-500 transform -translate-y-10"></div>
+            <div class="neon-bar w-16 h-[120%] bg-orange-500 transform translate-y-10"></div>
+            <div class="neon-bar w-16 h-[120%] bg-indigo-600 transform translate-y-20"></div>
+            <div class="neon-bar w-16 h-[120%] bg-purple-600 transform translate-y-10"></div>
+            <div class="neon-bar w-16 h-[120%] bg-blue-500 transform -translate-y-10"></div>
+            <div class="neon-bar w-16 h-[120%] bg-cyan-400 transform -translate-y-20"></div> -->
+        </div>
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+        <section class="relative z-20 flex justify-between items-start p-8 md:p-12 pb-4 md:pb-6">
+            <h1 class="text-6xl md:text-9xl font-black -tracking-tighter font-sans text-white lg:ml-20">ABOUT</h1>
+        </section>
+        <div class="relative z-20 flex flex-col items-center justify-center pt-8 md:pt-44 px-6 text-center">
+            <div class="max-w-3xl space-y-2">
+                <p class="text-xl md:text-2xl text-slate-300 font-light">India's First Independent, Artist driven</p>
+                <h2 class="text-3xl md:text-5xl font-bold">
+                    <span class="music-gradient-text">360° Music Co-Operative</span>
+                </h2>
+                <p class="text-lg md:text-xl text-slate-400">& Integrated Brand Solution</p>
+            </div>
+        </div>
+        <div class="relative z-20 flex justify-center py-12">
+            <div class="w-0.5 h-12 bg-gradient-to-b from-white to-transparent opacity-50"></div>
+        </div>
+    </section>
+
+    <section class="relative z-20 py-8 md:py-12 bg-matte-black border-y border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                <div class="text-center md:text-left">
+                    <p class="text-sm md:text-base text-slate-400 font-medium mb-0 tracking-widest uppercase font-sans">
+                        An
+                        Ecosystem of</p>
+                    <h3 class="text-6xl md:text-8xl font-black tracking-wider text-white leading-none font-sans ">MUSIC
+                    </h3>
+                </div>
+                <div class="flex items-center">
+                    <span
+                        class="material-symbols-outlined text-[100px] md:text-[140px] music-gradient-icon leading-none">music_note</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative z-20 py-16 md:py-24 bg-matte-black">
+        <div class="container mx-auto px-6 ">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
+                <div class="space-y-6">
+                    <p class="text-2xl leading-relaxed font-semibold text-white ">
+                        We are <span class="text-primary">India's Only Music-Driven Media Conglomerate</span> that owns
+                        the entire Value Chain of Music, Events, Media, Curated Experiences, Ground Production and its
+                        Media amplification as a One Stop Solution Package.
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <p class="text-lg md:text-xl text-slate-400 leading-relaxed font-light">
+                        India's most Successful and Undisputed leader in the brand-funded, brand-integrated, curated
+                        content space. From Ground to Digital, We tailor music with soul for every celebration, bringing
+                        together brands, artists, and consumers through impactful experiences.
+                    </p>
+                    <div class="pt-4">
+                        <a class="inline-flex items-center gap-2 group text-primary font-bold text-lg hover:underline decoration-2 underline-offset-8"
+                            href="#">
+                            Learn more about our mission
+                            <span
+                                class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- for bussiness -->
+    <section id="business-section">
+        <section class="relative z-20 py-12 md:py-24 bg-matte-black">
+            <main class="max-w-7xl mx-auto px-4 md:px-6">
+                <div class="flex justify-center mb-10 md:mb-16">
+                    <div
+                        class="inline-flex items-center p-1 bg-white/5 rounded-full border border-zinc-800 backdrop-blur-sm shadow-xl">
+                        <button
+                            class="px-4 py-2 md:px-8 md:py-3 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 bg-brand-blue text-white shadow-lg shadow-brand-blue/30">
+                            For Businesses
+                        </button>
+                        <button
+                            class="px-4 py-2 md:px-8 md:py-3 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 text-zinc-400 hover:text-white">
+                            For Artists
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
+                    <div class="stat-card-border-pink p-0.5 rounded-xl overflow-hidden group">
+                        <div class="bg-zinc-950 h-full rounded-[0.6rem] overflow-hidden">
+                            <div class="gradient-pink py-3 md:py-4 px-6 text-center">
+                                <span class="text-white font-display text-xl md:text-2xl font-bold">1000 +</span>
+                            </div>
+                            <div class="p-4 md:p-6 text-center">
+                                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed">Crores of business generated
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card-border-orange p-0.5 rounded-xl overflow-hidden group">
+                        <div class="bg-zinc-950 h-full rounded-[0.6rem] overflow-hidden">
+                            <div class="gradient-orange py-3 md:py-4 px-6 text-center">
+                                <span class="text-white font-display text-xl md:text-2xl font-bold">100 k +</span>
+                            </div>
+                            <div class="p-4 md:p-6 text-center">
+                                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed">Customers reached</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card-border-pink p-0.5 rounded-xl overflow-hidden group">
+                        <div class="bg-zinc-950 h-full rounded-[0.6rem] overflow-hidden">
+                            <div class="gradient-pink py-3 md:py-4 px-6 text-center">
+                                <span class="text-white font-display text-xl md:text-2xl font-bold">700 +</span>
+                            </div>
+                            <div class="p-4 md:p-6 text-center">
+                                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed">Commercial Events organised
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card-border-pink p-0.5 rounded-xl overflow-hidden group">
+                        <div class="bg-zinc-950 h-full rounded-[0.6rem] overflow-hidden">
+                            <div class="gradient-pink py-3 md:py-4 px-6 text-center">
+                                <span class="text-white font-display text-xl md:text-2xl font-bold">1000 +</span>
+                            </div>
+                            <div class="p-4 md:p-6 text-center">
+                                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed">National and regional Artist
+                                    collaborations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto mb-16 md:mb-24">
+                    <div class="stat-card-border-pink p-0.5 rounded-xl overflow-hidden group">
+                        <div class="bg-zinc-950 h-full rounded-[0.6rem] overflow-hidden">
+                            <div class="gradient-pink py-3 md:py-4 px-6 text-center">
+                                <span class="text-white font-display text-xl md:text-2xl font-bold">500 +</span>
+                            </div>
+                            <div class="p-4 md:p-6 text-center">
+                                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed">Top brands served</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card-border-orange p-0.5 rounded-xl overflow-hidden group">
+                        <div class="bg-zinc-950 h-full rounded-[0.6rem] overflow-hidden">
+                            <div class="gradient-orange py-3 md:py-4 px-6 text-center">
+                                <span class="text-white font-display text-xl md:text-2xl font-bold">1000 +</span>
+                            </div>
+                            <div class="p-4 md:p-6 text-center">
+                                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed">Hours of content crafted</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative w-full aspect-video rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl mb-16 md:mb-24 group">
+                    <img alt="Concert stage"
+                        class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+                        src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=2070" />
+                    <div
+                        class="absolute inset-0 bg-black/40 flex items-center justify-center transition-all duration-300 group-hover:bg-black/20">
+                        <button
+                            class="w-14 h-14 md:w-28 md:h-28 bg-brand-blue rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(48,54,255,0.4)] hover:scale-110 transition-transform duration-300">
+                            <span class="material-icons text-white text-3xl md:text-6xl ml-1 md:ml-2">play_arrow</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start lg:items-center">
+                    <div>
+                        <h2
+                            class="text-gradient-stats font-display text-3xl md:text-5xl lg:text-4xl font-extrabold leading-[1.2] lg:leading-[1.1]">
+                            Curating Content, Building Communities, Driving Commerce.
+                        </h2>
+                    </div>
+                    <div class="flex items-center">
+                        <p class="text-zinc-400 text-base md:text-xl leading-relaxed max-w-xl">
+                            We Transform Brand Stories Into Cultural Movements, Leveraging The Unmatched Unifying
+                            Language
+                            Of Music To Empower Brands, Deepen Relationships, Build Brand Love, And Drive Meaningful
+                            Customer Engagement.
+                        </p>
+                    </div>
+                </div>
+            </main>
+        </section>
+        <header
+            class="w-full py-20 md:py-32 px-6 bg-gradient-to-br from-[#1e0b29] via-[#0a0a0a] to-[#d034d5] flex items-center justify-center text-center border-b border-white/5">
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-black max-w-5xl leading-tight header-gradient-text">
+                Redefining Brand Engagement And Transforming Brands Through The Power Of Music
+            </h1>
+        </header>
+
+        <!-- <section class="py-12 md:py-24 px-4 md:px-6 max-w-7xl mx-auto">
+            <div class="bento-grid">
+                <div class="span-2-cols flex items-center justify-center py-6 md:py-0 font-sans">
+                    <span
+                        class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black outline-text tracking-wider uppercase text-center  ">26
+                        STATES</span>
+                </div>
+
+                <div class="bg-dark-tile p-8 md:p-10 flex flex-col justify-center rounded-xl border border-white/5">
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-4">Unparalleled Reach Across 26 Indian States
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed font-medium">Bridge cultural diversity with
+                        innovative narratives that inspire, engage & transform cultural engagement into meaningful brand
+                        stories.</p>
+                </div>
+
+                <div class="bg-dark-tile p-8 md:p-10 flex flex-col justify-center rounded-xl border border-white/5">
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-4">Infrastructure, Talent And Endless
+                        Possibilities</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed font-medium">Our advanced infrastructure, powered
+                        by top creators and artists, positions us as leaders in delivering innovative brand solutions.
+                    </p>
+                </div>
+
+                <div class="span-2-cols span-2-rows h-64 md:h-auto overflow-hidden rounded-xl bg-neutral-900">
+                    <img alt="Music community"
+                        class="w-full h-full object-cover opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-700"
+                        src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=1000" />
+                </div>
+
+                <div
+                    class="bg-brand-orange p-8 md:p-10 flex flex-col justify-center rounded-xl shadow-2xl shadow-brand-orange/10">
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-4 leading-tight">Customized Brand Solutions
+                        All Year Round</h3>
+                    <p class="text-sm text-white/90 leading-relaxed font-medium">We craft impactful brand narratives,
+                        precision-crafted content, resonating with your brand's unique needs and vision.</p>
+                </div>
+
+                <div class="overflow-hidden rounded-xl bg-neutral-900 h-64 md:h-full">
+
+                    <img alt="Celebration"
+                        class="w-full h-full object-cover opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-700"
+                        src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1000" />
+                </div>
+
+                <div class="bg-dark-tile p-8 md:p-10 flex flex-col justify-center rounded-xl border border-white/5">
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-4">Unmatched versatility & capability</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed font-medium">We master multi-format, multi-lingual
+                        content that drives results from live to digital experiences.</p>
+                </div>
+
+                <div class="bg-dark-tile p-8 md:p-10 flex flex-col justify-center rounded-xl border border-white/5">
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-4">Pioneering immersive musical experiences
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed font-medium">Bring brands to life by creating
+                        unforgettable moments that connect deeply with audiences at each touchpoint.</p>
+                </div>
+
+                <div class="span-2-cols overflow-hidden rounded-xl h-64 bg-neutral-900">
+                    <img alt="Artist singing"
+                        class="w-full h-full object-cover opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-700"
+                        src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80&w=1000" />
+                </div>
+
+                <div class="bg-dark-tile p-8 md:p-10 flex flex-col justify-center rounded-xl border border-white/5">
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-4">Expertise and commitment</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed font-medium">Co-achieved success with top brands,
+                        blending creativity, technical expertise, and purpose-driven innovation.</p>
+                </div>
+
+                <div class="bg-dark-tile p-8 md:p-10 flex flex-col justify-center rounded-xl border border-white/5">
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-4">Commitment for 5x return</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed font-medium">We co-create long-term success,
+                        delivering five times the value while building sustainable relationships.</p>
+                </div>
+
+                <div
+                    class="span-2-cols flex flex-col md:flex-row items-center justify-center md:justify-around gap-8 md:gap-12 py-16 md:py-24 font-sans">
+                    <span
+                        class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black outline-text tracking-wider uppercase text-center leading-none">5X
+                        RETURNS</span>
+                    <button
+                        class="bg-cta-blue hover:bg-blue-500 text-white font-bold py-4 px-8 md:px-10 rounded-full transition-all flex items-center gap-2 group shadow-2xl shadow-cta-blue/30 uppercase tracking-widest text-xs md:text-sm whitespace-nowrap">
+                        Check All Offerings
+                        <span
+                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </section> -->
+
+        <section class="py-12 md:py-24 px-4 md:px-6 max-w-[1440px] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                <div class="lg:col-span-2 flex items-center justify-start py-8 lg:py-0">
+                    <span
+                        class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black outline-text tracking-wider uppercase text-center  ">26
+                        STATES</span>
+                </div>
+
+                <div
+                    class="bg-[radial-gradient(circle_at_center,#2e1222_0%,#331d1a_55%,#121212_100%)] p-10 flex flex-col justify-center rounded-xl border border-white/5">
+                    <h3 class="font-display font-bold text-xl mb-4 text-white uppercase tracking-tight leading-tight">
+                        Unparalleled Reach Across 26 Indian States</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Bridge cultural diversity with innovative
+                        narratives that inspire, engage & transform cultural engagement into meaningful brand stories.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-[radial-gradient(circle_at_center,#2e1222_0%,#331d1a_55%,#121212_100%)] p-10 flex flex-col justify-center rounded-xl border border-white/5">
+                    <h3 class="font-display font-bold text-xl mb-4 text-white uppercase tracking-tight leading-tight">
+                        Infrastructure, Talent And Endless Possibilities</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Our advanced infrastructure, powered by top
+                        Creators, Artists, Musicians, and Technicians, positions us as leaders in delivering innovative
+                        brand solutions.</p>
+                </div>
+
+                <div
+                    class="lg:col-span-2 relative overflow-hidden h-[320px] lg:h-[430px] rounded-xl hover:scale-105 transition-all duration-700 ">
+                    <img alt="Friends celebrating at a concert" class="w-full h-full object-cover grayscale-[10%]"
+                        src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=1000" />
+                    <div class="absolute inset-0 bg-black/10"></div>
+                </div>
+
+                <div class="bg-brand-orange rounded-xl p-10 flex flex-col justify-center text-white">
+                    <h3 class="font-display font-black text-2xl mb-4 uppercase leading-tight">Customized Brand Solutions
+                        All Year Round</h3>
+                    <p class="text-white/90 text-sm leading-relaxed font-medium">We craft impactful brand narratives,
+                        precision-crafted content resonating with your brand's unique needs and vision creating deep
+                        connection with your consumers.</p>
+                </div>
+
+                <div
+                    class="relative overflow-hidden h-[320px] lg:h-auto rounded-xl hover:scale-105 transition-all duration-700">
+                    <img alt="Festive crowd with confetti" class="w-full h-full object-cover"
+                        src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1000" />
+                </div>
+
+                <div
+                    class="bg-[radial-gradient(circle_at_center,#2e1222_0%,#331d1a_55%,#121212_100%)] p-10 flex flex-col justify-center rounded-xl border border-white/5">
+                    <h3 class="font-display font-bold text-xl mb-4 text-white uppercase tracking-tight leading-tight">
+                        Unmatched versatility & capability</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">We master Multi Format, Multi Lingual Content That
+                        Drives Results. From Live to Digital, Audio to Video Content, seamlessly paired with
+                        Multi-Channel Media Amplification.</p>
+                </div>
+
+                <div
+                    class="bg-[radial-gradient(circle_at_center,#2e1222_0%,#331d1a_55%,#121212_100%)] p-10 flex flex-col justify-center rounded-xl border border-white/5">
+                    <h3 class="font-display font-bold text-xl mb-4 text-white uppercase tracking-tight leading-tight">
+                        Pioneering immersive musical experiences</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Bring brands to life by creating unforgettable
+                        moments that connect deeply with audiences resonating with audience with each touchpoint,
+                        creating lasting impact.</p>
+                </div>
+
+                <div
+                    class="lg:col-span-2 relative overflow-hidden h-[320px] lg:h-auto rounded-xl hover:scale-105 transition-all duration-700 ">
+                    <img alt="Woman smiling at a colorful festival" class="w-full h-full object-cover"
+                        src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80&w=1000" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                </div>
+
+                <div
+                    class="bg-[radial-gradient(circle_at_center,#2e1222_0%,#331d1a_55%,#121212_100%)] p-10 flex flex-col justify-center rounded-xl border border-white/5">
+                    <h3 class="font-display font-bold text-xl mb-4 text-white uppercase tracking-tight leading-tight">
+                        Expertise and commitment</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Co-achieved success with top brands blending
+                        creativity, technical expertise, and purpose-driven innovation.</p>
+                </div>
+
+                <div
+                    class="bg-[radial-gradient(circle_at_center,#2e1222_0%,#331d1a_55%,#121212_100%)] p-10 flex flex-col justify-center rounded-xl border border-white/5">
+                    <h3 class="font-display font-bold text-xl mb-4 text-white uppercase tracking-tight leading-tight">
+                        Commitment for 5x return</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">We co-create long-term successes, delivering five
+                        times the value while building sustainable, collaborative relationships.</p>
+                </div>
+
+                <div class="lg:col-span-2 flex items-center justify-end py-8 lg:py-0">
+                    <span
+                        class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black outline-text tracking-wider uppercase text-center leading-none">5X
+                        RETURNS</span>
+
+                </div>
+                <button
+                    class="bg-cta-blue hover:bg-blue-500 text-white font-bold mt-5 py-4 px-8 md:px-10 rounded-full transition-all flex items-center gap-2 group shadow-2xl shadow-cta-blue/30 uppercase tracking-widest text-xs md:text-sm whitespace-nowrap">
+                    Check All Offerings
+                    <span
+                        class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+                </button>
+            </div>
+        </section>
+
+
+
+        <section class="relative min-h-[50vh] flex items-center py-16 px-6 overflow-hidden bg-black">
+            <div class="absolute inset-0 nebula-glow-intense"></div>
+            <div
+                class="absolute -right-1/4 top-1/4 w-[300px] md:w-[800px] h-[300px] md:h-[800px] bg-brand-pink/30 rounded-full blur-[80px] md:blur-[160px]">
+            </div>
+            <div
+                class="absolute -left-1/4 bottom-1/4 w-[250px] md:w-[600px] h-[250px] md:h-[600px] bg-purple-600/20 rounded-full blur-[70px] md:blur-[140px]">
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto w-full">
+                <div
+                    class="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-12 text-center lg:text-left">
+                    <div class="flex flex-col">
+                        <h2
+                            class="text-5xl md:text-[100px] lg:text-[140px] leading-[1] lg:leading-[0.85] font-black text-white tracking-wider">
+                            <span class="text-[#FF8C42]">CRAFT.</span><br />AMPLIFY.<br />ENGAGE.
+                        </h2>
+                    </div>
+                    <div class="lg:max-w-md lg:text-right">
+                        <p class="text-2xl md:text-4xl font-bold text-white leading-tight">
+                            Content That <span
+                                class="text-brand-pink drop-shadow-[0_0_15px_rgba(255,0,128,0.5)]">Converts.</span><br
+                                class="hidden md:block" />
+                            Communities That <span
+                                class="text-brand-pink drop-shadow-[0_0_15px_rgba(255,0,128,0.5)]">Deliver.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-16">
+            <div
+                class="bg-[#FF00B2]  p-8 md:p-20 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 md:gap-10 shadow-2xl">
+                <div class="max-w-3xl">
+                    <h2 class="text-3xl md:text-3xl font-bold text-white leading-tight mb-6 md:mb-8 tracking-tight">
+                        Turn Music Into Your Brand’s Ultimate Competitive Edge.
+                    </h2>
+                    <div class="space-y-4 text-white/95 text-base md:text-xl font-medium leading-relaxed">
+                        <p>We Create Brand Love with Deeper Consumer Impact—Way Beyond Traditional Promotion.</p>
+                        <p class="opacity-80 font-normal text-sm md:text-lg">Standing at the intersection where personal
+                            touch meets global reach, We craft experiences leading to content, commerce, convergence and
+                            loyal communities.</p>
+                    </div>
+                </div>
+                <div class="w-full lg:w-auto">
+                    <a class="bg-secondary hover:brightness-110 text-white font-bold py-4 px-8 md:py-5 md:px-3 rounded-pill inline-flex items-center justify-center group transition-all text-base md:text-lg shadow-xl w-full lg:w-auto"
+                        href="#">
+                        Check Case studies
+                        <span
+                            class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">chevron_right</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+    </section>
+    <!-- for bussiness -->
+
+
+    <!-- for atrist -->
+    <section id="artist-section">
+        <section class="relative z-20 py-12 md:py-24 bg-matte-black">
+            <main class="max-w-7xl mx-auto px-4 md:px-6">
+                <div class="flex justify-center mb-10 md:mb-16">
+                    <div
+                        class="inline-flex items-center p-1 bg-white/5 rounded-full border border-zinc-800 backdrop-blur-sm shadow-xl">
+                        <button
+                            class="px-4 py-2 md:px-8 md:py-3 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 bg-brand-blue text-white shadow-lg shadow-brand-blue/30">
+                            For Businesses
+                        </button>
+                        <button
+                            class="px-4 py-2 md:px-8 md:py-3 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 text-zinc-400 hover:text-white">
+                            For Artists
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
+                    <div class="stat-card-border-pink p-0.5 rounded-xl overflow-hidden group">
+                        <div class="bg-zinc-950 h-full rounded-[0.6rem] overflow-hidden">
+                            <div class="gradient-pink py-3 md:py-4 px-6 text-center">
+                                <span class="text-white font-display text-xl md:text-2xl font-bold">500 +</span>
+                            </div>
+                            <div class="p-4 md:p-6 text-center">
+                                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed">Songs created</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card-border-orange p-0.5 rounded-xl overflow-hidden group">
+                        <div class="bg-zinc-950 h-full rounded-[0.6rem] overflow-hidden">
+                            <div class="gradient-orange py-3 md:py-4 px-6 text-center">
+                                <span class="text-white font-display text-xl md:text-2xl font-bold"> 700 +</span>
+                            </div>
+                            <div class="p-4 md:p-6 text-center">
+                                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed">Live and digital
+                                    performances</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card-border-pink p-0.5 rounded-xl overflow-hidden group">
+                        <div class="bg-zinc-950 h-full rounded-[0.6rem] overflow-hidden">
+                            <div class="gradient-pink py-3 md:py-4 px-6 text-center">
+                                <span class="text-white font-display text-xl md:text-2xl font-bold">1000 +</span>
+                            </div>
+                            <div class="p-4 md:p-6 text-center">
+                                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed">Music Albums launched</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card-border-pink p-0.5 rounded-xl overflow-hidden group">
+                        <div class="bg-zinc-950 h-full rounded-[0.6rem] overflow-hidden">
+                            <div class="gradient-pink py-3 md:py-4 px-6 text-center">
+                                <span class="text-white font-display text-xl md:text-2xl font-bold">100 +</span>
+                            </div>
+                            <div class="p-4 md:p-6 text-center">
+                                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed">Cities and cultures touched
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto mb-16 md:mb-24">
+                    <div class="stat-card-border-pink p-0.5 rounded-xl overflow-hidden group">
+                        <div class="bg-zinc-950 h-full rounded-[0.6rem] overflow-hidden">
+                            <div class="gradient-pink py-3 md:py-4 px-6 text-center">
+                                <span class="text-white font-display text-xl md:text-2xl font-bold">200 +</span>
+                            </div>
+                            <div class="p-4 md:p-6 text-center">
+                                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed">Careers made</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card-border-orange p-0.5 rounded-xl overflow-hidden group">
+                        <div class="bg-zinc-950 h-full rounded-[0.6rem] overflow-hidden">
+                            <div class="gradient-orange py-3 md:py-4 px-6 text-center">
+                                <span class="text-white font-display text-xl md:text-2xl font-bold">1000 +</span>
+                            </div>
+                            <div class="p-4 md:p-6 text-center">
+                                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed">National and regional Artist
+                                    collaborations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative w-full aspect-video rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl mb-16 md:mb-24 group">
+                    <img alt="Concert stage"
+                        class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+                        src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=2070" />
+                    <div
+                        class="absolute inset-0 bg-black/40 flex items-center justify-center transition-all duration-300 group-hover:bg-black/20">
+                        <button
+                            class="w-14 h-14 md:w-28 md:h-28 bg-brand-blue rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(48,54,255,0.4)] hover:scale-110 transition-transform duration-300">
+                            <span class="material-icons text-white text-3xl md:text-6xl ml-1 md:ml-2">play_arrow</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start lg:items-center">
+                    <div>
+                        <h2
+                            class="text-gradient-stats font-display text-3xl md:text-5xl lg:text-3xl font-extrabold leading-[1.2] lg:leading-[1.1]">
+                            We bring together emerging and established artists from across the country to create,
+                            collaborate, and perform multilingual music, creating a global community that celebrates
+                            music
+                        </h2>
+                    </div>
+                    <div class="flex items-center">
+                        <p class="text-zinc-400 text-base md:text-xl leading-relaxed max-w-xl">
+                            Established in 2010, we boast a comprehensive understanding of the music industry. Our ten
+                            interconnected music verticals work in synergy to create a powerful ecosystem, including
+                            state-of-the-art studios, artist residencies, and opportunities for live performances.
+                        </p>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+
+
+
+        <section
+            class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-gray-100 py-12 lg:py-24">
+            <div class="max-w-[1400px] mx-auto p-4 md:p-8 lg:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                    <div class="md:col-span-6 flex flex-col justify-center">
+                        <span
+                            class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black outline-text tracking-wider uppercase text-center  ">GLOBAL
+                            SCALE </span>
+                    </div>
+
+
+                    <div class="md:col-span-4 bg-[#2d1219] p-8 rounded-sm flex flex-col justify-center">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-4 text-white text-right">Mega-Scale shows</h3>
+                        <p class="text-sm md:text-base text-gray-300 text-right leading-relaxed">
+                            We feature our artists in our Breathtaking mega concerts alongside the biggest national
+                            artists like Sunidhi and Arijit enabling them to claim their right of global visibility and
+                            fame
+                        </p>
+                    </div>
+
+                    <div class="md:col-span-2 overflow-hidden rounded-sm">
+                        <img alt="Musician playing guitar"
+                            class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOg2GOoayaqtdxZJ_-V3fRoxqn9liyXB8gDSLfUm764Bwhbo0kMMEBrh-jm1Odi-T6Gh8WlaqnBVktKrRHit0yjeAR_THoQV-or8fm2f_JV9qZYgRrYpOArc_8qY7XnTK4nZWEWwVVHSYBkLhurm4-FEBk6-y8qcN1ZiR8hApCGlgA18SHW8wLXOmiNfB6RNY9jt-Wbqfn-v7D5-YomrMBz3FlM47_KseT8eNJr85ARTJ4t4abde30xdPIYlJEM_G8AQSvFhDbRKYt" />
+                    </div>
+
+                    <div class="md:col-span-5 md:row-span-2 overflow-hidden rounded-sm">
+                        <img alt="Artist performing" class="w-full h-full object-cover min-h-[400px]"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV3jQc7tQw_Kw9UZz8xh7_dFrgpcMIb_w3XQ-2SyDJQyHSI5QODg_5AWLMTa3u3LX4WsaJOdHHmoMV2AiiFd_kEaBEPDLh1R35jeawTdHxcRxfMF9C-XwLWP2040WDxhlh-BAYAm3Cjh_gIEk--0DgcsWbKl0auUQ3ocSmyL_vKC__PjaE5YJnXbO3CjDVgaXAXCDMoMwPuj3tssbYj8_6s3jDoqaNOAPpo6GQR0tY_SWvPIiFZQ_p9C63xTu4PfniXlSpleR0BJ-a" />
+                    </div>
+
+                    <div class="md:col-span-7 flex items-center pt-8">
+
+                        <span
+                            class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black outline-text tracking-wider uppercase text-center  ">NETWORK
+                        </span>
+                    </div>
+
+                    <div class="md:col-span-4 bg-[#2d1219] p-8 rounded-sm flex flex-col justify-between">
+                        <div class="text-right">
+                            <h3 class="text-xl md:text-2xl font-semibold mb-4 text-white">The art of giving back</h3>
+                            <p class="text-sm text-gray-300 mb-6 leading-relaxed">
+                                Career starter opportunities, hands-on training and 360° support system to transform
+                                musical dreams into reality. Mentorship, platform and scholarships to the
+                                underprivileged budding artist
+                            </p>
+                        </div>
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-[#2b46ff] text-white px-4 py-1.5 rounded-full text-xs flex items-center gap-2 hover:bg-blue-700 transition-colors">
+                                Know more <span class="material-icons text-xs">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-3 bg-[#1f0c11] p-8 rounded-sm">
+                        <h3 class="text-xl font-semibold mb-4 text-white text-right">Network that Fuels</h3>
+                        <p class="text-xs text-gray-400 text-right leading-relaxed">
+                            We build a community of national and regional artists throughout India to foster
+                            collaborations and groundbreaking projects which break the internet and tops the charts
+                        </p>
+                    </div>
+
+                    <div class="md:col-span-4 bg-[#2d1219] p-8 rounded-sm">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-4 text-white text-right">Experiential Training
+                        </h3>
+                        <p class="text-sm text-gray-300 text-right leading-relaxed">
+                            We employ industry level tech and practices for hands-on experiential training of our
+                            artists as they set the bar for tomorrow. We make leaders with the right training
+                        </p>
+                    </div>
+
+                    <div class="md:col-span-8 overflow-hidden rounded-sm">
+                        <img alt="Guitarist performing" class="w-full h-[250px] object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQpMpO0g_Ci2hI8ZUlz1Vot0rT9vfKHFuyA7YowzArWSq6QvZuB0byJ92YeQEP2f3ZGpr0L-PBmOtILX7icUjYnKhLwQ1Ih9Z6lylPKuH9UaId3ZbcdBhco4937jdNXroZFWF-xsWeGksiKIO5EGYnRN3L5q7IGlGmtP__E6YnOlFBy4D49itNhprWHT0Z3dXUs22iB972qh55zprjqtFRlX1Fih0A2EakX7ugZzEtCyucY-ez7W2192FeslVrefMHzjgIS3lJBDnh" />
+                    </div>
+
+                    <div class="md:col-span-9 flex items-center ">
+
+                        <span
+                            class="mb-[35px] lg:mb-0 block text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black outline-text tracking-wider uppercase text-center  ">TRAINING
+                        </span>
+                    </div>
+
+                    <div
+                        class="md:col-span-3 bg-[#ff7e33] p-8 rounded-sm flex flex-col justify-between -mt-12 md:-mt-24 z-10">
+                        <div class="text-right">
+                            <h3 class="text-xl md:text-2xl font-bold mb-6 text-white leading-tight">Worldclass
+                                Infrastructure</h3>
+                            <p class="text-sm text-white/90 leading-relaxed mb-8">
+                                State-of-the-art audio-video infrastructure to support wildest of ideas with world-class
+                                amenities which includes 4 Hi-Tech Studios, Video Shoot Floors, Infinity LED Walls,
+                                Performance Arenas, Live Streaming Zones, Green Mat technology and so on. You name it,
+                                we have it
+                            </p>
+                        </div>
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-[#2b46ff] text-white px-5 py-2 rounded-md text-sm font-medium flex items-center gap-2 hover:bg-blue-700 transition-colors shadow-lg">
+                                Check Alive 1 Studio <span class="material-icons text-sm">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-4 mt-5">
+            <div
+                class="relative h-[50vh] overflow-hidden bg-[#FF00B2] rounded-[2rem] md:rounded-[3rem] shadow-2xl flex items-center">
+
+                <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+                    <svg class="h-full w-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="200" cy="200" fill="white" r="150"></circle>
+                        <circle cx="350" cy="100" fill="white" r="80"></circle>
+                    </svg>
+                </div>
+
+                <div class="relative z-10 px-8 md:px-20 w-full">
+                    <div class="flex flex-col font-sans">
+                        <h1 class="font-black uppercase tracking-[-0.06em] text-white">
+                            <div
+                                class="flex flex-wrap items-baseline gap-x-2 md:gap-x-4 leading-[0.85] md:leading-[0.8]">
+                                <span
+                                    class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black outline-text tracking-wider uppercase text-center  ">
+                                    I TO</span>
+                                <span class="text-white text-6xl md:text-[110px] lg:text-[140px]">Us</span>
+                            </div>
+                            <div
+                                class="flex flex-wrap items-baseline gap-x-2 md:gap-x-4 leading-[0.85] md:leading-[0.8] mt-2 md:mt-0">
+                                <span
+                                    class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black outline-text tracking-wider uppercase text-center  ">
+                                    ME TO</span>
+                                <span class="text-white text-6xl md:text-[110px] lg:text-[140px] font-sans">We</span>
+                            </div>
+                        </h1>
+                    </div>
+
+                    <div class="mt-8 md:mt-10">
+                        <p class="text-white text-xl md:text-3xl  tracking-tight opacity-95 max-w-2xl">
+                            We are building nation with music
+                        </p>
+                    </div>
+
+                    <div class="mt-8">
+                        <button
+                            class="bg-white text-primary px-10 py-4 rounded-full font-black text-lg uppercase tracking-widest hover:bg-gray-100 transition-all transform hover:scale-105 active:scale-95 shadow-xl">
+                            Discover More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="absolute bottom-8 right-10 opacity-10 pointer-events-none hidden md:block">
+                    <svg class="w-32 h-32 md:w-48 md:h-48 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="relative min-h-screen w-full bg-[#050505] font-display text-white overflow-hidden selection:bg-[#ec4899] selection:text-white border-y border-white/10">
+
+            <div id="custom-cursor" class="hidden md:block"></div>
+            <div id="cursor-trails"></div>
+
+            <div class="absolute inset-0 pointer-events-none z-0">
+                <div class="absolute top-[20%] left-0 w-full flex flex-col gap-8">
+                    <div class="pluck-string pointer-events-auto"></div>
+                    <div class="pluck-string pointer-events-auto opacity-20"></div>
+                    <div class="pluck-string pointer-events-auto opacity-40"></div>
+                </div>
+                <div class="absolute bottom-[20%] left-0 w-full flex flex-col gap-8">
+                    <div class="pluck-string pointer-events-auto opacity-30"></div>
+                    <div class="pluck-string pointer-events-auto opacity-50"></div>
+                    <div class="pluck-string pointer-events-auto"></div>
+                </div>
+            </div>
+
+            <div class="relative z-10 min-h-screen flex flex-col justify-between py-24 px-8 md:px-24">
+                <div class="flex-1 flex items-start">
+                    <div class="max-w-2xl group">
+                        <h2 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
+                            What Makes Us <br />
+                            <span class="text-[#ec4899] word-glow">Unique?</span>
+                        </h2>
+                        <p class="text-xl text-slate-400 leading-relaxed font-light max-w-lg">
+                            Born from the heart of the music industry, we understand the artist's journey and industry's
+                            complexities. Deep-rooted knowledge and empathy crafted for empowerment.
+                        </p>
+                        <div class="mt-8 flex items-center gap-4 text-[#ec4899] font-bold cursor-pointer group/link">
+                            <span class="text-sm uppercase tracking-widest">Explore Heritage</span>
+                            <span
+                                class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">arrow_right_alt</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-1 flex items-end justify-end text-right">
+                    <div class="max-w-2xl group flex flex-col items-end">
+                        <h2 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
+                            Our <span class="text-[#a855f7] word-glow" style="--primary: #a855f7">Dream</span>
+                        </h2>
+                        <p class="text-xl text-slate-400 leading-relaxed font-light max-w-lg">
+                            Empowering artists with sustainable careers while introducing the world to a vibrant music
+                            scene. A collaborative community transcending global boundaries.
+                        </p>
+                        <div class="mt-8 flex items-center gap-4 text-[#a855f7] font-bold cursor-pointer group/link">
+                            <span
+                                class="material-symbols-outlined transition-transform group-hover/link:-translate-x-2">keyboard_backspace</span>
+                            <span class="text-sm uppercase tracking-widest">Join The Pulse</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-20">
+                <div class="relative h-16 w-px bg-gradient-to-t from-[#ec4899] to-transparent">
+                    <div
+                        class="absolute top-0 left-1/2 w-4 h-4 bg-[#ec4899] rounded-full -translate-x-1/2 metronome-pulse blur-[2px]">
+                    </div>
+                </div>
+                <span class="text-[10px] tracking-[0.4em] uppercase text-[#ec4899] font-bold opacity-60">Rhythm of
+                    Vision</span>
+            </div>
+
+            <div class="fixed inset-0 pointer-events-none overflow-hidden opacity-20">
+                <span class="material-symbols-outlined absolute text-[#ec4899] text-6xl"
+                    style="top: 15%; left: 85%;">music_note</span>
+                <span class="material-symbols-outlined absolute text-[#a855f7] text-8xl"
+                    style="top: 60%; left: 5%;">album</span>
+                <span class="material-symbols-outlined absolute text-white text-4xl"
+                    style="top: 40%; left: 50%;">graphic_eq</span>
+            </div>
+        </section>
+
+
+
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-16 ">
+            <div
+                class="bg-[#FF00B2]  p-8 md:p-20 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 md:gap-10 shadow-2xl">
+                <div class="max-w-3xl">
+                    <h2 class="text-3xl md:text-3xl font-bold text-white leading-tight mb-6 md:mb-8 tracking-tight">
+                        Sound like your calling ?
+                    </h2>
+                    <div class="space-y-4 text-white/95 text-base md:text-xl font-medium leading-relaxed">
+                        <p>Alive is all about the community. Our aim is to create sustainable career for artists and
+                            bring them to economical mainstream and giving them a platform to roar and claim that fame.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="w-full lg:w-auto">
+                    <a class="bg-secondary hover:brightness-110 text-white font-bold py-4 px-8 md:py-5 md:px-3 rounded-pill inline-flex items-center justify-center group transition-all text-base md:text-lg shadow-xl w-full lg:w-auto"
+                        href="#">
+                        Check Career
+                        <span
+                            class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">chevron_right</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+    </section>
+    <!-- for atrist -->
+
+    <section class="bg-matte-black py-16 md:py-24 px-4 md:px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-12 md:mb-32 tracking-tight">Our Journey
+            </h2>
+
+            <div
+                class="relative cursor-grab active:cursor-grabbing pb-10 overflow-x-auto md:overflow-visible custom-scrollbar">
+                <div class="relative min-w-[1000px] md:min-w-full py-32 md:py-40">
+
+                    <div class="flex items-center justify-between gap-1 h-32 opacity-30 md:opacity-70">
+                        <div class="sound-wave-bar h-6"></div>
+                        <div class="sound-wave-bar h-12"></div>
+                        <div class="sound-wave-bar h-16"></div>
+                        <div class="sound-wave-bar h-8"></div>
+                        <div class="sound-wave-bar h-14"></div>
+                        <div class="sound-wave-bar h-24"></div>
+                        <div class="sound-wave-bar h-28"></div>
+                        <div class="sound-wave-bar h-20"></div>
+                        <div class="sound-wave-bar h-12"></div>
+                        <div class="sound-wave-bar h-14"></div>
+                        <div class="sound-wave-bar h-24"></div>
+                        <div class="sound-wave-bar h-32"></div>
+                        <div class="sound-wave-bar h-16"></div>
+                        <div class="sound-wave-bar h-20"></div>
+                        <div class="sound-wave-bar h-40"></div>
+                        <div class="sound-wave-bar h-28"></div>
+                        <div class="sound-wave-bar h-14"></div>
+                        <div class="sound-wave-bar h-32"></div>
+                        <div class="sound-wave-bar h-44"></div>
+                        <div class="sound-wave-bar h-24"></div>
+                        <div class="sound-wave-bar h-16"></div>
+                        <div class="sound-wave-bar h-32"></div>
+                        <div class="sound-wave-bar h-28"></div>
+                        <div class="sound-wave-bar h-16"></div>
+                        <div class="sound-wave-bar h-20"></div>
+                        <div class="sound-wave-bar h-44"></div>
+                        <div class="sound-wave-bar h-14"></div>
+                        <div class="sound-wave-bar h-20"></div>
+                        <div class="sound-wave-bar h-36"></div>
+                        <div class="sound-wave-bar h-16"></div>
+                        <div class="sound-wave-bar h-12"></div>
+                        <div class="sound-wave-bar h-28"></div>
+                        <div class="sound-wave-bar h-24"></div>
+                        <div class="sound-wave-bar h-16"></div>
+                        <div class="sound-wave-bar h-32"></div>
+                        <div class="sound-wave-bar h-40"></div>
+                        <div class="sound-wave-bar h-14"></div>
+                        <div class="sound-wave-bar h-20"></div>
+                        <div class="sound-wave-bar h-32"></div>
+                        <div class="sound-wave-bar h-44"></div>
+                        <div class="sound-wave-bar h-16"></div>
+                        <div class="sound-wave-bar h-20"></div>
+                        <div class="sound-wave-bar h-32"></div>
+                        <div class="sound-wave-bar h-28"></div>
+                        <div class="sound-wave-bar h-16"></div>
+                        <div class="sound-wave-bar h-20"></div>
+                        <div class="sound-wave-bar h-44"></div>
+                        <div class="sound-wave-bar h-14"></div>
+                        <div class="sound-wave-bar h-20"></div>
+                        <div class="sound-wave-bar h-36"></div>
+                        <div class="sound-wave-bar h-16"></div>
+                        <div class="sound-wave-bar h-12"></div>
+                        <div class="sound-wave-bar h-28"></div>
+                        <div class="sound-wave-bar h-24"></div>
+                        <div class="sound-wave-bar h-16"></div>
+                        <div class="sound-wave-bar h-32"></div>
+                        <div class="sound-wave-bar h-40"></div>
+                        <div class="sound-wave-bar h-14"></div>
+                        <div class="sound-wave-bar h-20"></div>
+                        <div class="sound-wave-bar h-32"></div>
+                        <div class="sound-wave-bar h-44"></div>
+                        <div class="sound-wave-bar h-16"></div>
+                        <div class="sound-wave-bar h-20"></div>
+                        <div class="sound-wave-bar h-32"></div>
+                        <div class="sound-wave-bar h-28"></div>
+                        <div class="sound-wave-bar h-16"></div>
+                        <div class="sound-wave-bar h-20"></div>
+                        <div class="sound-wave-bar h-44"></div>
+                        <div class="sound-wave-bar h-14"></div>
+                        <div class="sound-wave-bar h-20"></div>
+                        <div class="sound-wave-bar h-36"></div>
+                        <div class="sound-wave-bar h-16"></div>
+                        <div class="sound-wave-bar h-12"></div>
+                        <div class="sound-wave-bar h-28"></div>
+                        <div class="sound-wave-bar h-24"></div>
+                        <div class="sound-wave-bar h-16"></div>
+                        <div class="sound-wave-bar h-32"></div>
+                        <div class="sound-wave-bar h-40"></div>
+                        <div class="sound-wave-bar h-14"></div>
+                        <div class="sound-wave-bar h-20"></div>
+                        <div class="sound-wave-bar h-32"></div>
+                        <div class="sound-wave-bar h-44"></div>
+                    </div>
+
+                    <div class="absolute top-0 left-[2%] flex flex-col items-center">
+                        <span class="font-bold text-white mb-2 text-lg md:text-xl">1994</span>
+                        <span
+                            class="text-[10px] md:text-[11px] text-gray-300 font-semibold uppercase tracking-widest text-center whitespace-nowrap">Inception
+                            of Aurko</span>
+                        <div class="h-16 md:h-20 w-[2px] neon-pink-line mt-3"></div>
+                    </div>
+
+                    <div class="absolute bottom-0 left-[15%] flex flex-col items-center">
+                        <div class="h-16 md:h-20 w-[2px] neon-pink-line mb-3"></div>
+                        <span class="font-bold text-white mt-2 text-lg md:text-xl">2000</span>
+                        <span
+                            class="text-[10px] md:text-[11px] text-gray-300 font-semibold uppercase tracking-widest text-center whitespace-nowrap">Alive
+                            1 Studio</span>
+                    </div>
+
+                    <div class="absolute top-0 left-[28%] flex flex-col items-center">
+                        <span class="font-bold text-white mb-2 text-lg md:text-xl">2002</span>
+                        <span
+                            class="text-[10px] md:text-[11px] text-gray-300 font-semibold uppercase tracking-widest text-center whitespace-nowrap">Media
+                            Expansion</span>
+                        <div class="h-16 md:h-20 w-[2px] neon-pink-line mt-3"></div>
+                    </div>
+
+                    <div class="absolute bottom-0 left-[40%] flex flex-col items-center">
+                        <div class="h-16 md:h-20 w-[2px] neon-pink-line mb-3"></div>
+                        <span class="font-bold text-white mt-2 text-lg md:text-xl">2006</span>
+                        <span
+                            class="text-[10px] md:text-[11px] text-gray-300 font-semibold uppercase tracking-widest text-center whitespace-nowrap">Global
+                            Reach</span>
+                    </div>
+
+                    <div class="absolute top-0 left-[52%] flex flex-col items-center">
+                        <span class="font-bold text-white mb-2 text-lg md:text-xl">2011</span>
+                        <span
+                            class="text-[10px] md:text-[11px] text-gray-300 font-semibold uppercase tracking-widest text-center whitespace-nowrap">Iconic
+                            Collaborations</span>
+                        <div class="h-16 md:h-20 w-[2px] neon-pink-line mt-3"></div>
+                    </div>
+
+                    <div class="absolute bottom-0 left-[65%] flex flex-col items-center">
+                        <div class="h-16 md:h-20 w-[2px] neon-pink-line mb-3"></div>
+                        <span class="font-bold text-white mt-2 text-lg md:text-xl">2016</span>
+                        <span
+                            class="text-[10px] md:text-[11px] text-gray-300 font-semibold uppercase tracking-widest text-center whitespace-nowrap">Digital
+                            Core</span>
+                    </div>
+
+                    <div class="absolute top-0 left-[78%] flex flex-col items-center">
+                        <span class="font-bold text-white mb-2 text-lg md:text-xl">2017</span>
+                        <span
+                            class="text-[10px] md:text-[11px] text-gray-300 font-semibold uppercase tracking-widest text-center max-w-[100px] md:max-w-[120px] leading-tight">Partnered
+                            with 500 brands</span>
+                        <div class="h-16 md:h-20 w-[2px] neon-pink-line mt-3"></div>
+                    </div>
+
+                    <div class="absolute bottom-0 left-[88%] flex flex-col items-center">
+                        <div class="h-16 md:h-20 w-[2px] neon-pink-line mb-3"></div>
+                        <span class="font-bold text-white mt-2 text-lg md:text-xl">2018</span>
+                        <span
+                            class="text-[10px] md:text-[11px] text-gray-300 font-semibold uppercase tracking-widest text-center whitespace-nowrap">Community
+                            Growth</span>
+                    </div>
+
+                    <div class="absolute top-0 left-[97%] flex flex-col items-center">
+                        <span class="font-bold text-white mb-2 text-lg md:text-xl">2021</span>
+                        <span
+                            class="text-[10px] md:text-[11px] text-gray-300 font-semibold uppercase tracking-widest text-center whitespace-nowrap">AIC
+                            Season 10</span>
+                        <div class="h-16 md:h-20 w-[2px] neon-pink-line mt-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center mt-4 md:hidden">
+                <div class="flex items-center gap-2 text-gray-500 text-xs animate-pulse">
+                    <span class="material-symbols-outlined text-sm">swipe</span>
+                    Swipe to explore timeline
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <section class="relative py-20 overflow-hidden bg-black">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-6xl md:text-8xl font-black font-display tracking-tighter mb-8 text-white uppercase">
+                    Vision
+                </h2>
+                <div class="relative max-w-6xl mx-auto group">
+                    <div class="eye-clip aspect-[21/9] w-full overflow-hidden relative">
+                        <img alt="High energy concert crowd"
+                            class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                            src="vison.png" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/80 flex items-center justify-center p-8">
+                            <div class="max-w-2xl text-center">
+                                <p class="text-white text-lg md:text-xl font-medium leading-relaxed drop-shadow-lg">
+                                    Our vision is to become the world's most admired and loved independent music
+                                    platform. We aim to create a global music IP which represent Indian music worldwide
+                                    and create a flourishing ecosystem for musical community.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-black">
+            <div class="container mx-auto px-4 lg:px-20">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+
+                    <div class="w-full lg:w-[45%] flex justify-center lg:justify-end">
+                        <div class="relative w-full max-w-[420px] bg-white aspect-[1/1.4] flex shadow-2xl">
+                            <div class="w-[60px] bg-[#8c6b3e] flex items-center justify-center relative">
+                                <span
+                                    class="rotate-[270deg] whitespace-nowrap text-white font-bold tracking-[0.2em] text-lg uppercase">
+                                    ISO 9001 : 2015
+                                </span>
+                            </div>
+
+                            <div
+                                class="flex-1 text-slate-800 flex flex-col items-center justify-center overflow-hidden">
+                                <img src="cert.png" alt="ISO 9001:2015 Certificate" class="w-full h-full">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-[55%] flex flex-col">
+                        <h2 class="text-5xl md:text-[64px] font-black font-display leading-[0.9] mb-12 text-white">
+                            Certificates And<br />Recognition
+                        </h2>
+                        <div class="space-y-4 w-full">
+                            <div class="p-8 bg-transparent border border-[#1a1e4a] relative">
+                                <p class="text-[13px] md:text-sm text-slate-400 leading-relaxed italic">
+                                    ISO certification provides institution the autonomy to showcase their commitment to
+                                    quality standards. This recognition ensures that our processes are streamlined for
+                                    excellence, fostering trust and consistency across all our musical ventures and
+                                    partnerships.
+                                </p>
+                            </div>
+
+                            <div class="space-y-3 mt-8">
+                                <div class="border border-[#1a1e4a] p-5 flex items-center justify-between">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-white">Make In India
+                                        Recognition</span>
+                                </div>
+                                <div class="border border-[#1a1e4a] p-5 flex items-center justify-between">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-white">JBR Harvard ISO
+                                        9001 Recognition</span>
+                                </div>
+
+                                <button
+                                    class="w-full bg-[#3d42ff] hover:bg-blue-700 text-white py-5 px-8 flex items-center justify-between transition-all mt-4 group">
+                                    <span class="text-xs font-bold uppercase tracking-[0.2em]">ISO 9001
+                                        Certificate</span>
+
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section>
+        <div class="min-h-screen flex items-center justify-center py-20 px-6 lg:px-24">
+            <div class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-4 space-y-8">
+                    <div>
+                        <h2 class="text-4xl lg:text-5xl font-extrabold text-gradient mb-4">
+                            27 Awards And Counting
+                        </h2>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                            Honoring Excellence in Music &amp; Brand Innovation
+                        </h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm lg:text-base">
+                        Alive has been awarded with many renowned awards for its contribution in Non-film music
+                        landscape
+                        including CMO Asia national award, Foxglove award, Digital Crest award, Kaleido Award and so on.
+                        We
+                        continue to push boundaries and set new standards in the industry.
+                    </p>
+                    <div class="flex gap-4 justify-center lg:justify-start">
+                        <button onclick="scrollCards('left')"
+                            class="w-12 h-12 rounded-full flex items-center justify-center border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:bg-primary hover:text-white transition-all">
+                            <span class="material-icons">chevron_left</span>
+                        </button>
+                        <button onclick="scrollCards('right')"
+                            class="w-12 h-12 rounded-full flex items-center justify-center bg-blue-600 text-white shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition-all">
+                            <span class="material-icons">chevron_right</span>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="lg:col-span-8 relative overflow-hidden">
+                    <div id="scrollContainer"
+                        class="flex gap-6 overflow-x-auto custom-scrollbar pb-8 snap-x scroll-smooth">
+                        <div
+                            class="min-w-[320px] lg:min-w-[380px] snap-start card-gradient-border rounded-2xl overflow-hidden p-6 dark:bg-zinc-900/50 backdrop-blur-sm">
+                            <div
+                                class="aspect-[4/3] mb-6 rounded-xl overflow-hidden bg-zinc-800 flex items-center justify-center relative group">
+                                <img alt="Award Trophy Display"
+                                    class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhFqHe1aqGS6lV5jKrp1wepYe2rBCH6lBSQt1ooBYJXhEFi5DrgrLDJ83Cy8HcbV5qklpbvmx8fJwV7mjUkePwbRY9fFYTefyvsFqo9mRg1BHrVuh3K7aiSaXomJvuOYnpILryZ09jCm4KyyNY3Yd3ATRPiyhX9icwuzD6giDqQz-LyGZKaFRKhklJuHLC-XjnZD_3nH5ACKUFD8cUsZG28R-rbWdQepNa1pgwbpMoaFP_t6NQGPlcsikf-Z_6Ch7wCDt03R3sXHP9" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent opacity-60">
+                                </div>
+                                <div class="absolute bottom-4 left-4 flex gap-2">
+                                    <span
+                                        class="px-2 py-1 text-[10px] font-bold bg-yellow-500 text-black rounded uppercase">National</span>
+                                    <span
+                                        class="px-2 py-1 text-[10px] font-bold bg-primary text-white rounded uppercase">Regional</span>
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Foxglove Awards 2020</h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <span class="w-3 h-3 rounded-full bg-yellow-500 mt-1.5 shrink-0"></span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Best brand
+                                            integration</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">For Ashirwad Swasti's Doodh
+                                            Piyega India Campaign</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-3 h-3 rounded-full bg-orange-500 mt-1.5 shrink-0"></span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Best brand
+                                            integration</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">For Ashirwad Swasti's Jeetga
+                                            Bharat Campaign</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-3 h-3 rounded-full bg-gray-400 mt-1.5 shrink-0"></span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Best brand
+                                            integration</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">For Ashirwad Swasti's Abu
+                                            Tabi
+                                            Karo Campaign</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-3 h-3 rounded-full bg-pink-500 mt-1.5 shrink-0"></span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Best brand
+                                            integration</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">For Ashirwad Swasti's
+                                            Mahobbat
+                                            Har Hai Deewani Campaign</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="min-w-[320px] lg:min-w-[380px] snap-start card-gradient-border rounded-2xl overflow-hidden p-6 dark:bg-zinc-900/50 backdrop-blur-sm border-dashed border-blue-500/50">
+                            <div
+                                class="aspect-[4/3] mb-6 rounded-xl overflow-hidden bg-zinc-800 flex items-center justify-center relative group">
+                                <img alt="Digital Crest Award Trophies"
+                                    class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA45EoWO1UvsKURJnpbuE5gRVLUYmO-H2RrLc-pJik2SC1sb4l8D2vVclfHKE1ONNFteMdtphM-Es6LoU1074CdKXyO7JoWFuPDN6cin2AdjvUrG1zHXFRSD62GGHKFNFT7Qwe6P7Jc8IPlo9sUmV1ZfGCPh6iseerqIuz4GV8OmCzE91lQiJZmCIPdmRcO11sCXgUzDhcYLZ8QwSxiJAeb7GlHCkEI7p6A5PPGQHWgJyliCfRM2Yv8bWjS6MwpiyeaoDt4k3SNDsSP" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent opacity-60">
+                                </div>
+                                <div class="absolute bottom-4 left-4 flex gap-2">
+                                    <span
+                                        class="px-2 py-1 text-[10px] font-bold bg-blue-500 text-white rounded uppercase">Global</span>
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Digital Crest Award 2020
+                            </h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <span class="w-3 h-3 rounded-full bg-yellow-500 mt-1.5 shrink-0"></span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Best brand
+                                            integration</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">For Maru's Magic's Motor
+                                            Banti
+                                            Rendezvous Campaign</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-3 h-3 rounded-full bg-orange-500 mt-1.5 shrink-0"></span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Best brand
+                                            integration</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">For Maru's Magic's Koi Aur
+                                            Ma
+                                            Kale Campaign</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-3 h-3 rounded-full bg-gray-400 mt-1.5 shrink-0"></span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Best brand
+                                            integration</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">For Ashirwad Swasti's Bill
+                                            Bombastic Rahm-E-Ilahi Campaign</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="min-w-[320px] lg:min-w-[380px] snap-start card-gradient-border rounded-2xl overflow-hidden p-6 dark:bg-zinc-900/50 backdrop-blur-sm">
+                            <div
+                                class="aspect-[4/3] mb-6 rounded-xl overflow-hidden bg-zinc-800 flex items-center justify-center relative group">
+                                <img alt="Music Excellence Trophies"
+                                    class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-zqT9dfLakgVQbqPlx4y4I3EBlWPjseS7ipYs2YsVTzUf7Wm-gU4ti9h5fSTr0ja_kG7UKQKFjlpWw_biZMaizZxE9tLvclw9qzvZR7k4ocowLfejEUiXjaqeGcAS9zerYk3vi3Tb-s3NAfl4xOKzSPxhfUepl5Qd7ct72qqQMS4sfNVOCFczkTpLkUGI4clLrod1PJrYYzjKqfCahjAGr8qoBfQXYxSl100L_8ePVFGPdzs6vo7gkmB0WY9KnsaQZ0TOq-KL2f-M" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent opacity-60">
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Foxglove Awards 2020 (Vol
+                                II)
+                            </h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <span class="w-3 h-3 rounded-full bg-yellow-500 mt-1.5 shrink-0"></span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Best brand
+                                            integration</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">For Ashirwad Swasti's Doodh
+                                            Piyega India Campaign</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-3 h-3 rounded-full bg-orange-500 mt-1.5 shrink-0"></span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Best brand
+                                            integration</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">For Ashirwad Swasti's Jeetga
+                                            Bharat Campaign</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section
+        class="relative min-h-screen flex items-center justify-center py-12 lg:py-20 px-6 lg:px-24 overflow-hidden bg-matte-black">
+        <div
+            class="absolute w-full h-20 lg:h-48 bg-[#FF00B2] top-[40%] lg:top-1/2 -translate-y-1/2 lg:-translate-y-[120%] left-0 z-0 opacity-90">
+        </div>
+
+        <div class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
+
+            <div class="lg:col-span-5 flex justify-center lg:justify-start">
+                <div
+                    class="relative w-full aspect-[4/5] max-w-xs lg:max-w-md rounded-2xl md:rounded-[3rem] overflow-hidden shadow-2xl">
+                    <img alt="Supratiek Ghosh" class="w-full h-full object-cover brightness-90 contrast-110"
+                        src="gosh.jpg" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-transparent to-[#FF00B2]/20 mix-blend-overlay">
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <div class="mb-8">
+                    <p class="text-xs md:text-sm font-bold tracking-[0.3em] uppercase text-[#FF00B2] mb-4">
+                        The Visionary Behind ALIVE
+                    </p>
+                    <div class="flex flex-col">
+                        <h1
+                            class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-[2px] leading-[0.8] text-white font-sans">
+                            SUPRATIEK
+                        </h1>
+                        <h2
+                            class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black outline-text self-center lg:self-end mt-2 lg:pr-10 font-sans tracking-[5px]">
+                            GHOSH
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="space-y-6 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-gray-300">
+                    <p>
+                        The dynamic founder of ALIVE, is a trailblazing musician, entrepreneur, and visionary, recipient
+                        of Music Excellence Award from Vice President of India for his contribution to Indian
+                        Independent Music. With over 30 years of Media + Music industry experience, he is an acclaimed
+                        Singer of T Series, Times Music.
+                    </p>
+                    <p class="hidden sm:block">
+                        In 2000, Supratik formed his band, Aurko, with a mission to promote "Indian Music, Indian
+                        Dreams". Aurko took flight. Signed by Times Music, they released three albums with 24 original
+                        songs, touring extensively across India and abroad for 19 years.
+                    </p>
+                    <p>
+                        With a deep understanding of the music landscape, Supratik is leading ALIVE on a remarkable
+                        journey, paving the way for a brighter future for Indian music.
+                    </p>
+                </div>
+
+                <div class="pt-10">
+                    <a class="inline-flex items-center gap-3 px-8 py-3 bg-[#0a192f] hover:bg-[#112240] text-blue-400 border border-blue-900/50 rounded-full transition-all group"
+                        href="#">
+                        <span class="text-xs md:text-sm font-bold uppercase tracking-widest">Read on Wikipedia</span>
+                        <span
+                            class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_right_alt</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script>
+        function scrollCards(direction) {
+            // 1. Get the container element by its ID
+            const container = document.getElementById('scrollContainer');
+
+            // 2. Calculate how far to scroll 
+            // We take the width of the first card and add the gap (24px / gap-6)
+            const scrollAmount = container.firstElementChild.offsetWidth + 24;
+
+            if (direction === 'left') {
+                // Scroll to the left
+                container.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            } else {
+                // Scroll to the right
+                container.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Optional: Make the mobile arrow button work too
+        document.querySelector('.lg\\:hidden.absolute.right-4').addEventListener('click', () => {
+            scrollCards('right');
+        });
+    </script>
+    <script>
+        (function () {
+            const cursor = document.getElementById('custom-cursor');
+            const trailContainer = document.getElementById('cursor-trails');
+            const trails = [];
+            const trailCount = 8;
+
+            // 1. INJECT REQUIRED CSS FOR PARTICLES
+            if (!document.getElementById('particle-animation-styles')) {
+                const style = document.createElement('style');
+                style.id = 'particle-animation-styles';
+                style.innerHTML = `
+                @keyframes float-particle {
+                    0% { transform: translate(0, 0) scale(1); opacity: 0; }
+                    20% { opacity: 0.7; }
+                    100% { transform: translate(var(--tw-translate-x), var(--tw-translate-y)) scale(0); opacity: 0; }
+                }
+                .cursor-trail {
+                    width: 8px;
+                    height: 8px;
+                    background: #ec4899;
+                    border-radius: 50%;
+                    position: fixed;
+                    pointer-events: none;
+                    z-index: 9998;
+                    filter: blur(4px);
+                }
+                #custom-cursor {
+                    width: 20px;
+                    height: 20px;
+                    background: white;
+                    border-radius: 50%;
+                    position: fixed;
+                    pointer-events: none;
+                    z-index: 9999;
+                    mix-blend-mode: difference;
+                }
+            `;
+                document.head.appendChild(style);
+            }
+
+            // 2. Initialize Trails
+            for (let i = 0; i < trailCount; i++) {
+                const t = document.createElement('div');
+                t.className = 'cursor-trail';
+                trailContainer.appendChild(t);
+                trails.push({ el: t, x: 0, y: 0 });
+            }
+
+            let mouseX = 0;
+            let mouseY = 0;
+
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                if (cursor) {
+                    cursor.style.transform = `translate(${mouseX - 10}px, ${mouseY - 10}px)`;
+                }
+            });
+
+            // 3. Smooth Trail Animation
+            function animate() {
+                trails.forEach((trail, index) => {
+                    const nextTrail = trails[index + 1] || { x: mouseX, y: mouseY };
+                    trail.x += (nextTrail.x - trail.x) * 0.35;
+                    trail.y += (nextTrail.y - trail.y) * 0.35;
+                    trail.el.style.transform = `translate(${trail.x - 4}px, ${trail.y - 4}px)`;
+                    trail.el.style.opacity = 1 - (index / trailCount);
+                    trail.el.style.scale = 1 - (index / trailCount);
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+
+            // 4. PARTICLE/BUBBLE LOGIC (The "Pulse" effect)
+            setInterval(() => {
+                if (mouseX > 0) {
+                    const p = document.createElement('div');
+                    const isNote = Math.random() > 0.7;
+
+                    // Styling the particle
+                    p.className = 'fixed pointer-events-none z-[9997]';
+                    p.style.left = mouseX + 'px';
+                    p.style.top = mouseY + 'px';
+                    p.style.color = '#ec4899'; // Pink color
+
+                    if (isNote) {
+                        p.innerHTML = '<span class="material-symbols-outlined" style="font-size: 14px;">music_note</span>';
+                    } else {
+                        // This creates the "Bubble" or Circle
+                        p.innerHTML = '<div style="width: 6px; height: 6px; background: white; border-radius: 50%; box-shadow: 0 0 10px #ec4899;"></div>';
+                    }
+
+                    // Random Scatter Direction
+                    const tx = (Math.random() - 0.5) * 120; // 120px spread
+                    const ty = (Math.random() - 0.5) * 120;
+
+                    p.style.setProperty('--tw-translate-x', `${tx}px`);
+                    p.style.setProperty('--tw-translate-y', `${ty}px`);
+                    p.style.animation = 'float-particle 1.2s ease-out forwards';
+
+                    document.body.appendChild(p);
+
+                    // Clean up memory
+                    setTimeout(() => p.remove(), 1200);
+                }
+            }, 100); // Create bubble every 100ms
+        })();
+    </script>
+    <script>
+        // Simple toggle function
+        function toggleSections(sectionToShow) {
+            // Hide both sections
+            document.getElementById('business-section').style.display = 'none';
+            document.getElementById('artist-section').style.display = 'none';
+
+            // Show the selected section
+            document.getElementById(sectionToShow + '-section').style.display = 'block';
+
+            // Update button styles
+            updateButtonStyles(sectionToShow);
+        }
+
+        // Update button styles
+        function updateButtonStyles(activeSection) {
+            // Find all toggle buttons
+            const buttons = document.querySelectorAll('.inline-flex.items-center.p-1.bg-white\\/5.rounded-full button');
+
+            buttons.forEach(button => {
+                const buttonText = button.textContent.trim();
+                const baseClasses = 'px-4 py-2 md:px-8 md:py-3 rounded-full text-xs md:text-sm font-semibold transition-all duration-300';
+
+                if (activeSection === 'business') {
+                    if (buttonText === 'For Businesses') {
+                        button.className = `${baseClasses} bg-brand-blue text-white shadow-lg shadow-brand-blue/30`;
+                    } else {
+                        button.className = `${baseClasses} text-zinc-400 hover:text-white`;
+                    }
+                } else {
+                    if (buttonText === 'For Artists') {
+                        button.className = `${baseClasses} bg-brand-blue text-white shadow-lg shadow-brand-blue/30`;
+                    } else {
+                        button.className = `${baseClasses} text-zinc-400 hover:text-white`;
+                    }
+                }
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initially show only business section
+            document.getElementById('business-section').style.display = 'block';
+            document.getElementById('artist-section').style.display = 'none';
+
+            // Add event listeners to all buttons
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', function () {
+                    const buttonText = this.textContent.trim();
+
+                    if (buttonText === 'For Businesses') {
+                        toggleSections('business');
+                    } else if (buttonText === 'For Artists') {
+                        toggleSections('artist');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
