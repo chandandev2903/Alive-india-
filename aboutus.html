@@ -15,6 +15,7 @@
         rel="stylesheet" />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link rel="stylesheet" href="assest/css/navbar.css">
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -178,83 +179,23 @@
 </head>
 
 <body class="bg-background-dark font-display text-white antialiased overflow-x-hidden">
-    <nav class="fixed top-0 left-0 w-full z-[100] px-4 py-4 sm:px-6">
-        <div class="relative group">
-
-            <div
-                class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000">
-            </div>
-
-            <div
-                class="relative flex items-center justify-between bg-[#020617]/80 backdrop-blur-xl border border-white/10 px-6 py-3 rounded-2xl shadow-2xl">
-
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <div
-                        class="w-9 h-9 bg-gradient-to-tr from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/20">
-                        <span class="material-symbols-outlined text-white text-xl">bolt</span>
-                    </div>
-                    <span class="text-white font-bold tracking-tighter text-xl uppercase hidden sm:block">ALIVE INIDA<span
-                            class="text-blue-500">.</span></span>
-                </div>
-
-                <div class="hidden lg:flex items-center gap-8">
-                    <a href="index.html" class="relative group/link text-2xl font-medium tracking-wide text-white transition-colors duration-300  ">
-                        Home
-                        <span
-                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover/link:w-full"></span>
-                    </a>
-                    <a href="aboutus.html"
-                        class="relative group/link text-2xl font-medium tracking-wide text-slate-400 hover:text-white transition-colors duration-300">
-                        About
-                        <span
-                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover/link:w-full"></span>
-                    </a>
-                    <a href="service.html"
-                        class="relative group/link text-2xl font-medium tracking-wide text-slate-400 hover:text-white transition-colors duration-300">
-                        Services
-                        <span
-                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover/link:w-full"></span>
-                    </a>
-                    <a href="#projects"
-                        class="relative group/link text-2xl font-medium tracking-wide text-slate-400 hover:text-white transition-colors duration-300">
-                        Projects
-                        <span
-                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover/link:w-full"></span>
-                    </a>
-                    
-                </div>
-
-                <div class="flex items-center gap-4">
-                    
-                    <button
-                        class="relative group/btn flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 p-[1px] rounded-xl transition-transform active:scale-95 shadow-lg shadow-blue-500/20">
-                        <div
-                            class="bg-[#020617] group-hover:bg-transparent transition-colors duration-300 px-5 py-2 rounded-[11px]">
-                            <span class="text-sm font-bold text-white uppercase tracking-wider">Get Started</span>
-                        </div>
-                    </button>
-
-                    <button id="nav-toggle" class="lg:hidden text-white/80 hover:text-white p-1">
-                        <span class="material-symbols-outlined text-3xl">menu</span>
-                    </button>
-                </div>
-            </div>
-
-            <div id="mobile-nav"
-                class="hidden absolute top-full left-0 w-full mt-2 bg-[#020617]/95 backdrop-blur-2xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl lg:hidden">
-                <div class="flex flex-col p-4 gap-2">
-                    <a href="#"
-                        class="p-3 text-white font-medium hover:bg-white/5 rounded-xl transition-colors">Home</a>
-                    <a href="#"
-                        class="p-3 text-slate-400 hover:text-white font-medium hover:bg-white/5 rounded-xl transition-colors">Services</a>
-                    <a href="#"
-                        class="p-3 text-slate-400 hover:text-white font-medium hover:bg-white/5 rounded-xl transition-colors">Projects</a>
-                    <a href="#"
-                        class="p-3 text-white font-medium hover:bg-white/5 rounded-xl transition-colors">Login</a>
-                </div>
-            </div>
+    <header class="alove-nav-wrapper">
+    <nav class="navbar" id="alove-sticky-nav">
+      <div class="nav-container">
+        <div class="logo">ALIVE <span>INDIA</span></div>
+        <ul class="nav-links">
+          <li><a href="finalll.html" class="active">Home</a></li>
+          <li><a href="aboutus.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="#" class="btn-shop">Book Now</a>
         </div>
+      </div>
     </nav>
+  </header>
     <section
         class=" lg:mt-10 relative min-h-[85vh] flex flex-col justify-start overflow-hidden bg-black bg-[url('./about.png')] bg-cover bg-center ">
         <div class="absolute inset-0 pointer-events-none select-none flex justify-around items-start pt-[-10%] z-0 ">

@@ -1,0 +1,87 @@
+
+    .alove-nav-wrapper {
+  --nav-bg: #121212;
+  --accent-gold: #d4af37;
+  --text-light: #ffffff;
+  --text-muted: #b0b0b0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.alove-nav-wrapper .navbar {
+  /* Sticky Logic */
+  position: fixed; /* Fixed works best for full-page sticky navs */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  
+  /* Styling */
+  background: var(--nav-bg);
+  padding: 1.5rem 5%; /* Start a bit taller */
+  transition: all 0.4s ease; /* Smooth transition when shrinking */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* This class is added via JS when scrolling */
+.alove-nav-wrapper .navbar.scrolled {
+  padding: 0.8rem 5%;
+  background: rgba(18, 18, 18, 0.95); /* Slight transparency */
+  backdrop-filter: blur(10px); /* Modern blur effect */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.alove-nav-wrapper .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.alove-nav-wrapper .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-light);
+  transition: transform 0.3s ease;
+}
+
+.alove-nav-wrapper .logo span { color: var(--accent-gold); }
+
+.alove-nav-wrapper .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.alove-nav-wrapper .nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.alove-nav-wrapper .nav-links a:hover { color: var(--text-light); text-decoration: underline;  text-underline-offset: 12px;color: #F26C0D;
+}
+
+.alove-nav-wrapper .btn-shop {
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  padding: 10px 30px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: 0.3s;
+  
+}
+
+.alove-nav-wrapper .btn-shop:hover {
+  background: var(--accent-gold);
+  color: #000000;
+}
+
+@media (max-width: 992px) {
+  .alove-nav-wrapper .nav-links { display: none; }
+}

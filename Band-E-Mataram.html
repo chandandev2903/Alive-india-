@@ -1,0 +1,1050 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Offerings | Musician Hero</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Montserrat:wght@700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assest/css/footer.css">
+    <link rel="stylesheet" href="assest/css/navbar.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "#000000",
+              primary: "#304FFE",
+              accent: "#E91E63",
+              "background-light": "#F8F9FA",
+              "background-dark": "#0D0D0D",
+              "accent-pink": "#ff2d8c",
+              "card-bg": "#1a0d16",
+              "orange-brand": "#ff7e33",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Montserrat", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      .text-outline {
+        -webkit-text-stroke: 2px white;
+        color: transparent;
+      }
+      @media (max-width: 768px) {
+        .text-outline {
+          -webkit-text-stroke: 1px white;
+        }
+      }
+      .gradient-border-pink-orange {
+        border: 2px solid transparent;
+        background:
+          linear-gradient(#0d0d0d, #0d0d0d) padding-box,
+          linear-gradient(to right, #e91e63, #ff9800) border-box;
+      }
+      .gradient-border-pink {
+        border: 2px solid #e91e63;
+      }
+      .aspect-video-custom {
+        aspect-ratio: 18 / 9;
+      }
+      .aspect-video-p {
+        aspect-ratio: 10 / 9;
+      }
+      .logo-grayscale {
+        filter: brightness(0) invert(1);
+        opacity: 0.9;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 20;
+        font-size: 18px;
+      }
+      .filled-icon {
+        font-variation-settings: "FILL" 1;
+      }
+    </style>
+    <style>
+      /* Mobile Navigation Styles */
+      .navbar {
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: white;
+        letter-spacing: 0.05em;
+      }
+
+      .logo span {
+        color: #304FFE;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+        font-size: 0.95rem;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #304FFE;
+      }
+
+     
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+
+      /* Mobile Styles */
+      @media (max-width: 768px) {
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          height: 100vh;
+          width: 70%;
+          max-width: 300px;
+          background: rgba(0, 0, 0, 0.98);
+          flex-direction: column;
+          padding: 5rem 2rem 2rem;
+          gap: 1.5rem;
+          transition: right 0.3s ease;
+          box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .nav-links a {
+          font-size: 1.1rem;
+          padding: 0.5rem 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .nav-actions {
+          display: none;
+        }
+
+        .mobile-close-btn {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          background: none;
+          border: none;
+          color: white;
+          font-size: 2rem;
+          cursor: pointer;
+          padding: 0.5rem;
+        }
+      }
+
+      /* Mobile overlay */
+      .mobile-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 999;
+      }
+
+      .mobile-overlay.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="font-display bg-background m-0 p-0 overflow-x-hidden">
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+
+    <!-- Navigation -->
+   <header class="alove-nav-wrapper">
+    <nav class="navbar" id="alove-sticky-nav">
+      <div class="nav-container">
+        <div class="logo">ALIVE <span>INDIA</span></div>
+        <ul class="nav-links">
+          <li><a href="finalll.html">Home</a></li>
+          <li><a href="aboutus.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="#" class="btn-shop">Book Now</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <!-- Banner Section -->
+    <section class="relative h-screen w-full flex flex-col">
+      <div class="h-1/2 w-full overflow-hidden">
+        <img
+          alt="Musician silhouette with guitar against fiery stage lighting"
+          class="w-full h-full object-cover"
+          src="offering.png"
+        />
+      </div>
+      <div class="h-1/2 w-full bg-black"></div>
+      <div
+        class="absolute inset-0 flex items-center justify-center pointer-events-none z-10 px-4"
+      >
+        <h1
+          class="text-[15vw] sm:text-[12vw] md:text-[11rem] font-black tracking-[0.05em] sm:tracking-[0.1em] flex leading-none select-none"
+        >
+          <span class="text-outline">OFFER</span
+          ><span class="text-white">INGS</span>
+        </h1>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <div
+      class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 transition-colors duration-300"
+    >
+      <header class="pt-8 sm:pt-12 pb-12 sm:pb-16 flex justify-center px-4">
+        <div
+          class="inline-flex items-center p-1 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full w-full sm:w-auto"
+        >
+          <button
+            id="business-tab"
+            class="flex-1 sm:flex-none px-4 sm:px-8 py-2.5 sm:py-3 rounded-full bg-primary text-white font-medium shadow-lg transition-all text-sm sm:text-base"
+            onclick="showBusinessContent()"
+          >
+            For Businesses
+          </button>
+          <button
+            id="artist-tab"
+            class="flex-1 sm:flex-none px-4 sm:px-8 py-2.5 sm:py-3 rounded-full text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white font-medium transition-all text-sm sm:text-base"
+            onclick="showArtistContent()"
+          >
+            For Artists
+          </button>
+        </div>
+      </header>
+
+      <!-- Business Content -->
+      <div id="business-content">
+        <main
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pb-16 sm:pb-24"
+        >
+          <!-- Sidebar - Mobile: Collapsible, Desktop: Always visible -->
+          <aside class="lg:col-span-3 space-y-6 sm:space-y-10">
+            <div>
+              <h3 class="text-primary font-bold text-base sm:text-lg mb-4 sm:mb-6 leading-tight">
+                Music IPs- Brand Integrated Mega Shows
+              </h3>
+              <ul class="space-y-3 sm:space-y-4">
+                  <li
+                  class="flex items-center text-slate-500 dark:text-slate-400 hover:text-white cursor-pointer transition-colors pl-6 text-sm sm:text-base"
+                >
+                 <a href="service.html"> Alive India in Concert</a>
+                </li>
+         
+                <li
+                  class="flex items-center text-white font-semibold cursor-pointer text-sm sm:text-base"
+                >
+                  <a href="Band-E-Mataram.html">
+                    <span class="material-icons text-sm mr-2">play_arrow</span>
+                  <span class="underline underline-offset-4 decoration-white"
+                    >Band E Mataram</span>
+                  </a>
+                </li>
+
+                <li
+                  class="flex items-center text-slate-500 dark:text-slate-400 hover:text-white cursor-pointer transition-colors pl-6 text-sm sm:text-base"
+                >
+                  Sounds of India
+                </li>
+                <li
+                  class="flex items-center text-slate-500 dark:text-slate-400 hover:text-white cursor-pointer transition-colors pl-6 text-sm sm:text-base"
+                >
+                  Get Alive Nights
+                </li>
+              </ul>
+            </div>
+            <nav class="space-y-4 sm:space-y-5">
+              <a
+                class="block text-primary hover:text-blue-400 font-medium transition-colors text-sm sm:text-base"
+                href="#"
+                >Live Music Experiences</a
+              >
+              <a
+                class="block text-primary/70 hover:text-primary font-medium transition-colors text-sm sm:text-base"
+                href="#"
+                >Customer Gratification &amp; Loyalty Solutions</a
+              >
+              <a
+                class="block text-primary/70 hover:text-primary font-medium transition-colors text-sm sm:text-base"
+                href="#"
+                >Campaigns, Activations, and Innovations</a
+              >
+              <a
+                class="block text-primary/70 hover:text-primary font-medium transition-colors text-sm sm:text-base"
+                href="#"
+                >Event Production &amp; Execution</a
+              >
+              <a
+                class="block text-primary/70 hover:text-primary font-medium transition-colors text-sm sm:text-base"
+                href="#"
+                >Audio-Video Productions Infrastructure</a
+              >
+              <a
+                class="block text-primary/70 hover:text-primary font-medium transition-colors text-sm sm:text-base"
+                href="#"
+                >Music Influencer/ Celebrity Artist Network</a
+              >
+              <a
+                class="block text-primary/70 hover:text-primary font-medium transition-colors text-sm sm:text-base"
+                href="#"
+                >Creative Services for Digital &amp; Mass Media</a
+              >
+              <a
+                class="block text-primary/70 hover:text-primary font-medium transition-colors text-sm sm:text-base"
+                href="#"
+                >Music Labels</a
+              >
+            </nav>
+          </aside>
+
+          <div class="lg:col-span-9 space-y-8 sm:space-y-12">
+            <section class="space-y-4 sm:space-y-6 relative">
+              <div
+                class="absolute right-0 top-0 w-12 h-10 sm:w-16 sm:h-12 bg-slate-800 flex items-center justify-center rounded text-[8px] sm:text-[10px] text-slate-400 uppercase tracking-widest"
+              >
+                Logo
+              </div>
+              <div>
+                <span
+                  class="text-accent font-semibold tracking-wide uppercase text-xs sm:text-sm"
+                  >Music IPs- Brand Integrated Mega Shows</span
+                >
+                <h1
+                  class="text-display text-3xl sm:text-4xl lg:text-6xl text-slate-900 dark:text-white mt-3 sm:mt-4 font-extrabold"
+                >
+                  Alive India In Concert
+                </h1>
+                <p
+                  class="text-slate-500 dark:text-slate-400 text-lg sm:text-xl lg:text-2xl mt-2 font-light"
+                >
+                  The heart of Alive
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-4 sm:gap-6 items-center">
+                <a
+                  class="flex items-center text-primary hover:underline text-xs sm:text-sm font-medium"
+                  href="#"
+                >
+                  <span class="material-icons text-sm sm:text-base mr-1">language</span>
+                  Website
+                </a>
+                <a
+                  class="flex items-center text-primary hover:underline text-xs sm:text-sm font-medium"
+                  href="#"
+                >
+                  <span class="material-icons text-sm sm:text-base mr-1"
+                    >play_circle_filled</span
+                  >
+                  Youtube
+                </a>
+                <a
+                  class="flex items-center text-primary hover:underline text-xs sm:text-sm font-medium"
+                  href="#"
+                >
+                  <span class="material-icons text-sm sm:text-base mr-1"
+                    >photo_camera</span
+                  >
+                  Instagram
+                </a>
+                <a
+                  class="flex items-center text-primary hover:underline text-xs sm:text-sm font-medium"
+                  href="#"
+                >
+                  <span class="material-icons text-sm sm:text-base mr-1">facebook</span>
+                  Facebook
+                </a>
+              </div>
+            </section>
+
+            <section
+              class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base"
+            >
+              <div class="space-y-3 sm:space-y-4">
+                <p>
+                  Recognized as India's largest and longest-running live music
+                  concert series, Alive India in concert is an expanding
+                  10-season legacy across Multiple Indian Cities partnering with
+                  India's most Admired
+                  <span class="text-white font-bold"
+                    >Artists, Venues and Brands.</span
+                  >
+                </p>
+                <p>
+                  What sets it apart is its unprecedented
+                  <span class="text-white font-bold"
+                    >pre-concert activation,</span
+                  >
+                  engaging music lovers for 2-3 months before each concert.
+                </p>
+              </div>
+              <div class="space-y-3 sm:space-y-4">
+                <p>
+                  This interactive platform also unites leading brands, creating
+                  unique experiences for all with a mix of grand and intimate
+                  shows.
+                </p>
+                <p>
+                  We live for the cheering sound of our audience. The magic of a
+                  open air concert is hard to put in words. So Instead, We
+                  invite you to attend and experience it.
+                </p>
+              </div>
+            </section>
+
+            <section class="py-4 sm:py-6">
+              <h2
+                class="text-display text-2xl sm:text-3xl lg:text-5xl text-slate-900 dark:text-white font-extrabold leading-tight"
+              >
+                Music That <span class="text-accent">Inspires.</span><br />
+                Stories That <span class="text-accent">Resonate.</span>
+              </h2>
+            </section>
+
+            <section class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+              <div
+                class="gradient-border-pink rounded-xl p-6 sm:p-8 flex flex-col items-center justify-center text-center space-y-2 group hover:scale-[1.02] transition-transform"
+              >
+                <span
+                  class="text-display text-4xl sm:text-5xl text-slate-900 dark:text-white font-black tracking-tight"
+                  >10</span
+                >
+                <p
+                  class="text-slate-500 dark:text-slate-400 font-bold uppercase text-xs tracking-widest"
+                >
+                  Glorious Seasons
+                </p>
+              </div>
+              <div
+                class="gradient-border-pink-orange rounded-xl p-6 sm:p-8 flex flex-col items-center justify-center text-center space-y-2 group hover:scale-[1.02] transition-transform"
+              >
+                <span
+                  class="text-display text-4xl sm:text-5xl text-slate-900 dark:text-white font-black tracking-tight"
+                  >72</span
+                >
+                <p
+                  class="text-slate-500 dark:text-slate-400 font-bold uppercase text-xs tracking-widest"
+                >
+                  Cities rocked on beat
+                </p>
+              </div>
+              <div
+                class="gradient-border-pink-orange rounded-xl p-6 sm:p-8 flex flex-col items-center justify-center text-center space-y-2 group hover:scale-[1.02] transition-transform"
+              >
+                <span
+                  class="text-display text-4xl sm:text-5xl text-slate-900 dark:text-white font-black tracking-tight"
+                  >175</span
+                >
+                <p
+                  class="text-slate-500 dark:text-slate-400 font-bold uppercase text-xs tracking-widest"
+                >
+                  Unforgettable concerts
+                </p>
+              </div>
+            </section>
+
+            <!-- Showreel & Concert Formats Section -->
+            <section class="space-y-12 sm:space-y-20">
+              <div>
+                <h2
+                  class="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-400 mb-4 sm:mb-6"
+                >
+                  Alive India in Concert Showreel
+                </h2>
+                <div
+                  class="relative group cursor-pointer overflow-hidden rounded-sm shadow-2xl"
+                >
+                  <div
+                    class="aspect-video w-full overflow-hidden bg-zinc-900"
+                  >
+                    <img
+                      alt="High energy concert scene with vibrant smoke and lights"
+                      class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuA68JP_IBFnrY2qh6Mg6Dd5KYIJvxA-iaFW11rnDNx5HXb5QEan0gH1yLys4wvDgdJKkxJqcuHcQmGq_WuGHf942DnZruGBJervg1gp3VRSC_PUSkLnooJ8ga49Nj3AmdlzGCAUgPB9hQzZiFUMama7I6VNN-J56RA0fY5ZTiHUG1Z7CxfQBoNswLzoelrivqK4CTpI2XQoJHAVbMoxmTQKFQPn_60cgIzxIYbdcce_E1_pK0b6NB2Dnf4NPd5yISjhOhC-mwdr6zk"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-orange-600/40 to-transparent mix-blend-overlay"
+                    ></div>
+                  </div>
+                  <div
+                    class="absolute inset-0 flex items-center justify-center"
+                  >
+                    <div
+                      class="w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-accent-pink rounded-full flex items-center justify-center shadow-2xl transform transition-transform group-hover:scale-110"
+                    >
+                      <span
+                        class="material-icons text-white text-2xl sm:text-4xl md:text-6xl pl-1"
+                        >play_arrow</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h2
+                  class="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-400 mb-6 sm:mb-10"
+                >
+                  Concert Formats
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                  <div class="flex flex-col group cursor-pointer">
+                    <div class="aspect-[16/10] overflow-hidden">
+                      <img
+                        alt="Massive mega concert with red lighting and large crowd"
+                        class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtIBpPRmMXom60tsea2l--m5fgcPumeJop10vi29Omuy-erhbX3APHJ9JwsyTvReapYwa21ryG830aTEPNULoAv6CLQ-bkxfEQrG9vmhC7dbYA8m34_DumtWak7dKHx1qNfsoT8g_sxoa_dJUaLe-QFgOrFAaQl1zyPoDgPQY6Ek96MQDmEXB8LvMsMD0HjPXRqqGxQdFR08_hi3TfAriJHCXOQshmwmf0mPF3YLf_nQaUae1muRcXKBl0_UWRx5ddmUjWE8c3lNw"
+                      />
+                    </div>
+                    <div
+                      class="bg-primary p-4 sm:p-6 flex items-center justify-between"
+                    >
+                      <span class="text-white text-base sm:text-lg md:text-xl font-medium"
+                        >Mega Concerts</span
+                      >
+                      <span class="material-icons text-white">expand_more</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col group cursor-pointer">
+                    <div class="aspect-[16/10] overflow-hidden">
+                      <img
+                        alt="Intimate concert setting with musicians on stage and blue lighting"
+                        class="w-full h-full object-cover transition-all duration-500"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCY0gJ6gNIxBSH5xPWNP2zvHp7OkL_9_ccaKCtil7NJZBbGCGOvypV7mQ7hi_2sOk5MKV5--xP-5fDIWN1SkwaI-RVpSVberlY6mR7sCUzNtOHxmMXoOSYCQ-Wert6MCrvgGEN9FEEAN_kASSEhFkFz16NKLwm3Fo-fCRdbN23lUro8D6byQhjcGp2t6kVkJXxeGCejE60epjEM7KKMFN2WMe0QukA1Pjvj9JLKpOk_h16FPqJPWvTN8MO4-6dKUkniRw4dzM77lg"
+                      />
+                    </div>
+                    <div
+                      class="bg-white dark:bg-zinc-100 p-4 sm:p-6 md:p-8 flex flex-col min-h-[140px] sm:min-h-[180px]"
+                    >
+                      <div class="flex items-center justify-between mb-3 sm:mb-4">
+                        <h3 class="text-black text-base sm:text-lg md:text-xl font-medium">
+                          Intimate Concerts
+                        </h3>
+                        <span class="material-icons text-black"
+                          >expand_less</span
+                        >
+                      </div>
+                      <p class="text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                        The initiative of digital concerts is our attempt to
+                        democratise music. Intimate concerts offer an
+                        opportunity to brands to reach every customer and build
+                        strong connections.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Collaborations Section -->
+            <section class="space-y-16 sm:space-y-24 py-8 sm:py-16">
+              <div>
+                <h2
+                  class="text-xl sm:text-2xl font-light text-slate-700 dark:text-gray-400 mb-6 sm:mb-10 tracking-wide"
+                >
+                  Artists collaboration
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+                  <div class="space-y-2 sm:space-y-3">
+                    <div class="aspect-video-p overflow-hidden rounded-sm">
+                      <img
+                        alt="Artist Arijit Singh performing on stage with a guitar"
+                        class="w-full h-full object-cover"
+                        src="https://static.wixstatic.com/media/69e1d4_f8c0f2027b32408fb614ea5753708398~mv2.jpg/v1/fill/w_924,h_922,q_90,enc_avif,quality_auto/69e1d4_f8c0f2027b32408fb614ea5753708398~mv2.jpg"
+                      />
+                    </div>
+                    <p
+                      class="text-[10px] tracking-widest text-right uppercase font-medium text-slate-600 dark:text-white"
+                    >
+                      Arijit Singh
+                    </p>
+                  </div>
+                  <div class="space-y-2 sm:space-y-3">
+                    <div class="aspect-video-p overflow-hidden rounded-sm">
+                      <img
+                        alt="Artist Mohit Chauhan singing into a microphone"
+                        class="w-full h-full object-cover"
+                        src="https://static.wixstatic.com/media/69e1d4_a8f4611591a14c7294d59668e83dd860~mv2.jpg/v1/fill/w_924,h_922,q_90,enc_avif,quality_auto/69e1d4_a8f4611591a14c7294d59668e83dd860~mv2.jpg"
+                      />
+                    </div>
+                    <p
+                      class="text-[10px] tracking-widest text-right uppercase font-medium text-slate-600 dark:text-white"
+                    >
+                      Kumar Sanu
+                    </p>
+                  </div>
+                  <div class="space-y-2 sm:space-y-3">
+                    <div class="aspect-video-p overflow-hidden rounded-sm">
+                      <img
+                        alt="Artist Shreya Ghoshal singing under blue stage lights"
+                        class="w-full h-full object-cover"
+                        src="https://static.wixstatic.com/media/69e1d4_186afee67e1f495aa86762d2461c397e~mv2.jpg/v1/fill/w_948,h_582,q_90,enc_avif,quality_auto/69e1d4_186afee67e1f495aa86762d2461c397e~mv2.jpg"
+                      />
+                    </div>
+                    <p
+                      class="text-[10px] tracking-widest text-right uppercase font-medium text-slate-600 dark:text-white"
+                    >
+                      Shreya Ghoshal
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h2
+                  class="text-xl sm:text-2xl font-light text-slate-700 dark:text-gray-400 mb-8 sm:mb-12 tracking-wide"
+                >
+                  Over 50 Indian and international Brand collaborations
+                </h2>
+                <div
+                  class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 sm:gap-12 items-center justify-items-center"
+                >
+                  <img
+                    alt="PVR logo"
+                    class="h-6 sm:h-8 w-auto grayscale dark:invert brightness-0 dark:brightness-100 opacity-70"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlGPbcVxZDSE-NeRHJ6-ja-XXrC7GDp0oIXmPeMdTFA0cbxVKdXVtsB8G66P0zOTuuJ-1wJ5sFgVn_GZN05zcHh9zNWiZyXebdR1DFZXfrNmVWbtcxD77MEjZpy-iFWnS4kndH8vHjslrTTfJrwCOtEtwKpcXztKzPmuHvm3tRro-_iuXlOfDhxslEpSyNGAsB-RHlAeCfqw01g_7wTbd9AmdTTEbjQtm_9lVYhF0hWCM81l-CepDbrmiDTNzgpVeTRiXBSE-jeWc"
+                  />
+                  <img
+                    alt="HSBC logo"
+                    class="h-5 sm:h-6 w-auto grayscale dark:invert brightness-0 dark:brightness-100 opacity-70"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBDdvxLs4zJ60A1HmP8k0u5bUYqQ7hN7DC1-tZWor_MB4ZknQBFPBO2Fit19WcmrIeU9a254d-ZxSKI9z1tqlPuLhOPdO72Q_F9Y9dHhMTvlvw_NldylYM9rR-zz_GWhJi-pQivS0wAcHnWXZNgQYQgWLsWNbBiEXli6N66J9stzmH6_KOhnh-4HU2aKjT_bE1n5-TxKJEvaGvhbqu-JC87zlvra0mXpSu8PbNaYnZVkGL81v5dsZT8U1Le4hIBWAuK__E5zcy8Uc"
+                  />
+                  <img
+                    alt="ITC Limited logo"
+                    class="h-10 sm:h-12 w-auto grayscale dark:invert brightness-0 dark:brightness-100 opacity-70"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuANuI-MnnsUuMHYQJCt1KTXCYE1EFR7xocyTdpLyAkAo8Axm0QxANwAVgtACJVaWw6w40mAV_fx74hL8omtSqf1Cq7Zhj3OH3E6UR2INzbM6ViiFCCSggl_xJ0mwrDgL18aRiPIE4Zr5aFx3wXOKVK42ZFsNzGK1xND9RN8DnQe93P4bFy_w3s4yYvLmTEorSRvQEOGRyDpeusWE0nMInQR1oj4HTN5piiGmk0Q09XD2rM9R1qcO6e3rXA1fsvktVpDRefNq8sXqHY"
+                  />
+                  <img
+                    alt="Prestige Group logo"
+                    class="h-12 sm:h-14 w-auto grayscale dark:invert brightness-0 dark:brightness-100 opacity-70"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLekvkq2H_wSuKlYSjfHgieNIf4OoilFJfZFcPY7UwR-zq-cr1dGOaHjaPScKbmHZ-kVL2fTT1oKxXgWsdRecUViI9L4vd2Db37trV6w6WXOUcadTvyl9kwg6eFr-EnV6EEB-NCh4X2SAoexbq0XY-1Pygbxe-gKkN_KvqCrhGaGCfkzBc-PS8A4My2fAs5IQqPicDrZffYN0HhJjAcA98GP8Mjvt5gXmgilldCpnW4ol25yzX-7YJeOhZjDFXyBDLlLVSNZ8ob3o"
+                  />
+                  <img
+                    alt="Volvo logo"
+                    class="h-6 sm:h-8 w-auto grayscale dark:invert brightness-0 dark:brightness-100 opacity-70"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW4LoIYiiBBmNAbPHqbyTfyibEN4aOTruAQ4F1x7pOQM9OJAoa2Yu3mw9PuT9ETpNEbLQNLWQiErZb_uiNS5h0bIoEVEkdz5JBVLJmd-mS-IPl1zLivscwWtyoeObPz_Ikmx8mNpRQ8czsiPzsF0esspOT3uedEB7SGLalzC2BFNsgKHkaGj8JPo0VXSWPTSQEd1HT21NOrDb7pkEUjoSnW5AuHy8jgPXlmMmTi236B3bZB32EVN3yVNFoW5eyASCMjjTk5CNg_dE"
+                  />
+                  <img
+                    alt="Pepsi logo"
+                    class="h-10 sm:h-12 w-auto grayscale dark:invert brightness-0 dark:brightness-100 opacity-70"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm6bDj0xf1TAzZ5GO05Tcotd7SdLWH9ra8s1-u4uff_utbA2K29BUkUIxjcdrqHG4EJheah0eFZpscLzH-Szg9crnKbdEIFpVlUar8plAhoxTQSw22PLCpPYvf3AEdkLsTiEi4dc8Di6hSFRVA2yLp5Bv8otw516rZSPXQ253UqhVkc7GOhuJnWqxMf5Sr4Z8jtuum5sFSm58JG1vIPZNLiwGvay4y9XZCsqKjNgciebgpc3XrGIVURatmolk_dtSwOldl2A2Adt4"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h2
+                  class="text-xl sm:text-2xl font-light text-slate-700 dark:text-gray-400 mb-8 sm:mb-12 tracking-wide"
+                >
+                  Mall collaborations
+                </h2>
+                <div
+                  class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 sm:gap-12 items-center justify-items-center"
+                >
+                  <div class="flex flex-col items-center">
+                    <img
+                      alt="Phoenix Marketcity logo"
+                      class="h-12 sm:h-14 w-auto grayscale dark:invert brightness-0 dark:brightness-100 opacity-70"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuB55fwae-PZt_d43V_GEWNWOmhSFJyTxhRGpuQljPD2dNgcMtIY9aPQO7gUhmZ128H89nbF7GJV3FBqgcWBXFmloDLdLpEGKf9w65oebRRSwb-r5Z0CIctZqX9yvmKHjnVhlaUcyZmwjFvsxPaptNs3LRi4OHtZAJPmedCpzpSKQYtlkiRBBzP7j_i6FcRwi_OdscSUIzB3cFx6LAGr3fgSd2fYGWEGp8cVCDDyfervDXOOXW1rwXifgn0NAphd-iBh3YfVAwJ60PI"
+                    />
+                  </div>
+                  <img
+                    alt="Orion Mall logo"
+                    class="h-8 sm:h-10 w-auto grayscale dark:invert brightness-0 dark:brightness-100 opacity-70"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgkc4HzRXcsfOvJjXl9tBBvPdVDHIPtoB0ptlhkYEBQ0iaUsSZ-I_KDjxbvp1b4Iovvz5WVQ0SfbHHKlWut2nuEDE6-xPvP_i4qDx7DFU6yqgCB2j-7E3GxNqMJuYAOttovltuCnqM6KDaKTBBJ6f1t7nO0gyzwafL2QOlXKuXEDh7Us5G6MZRBuDbJ2JHL1o-Xir4JRU63mR96bk1qa3Y0nSYUkzhPYqmCV_SiWA0E9TZBeLGPZsjx1SirVV8Sguq1xq8wvcQU0I"
+                  />
+                  <img
+                    alt="Elements Mall logo"
+                    class="h-8 sm:h-10 w-auto grayscale dark:invert brightness-0 dark:brightness-100 opacity-70"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFGPll40JnoZpXdIcZNFwGizKmNxkdSelPXhD5h8T-v9EWn8Tul66TZMuLG81aiCP7YWiDcdIAGXX6jezLQG8VE0SwFV7ecuxo1qQlce5wV6vdCuJJTVxBwETMlH51ayku-9azgF8Fr2TUk6FLq-zHar2kHjK_JR6v1shDn1dI6wjsrrqE__I1MaGtlZaLLZ0vGwNu-dIXLqYgj6-XDxv6ctwPiCgG_ESoHKLkNoukBKwyx4rrung9KaV-fNNr5mvJi0bvsEl8iOs"
+                  />
+                  <img
+                    alt="Prestige Group logo"
+                    class="h-12 sm:h-14 w-auto grayscale dark:invert brightness-0 dark:brightness-100 opacity-70"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0o37P8V3JbhFRKO8L0bMUPQ1asj-7sqwurQ89GwqipcWrlU0YdrmYoKuVhJc-Ug6iUYLQxWShCBp0yONcJQlk9dH6YASJ5qX-048-Pe9ZPRdjFJZxnNIoocVbsieWVu675T77azHwx46spt8uMq7n1o62cwtCXmDfWUN2jW84jUnKMitsgmh8YjHIJK2bDT5Mj7nnCdx-r1CMmo_Wf5ecCcebTpqawntvq-9M8gq09ojcHS8hKeU-TppIHJfWLnGn7cjL1L-NnFg"
+                  />
+                  <img
+                    alt="Forum Mall logo"
+                    class="h-10 sm:h-12 w-auto grayscale dark:invert brightness-0 dark:brightness-100 opacity-70"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuArzUs3D_JX3oksDZ7leWg1oaJfEWV0K23kuZ3qJnppb-IouRlBy3nBL2-IvXYL_zXbDVNeLCoaAY-qDiiyqtVc9umFy6jrKPO0MDsk8BKSCy2vxRR18Bm3sGwX6FC1zqyLq8xz0qwKWNfHMeJdyAyxv9S6H0EOxXFVYbTE7OVJ6isYeyfTvQsLwvjLvc0rr4jWLqgBjxP9FdpHYOKs5zopGt82qSVAZbg18Ts3R8exBguvOz2aaRJucxw-rb4c8lBJjvDhvYwdm3k"
+                  />
+                  <div
+                    class="h-8 sm:h-10 w-20 sm:w-24 bg-slate-200 dark:bg-gray-800/30 rounded flex items-center justify-center"
+                  >
+                    <span
+                      class="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-widest"
+                      >Partner</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Alive India Concerts Section -->
+            <section class="space-y-8 sm:space-y-12 py-8 sm:py-16">
+              <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 sm:mb-10">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">
+                  Alive India in Concert Season 1-11
+                </h2>
+                <a
+                  class="group flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-sm"
+                  href="#"
+                >
+                  <span class="font-medium">View all</span>
+                  <span class="material-icons-outlined text-sm"
+                    >chevron_right</span
+                  >
+                </a>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 sm:mb-12">
+                <div
+                  class="bg-slate-50 dark:bg-card-bg rounded-xl overflow-hidden flex flex-col h-full shadow-lg"
+                >
+                  <div class="aspect-video w-full overflow-hidden">
+                    <img
+                      alt="Blue electric guitar under red laser lights"
+                      class="w-full h-full object-cover"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2k6TqnJOQK4BBfD6f0thkfHHDX9ZrFzfmTOKlk90_F5MILb1GCmSTAYzwoI05QoVHq98vl1T8IPkpWuFgy0KQYZQH5p77lwanTgXMo_13A43ky1cQ4YditRfLy5ARprcqUKaaCx_YY1_M1y831rbKh4kHweKqfIGavrd8soyjYT6qZ2wtC-AHh5bPm2dxn2F6TdH7zdOpxvgl0gtgVDvrUD-2bYknWSkxzFktLYoZZ4-vPpnQXEQSdqkQrYtuc2o261WSVWV0NC0"
+                    />
+                  </div>
+                  <div class="p-4 sm:p-6 flex flex-col flex-grow">
+                    <h3
+                      class="text-base sm:text-lg font-semibold leading-snug mb-4 sm:mb-6 flex-grow"
+                    >
+                      Amit Trivedi and Palak Muchhal LIVE in Indore - Season 9
+                    </h3>
+                    <div class="mt-auto">
+                      <button
+                        class="bg-primary hover:bg-blue-600 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg flex items-center gap-2 text-xs sm:text-sm font-medium transition-colors w-full sm:w-auto justify-center"
+                      >
+                        Learn More
+                        <span class="material-icons-outlined text-sm"
+                          >chevron_right</span
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-slate-50 dark:bg-card-bg rounded-xl overflow-hidden flex flex-col h-full shadow-lg"
+                >
+                  <div class="aspect-video w-full overflow-hidden">
+                    <img
+                      alt="Musician silhouette in atmospheric purple lighting"
+                      class="w-full h-full object-cover"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMWt53oaeeuAwlDaZsZHSwrYfhMZ523FeqBk6wsCiPdTL2MyfXXF-U6Yk4RAcQj7Sy-jfjceZHy0OeH3uRVqTk0fIlZyWEAgyCEn3U9_23DhcV6XTtKlLPRdKaoKjXDGYW6DNe9adTIf3GEbHH7PIUv4vQ6bmaeqloxAarr9VWNe4tid0kDtT65ewDk7ewT2pK2YEmPuQH6UfYn_krXncbOnm3DUb5J2oirruETQ8WOZuDeXiXf_cwXYnj7pyt7VCv0s2c-H2D3MA"
+                    />
+                  </div>
+                  <div class="p-4 sm:p-6 flex flex-col flex-grow">
+                    <h3
+                      class="text-base sm:text-lg font-semibold leading-snug mb-4 sm:mb-6 flex-grow"
+                    >
+                      Mohit Chauhan with Kavita Krishnamurthy - Season 8
+                    </h3>
+                    <div class="mt-auto">
+                      <button
+                        class="bg-primary hover:bg-blue-600 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg flex items-center gap-2 text-xs sm:text-sm font-medium transition-colors w-full sm:w-auto justify-center"
+                      >
+                        Learn More
+                        <span class="material-icons-outlined text-sm"
+                          >chevron_right</span
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-slate-50 dark:bg-card-bg rounded-xl overflow-hidden flex flex-col h-full shadow-lg"
+                >
+                  <div class="aspect-video w-full overflow-hidden">
+                    <img
+                      alt="Singer performing on stage with red stage lights"
+                      class="w-full h-full object-cover"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3rJhlcnctjfKT_IkJMQKbGGcCbpCkxMrHhztLvHz7N2zEYu2HHB2X9yz0L7nIif6s3BQnMrUqsjkdvh2cEAai2mezWG7CUhNT4jrbuB71zUx_oTYgUavJmE8T8uWD_AK7z6oq6nRPaBkpDLUUY4txXyoDRKsQqiOQ3tvxt6Cvs6Io7-LraQFXEbGbNIEvycGkjQHKmAFWHf8RDK3iCGeiBvTOKcpfSfD98I0-kOdx2VFdsh3cu9PKMlSpxrZt3mAROpJY-SHWm5A"
+                    />
+                  </div>
+                  <div class="p-4 sm:p-6 flex flex-col flex-grow">
+                    <h3
+                      class="text-base sm:text-lg font-semibold leading-snug mb-4 sm:mb-6 flex-grow"
+                    >
+                      21 artists on the stage Wankhede Stadium for Cancer
+                      initiative
+                    </h3>
+                    <div class="mt-auto">
+                      <button
+                        class="bg-primary hover:bg-blue-600 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg flex items-center gap-2 text-xs sm:text-sm font-medium transition-colors w-full sm:w-auto justify-center"
+                      >
+                        Learn More
+                        <span class="material-icons-outlined text-sm"
+                          >chevron_right</span
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex justify-end mb-12 sm:mb-16">
+                <a
+                  class="group flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-sm"
+                  href="#"
+                >
+                  <span class="font-medium">View all</span>
+                  <span class="material-icons-outlined text-sm"
+                    >chevron_right</span
+                  >
+                </a>
+              </div>
+
+              <div
+                class="w-full bg-orange-brand rounded-xl p-6 sm:p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl"
+              >
+                <div class="text-center md:text-left">
+                  <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-white mb-2 sm:mb-3">
+                    Alive India Invites Brands And Venues
+                  </h2>
+                  <p
+                    class="text-white/90 text-xs sm:text-sm md:text-base max-w-xl font-medium"
+                  >
+                    Generate enquiry to collaborate or to know more about Alive
+                    India in Concert
+                  </p>
+                </div>
+                <button
+                  class="bg-primary hover:bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl flex items-center gap-2 sm:gap-3 text-sm sm:text-base font-semibold transition-all hover:scale-105 active:scale-95 shadow-lg whitespace-nowrap w-full md:w-auto justify-center"
+                >
+                  Enquire
+                  <span class="material-icons-outlined">chevron_right</span>
+                </button>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+
+      <!-- Artist Content (Initially Hidden) - Simplified for brevity -->
+      <div id="artist-content" class="hidden">
+        <!-- Same structure as business content with artist-specific copy -->
+      </div>
+
+  
+    </div>
+
+    <!-- Dark Mode Toggle Button -->
+    <div class="fixed bottom-4 right-4 z-50">
+      <button
+        class="p-2.5 sm:p-3 rounded-full bg-white dark:bg-zinc-800 shadow-lg border border-gray-200 dark:border-zinc-700 flex items-center justify-center"
+        onclick="document.documentElement.classList.toggle('dark')"
+      >
+        <span class="material-icons text-gray-800 dark:text-gray-200 text-xl sm:text-2xl"
+          >brightness_6</span
+        >
+      </button>
+    </div>
+    
+  <!-- footer -->
+     <footer>
+        <div class="alive-footer-wrapper">
+        <div class="alive-footer-container">
+            <div class="alive-footer-content">
+                <div class="alive-footer-main">
+                    <div class="alive-footer-cta">
+                        <h2 class="alive-footer-cta-heading">Want To Stay Connected?</h2>
+                        <p class="alive-footer-cta-text">Join our WhatsApp community to stay connected, get latest news
+                            and updates</p>
+                        <a href="#" class="alive-whatsapp-btn">
+                            <span class="alive-btn-text">Join WhatsApp Community</span>
+                            <span class="alive-btn-arrow">→</span>
+                        </a>
+                    </div>
+
+                    <div class="alive-footer-address alive-footer-section">
+                        <h3 class="alive-footer-section-heading underline">Visit Us</h3>
+                        <div class="alive-address-text">
+                            <span class="alive-address-line">219, 8th Main Maruthi Layout</span>
+                            <span class="alive-address-line">Dasarahalli, Hebbal, Kempapura</span>
+                            <span class="alive-address-line">Bengaluru</span>
+                            <span class="alive-address-line">Karnataka 560024</span>
+                        </div>
+                        <a href="https://maps.google.com" class="alive-map-link" target="_blank">
+                            <span class="alive-map-icon">📍</span>
+                            <span>Google Maps</span>
+                        </a>
+                    </div>
+
+                    <div class="alive-footer-links alive-footer-section">
+                        <h3 class="alive-footer-section-heading underline">Quick Links</h3>
+                        <ul class="alive-links-list">
+                            <li class="alive-link-item"><a href="#downloads" class="alive-link-anchor">Downloads</a>
+                            </li>
+                            <li class="alive-link-item"><a href="#career" class="alive-link-anchor">Career</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alive-footer-bottom">
+                    <div class="alive-footer-logo">
+                        <svg class="alive-logo-img" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="4" fill="#4f87ff" />
+                            <path d="M15 12L25 28M25 12L15 28" stroke="white" stroke-width="3" stroke-linecap="round" />
+                            <text x="48" y="28" font-family="Orbitron" font-weight="700" font-size="20"
+                                fill="white">ALIVE</text>
+                            <text x="48" y="36" font-family="Orbitron" font-weight="700" font-size="8"
+                                fill="#4f87ff">INDIA</text>
+                        </svg>
+                    </div>
+
+                    <nav>
+                        <ul class="alive-footer-nav">
+                            <li class="alive-nav-item"><a href="#about" class="alive-nav-link">About</a></li>
+                            <li class="alive-nav-item"><a href="#offerings" class="alive-nav-link">Offerings</a></li>
+                            <li class="alive-nav-item"><a href="#infrastructure"
+                                    class="alive-nav-link">Infrastructure</a></li>
+                            <li class="alive-nav-item"><a href="#responsibility" class="alive-nav-link">Social
+                                    responsibility</a></li>
+                            <li class="alive-nav-item"><a href="#announcements" class="alive-nav-link">Announcements</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+     </footer>
+  <!-- footer -->
+
+    <script>
+      function showBusinessContent() {
+        document.getElementById("business-content").classList.remove("hidden");
+        document.getElementById("artist-content").classList.add("hidden");
+        document
+          .getElementById("business-tab")
+          .classList.add("bg-primary", "text-white", "shadow-lg");
+        document
+          .getElementById("business-tab")
+          .classList.remove("text-slate-600", "dark:text-slate-400");
+        document
+          .getElementById("artist-tab")
+          .classList.remove("bg-primary", "text-white", "shadow-lg");
+        document
+          .getElementById("artist-tab")
+          .classList.add("text-slate-600", "dark:text-slate-400");
+      }
+
+      function showArtistContent() {
+        document.getElementById("artist-content").classList.remove("hidden");
+        document.getElementById("business-content").classList.add("hidden");
+        document
+          .getElementById("artist-tab")
+          .classList.add("bg-primary", "text-white", "shadow-lg");
+        document
+          .getElementById("artist-tab")
+          .classList.remove("text-slate-600", "dark:text-slate-400");
+        document
+          .getElementById("business-tab")
+          .classList.remove("bg-primary", "text-white", "shadow-lg");
+        document
+          .getElementById("business-tab")
+          .classList.add("text-slate-600", "dark:text-slate-400");
+      }
+
+      function openMobileMenu() {
+        document.getElementById('navLinks').classList.add('active');
+        document.getElementById('mobileOverlay').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileMenu() {
+        document.getElementById('navLinks').classList.remove('active');
+        document.getElementById('mobileOverlay').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Initialize with business content showing
+      showBusinessContent();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alive India - Morphing Eye Transition</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+  <link rel="stylesheet" href="assest/css/sec1sec2.css">
+  <link rel="stylesheet" href="assest/css/sec3.css">
+  <link rel="stylesheet" href="assest/css/hero.css">
+  <link rel="stylesheet" href="assest/css/navbar.css">
+  <link rel="stylesheet" href="assest/css/homemedia.css">
+  <link rel="stylesheet" href="assest/css/genral.css">
+  <link rel="stylesheet" href="assest/css/contact.css">
+  <link rel="stylesheet" href="assest/css/barnd.css">
+  <link rel="stylesheet" href="assest/css/footer.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/b70e1ac393.js" crossorigin="anonymous"></script>
+  
+ 
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="alove-nav-wrapper">
+    <nav class="navbar" id="alove-sticky-nav">
+      <div class="nav-container">
+        <div class="logo">ALIVE <span>INDIA</span></div>
+        <!-- <div class="logo">ALIVE <img src="assest/img/logo.png" alt="" style="width: 150px;;"> </div> -->
+        <ul class="nav-links">
+          <li><a href="finalll.html" class="active">Home</a></li>
+          <li><a href="aboutus.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="#" class="btn-shop">Book Now</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <main class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 z-0 overflow-hidden">
+        <!-- FIX 1: Added w-full h-full object-cover so video fills the container -->
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="w-full h-full object-cover"
+        >
+          <source src="HERO.mp4" type="video/mp4">
+        </video>
+        <!-- FIX 2: Kept only ONE gradient overlay (removed the duplicate) -->
+        <div class="absolute inset-0 gradient-overlay"></div>
+      </div>
+      <!-- FIX 2 continued: Removed the second duplicate gradient-overlay div that was here -->
+    </div>
+
+    <div class="relative z-10 text-center max-w-4xl px-6">
+      <div class="flex flex-col items-center gap-8">
+        <div class="space-y-4">
+          <h1 style="color: whitesmoke;" class="text-6xl md:text-8xl font-black tracking-tighter leading-none italic uppercase">
+            REVOLUTIONISING<br/>
+            <span class="text-primary drop-shadow-[0_0_15px_rgba(242,108,13,0.5)]">MUSIC</span>
+          </h1>
+          <p class="text-lg md:text-xl font-medium text-white/80 max-w-2xl mx-auto tracking-wide leading-relaxed">
+            Experience the next generation of sound, culture, and artist discovery. Built for those who live for the beat.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== SERVICES CAROUSEL ========== -->
+  <section style="background-color: #181411;" class="py-20 px-6 md:px-12 lg:px-40 overflow-hidden">
+
+    <div class="max-w-[1200px] mx-auto">
+      <div class="flex flex-col md:flex-row items-end justify-between gap-6 border-b border-white/10 pb-8">
+        <div class="space-y-2">
+          <p class="text-primary font-bold tracking-[0.3em] text-xs uppercase">The Pulse</p>
+          <h2 style="color: whitesmoke !important;" class="text-4xl md:text-5xl font-bold tracking-tight">Services</h2>
+        </div>
+        <div class="flex items-center gap-6">
+          <div class="flex flex-col gap-1 items-end">
+            <p style="color: whitesmoke !important;" class="text-sm font-bold">LATEST UPDATES</p>
+            <div class="w-24 h-1 bg-white/20 rounded-full overflow-hidden">
+              <div id="scroll-progress" class="w-0 h-full bg-primary transition-all duration-500"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="auto-carousel"
+        class="flex gap-6 mt-12 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
+        style="scrollbar-width: none; -ms-overflow-style: none;"
+      >
+        <div class="min-w-[85%] md:min-w-[calc(33.333%-1rem)] snap-center group cursor-pointer">
+          <div class="relative aspect-[4/5] rounded-xl overflow-hidden mb-4">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaQgD0JqhUYX-UJPajsqRsEhA-9UwrtvFdn3Eq86bmGAtIrTh-ccfv0bDqKICjFSAKvdjjduWiJFeQNNtjF-_OmBYRqlBLgJAT7ypYmLKCZt-ZAEuTQvraO-7mpxjUmSULSc5IzSbgLCf0cTtLQBKZPruqF7JQz_BxLf_zz-_MYrxfSNs3ExvC6oFHDfzoZIewmjMHmhobCkiFiXyAZGKz0MgI_LwpG23zmY0C1bS8ogUOdo9ndWq0OEprK7rUd8V3eqByGacNsyPI');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="bg-primary/20 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest mb-2 inline-block">Electronic</span>
+              <h3 style="color: whitesmoke !important;" class="text-xl font-bold">Digital Echoes 2024</h3>
+            </div>
+          </div>
+        </div>
+        <div class="min-w-[85%] md:min-w-[calc(33.333%-1rem)] snap-center group cursor-pointer">
+          <div class="relative aspect-[4/5] rounded-xl overflow-hidden mb-4">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_w_3ZFmtBfa_gMNdr1b2Qn9Qu937bfqI12GNsMI3xkhOXIiXvCcFJUxET6x52Uuhqzjc_uYETPrwYsLPo77kebhX3-z0qWsbltw9np_2BgxOgL2BWQUaw7zKZTsy4zGWxWgY5w4CXirID6yVbz4S-7hn_GijjwpCiN2tqS5DfwuIX1m_684UEAqzDH8qU8LOV4mEffuUpkEwaJfkjDAd518ona0lPlc-_DRgrPaAclHjJPOXmhXeTnFM6igmlaNJ8pOZT0hmzlzSz');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="bg-primary/20 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest mb-2 inline-block">Indie Rock</span>
+              <h3 style="color: whitesmoke !important;" class="text-xl font-bold">Underground Soul</h3>
+            </div>
+          </div>
+        </div>
+        <div class="min-w-[85%] md:min-w-[calc(33.333%-1rem)] snap-center group cursor-pointer">
+          <div class="relative aspect-[4/5] rounded-xl overflow-hidden mb-4">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBV3lqjA3aALARR5SoTL9_oV5JSKrbyqGDMxs3CapRRzNUgkV1QLp67gJYAd9YJdxafqbhBGbmZrLdBl1g4-C89g0l0bUA0b6wJlIP8uuydRHZtRT4GVQ0XXRYRpD2Q-mRl3ceG2nKcPjo0XrKOAID0V8U9hhpTnr1z8dCyNP7M8ZndwX-vmG9emFvt0CdGMIVumHDBpfHIvGp24UJSFJ9vw6yoRaVs0xAK0McRRpcEZuqsNb2vwA0hvzHlmGh8nIGSdK7RrJMeh-XI');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="bg-primary/20 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest mb-2 inline-block">Jazz Fusion</span>
+              <h3 style="color: whitesmoke !important;" class="text-xl font-bold">Midnight Sessions</h3>
+            </div>
+          </div>
+        </div>
+        <div class="min-w-[85%] md:min-w-[calc(33.333%-1rem)] snap-center group cursor-pointer">
+          <div class="relative aspect-[4/5] rounded-xl overflow-hidden mb-4">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaQgD0JqhUYX-UJPajsqRsEhA-9UwrtvFdn3Eq86bmGAtIrTh-ccfv0bDqKICjFSAKvdjjduWiJFeQNNtjF-_OmBYRqlBLgJAT7ypYmLKCZt-ZAEuTQvraO-7mpxjUmSULSc5IzSbgLCf0cTtLQBKZPruqF7JQz_BxLf_zz-_MYrxfSNs3ExvC6oFHDfzoZIewmjMHmhobCkiFiXyAZGKz0MgI_LwpG23zmY0C1bS8ogUOdo9ndWq0OEprK7rUd8V3eqByGacNsyPI');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="bg-primary/20 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest mb-2 inline-block">Ambient</span>
+              <h3 style="color: whitesmoke !important;" class="text-xl font-bold">Neon Dreams</h3>
+            </div>
+          </div>
+        </div>
+        <div class="min-w-[85%] md:min-w-[calc(33.333%-1rem)] snap-center group cursor-pointer">
+          <div class="relative aspect-[4/5] rounded-xl overflow-hidden mb-4">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaQgD0JqhUYX-UJPajsqRsEhA-9UwrtvFdn3Eq86bmGAtIrTh-ccfv0bDqKICjFSAKvdjjduWiJFeQNNtjF-_OmBYRqlBLgJAT7ypYmLKCZt-ZAEuTQvraO-7mpxjUmSULSc5IzSbgLCf0cTtLQBKZPruqF7JQz_BxLf_zz-_MYrxfSNs3ExvC6oFHDfzoZIewmjMHmhobCkiFiXyAZGKz0MgI_LwpG23zmY0C1bS8ogUOdo9ndWq0OEprK7rUd8V3eqByGacNsyPI');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="bg-primary/20 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest mb-2 inline-block">Ambient</span>
+              <h3 style="color: whitesmoke !important;" class="text-xl font-bold">Neon Dreams</h3>
+            </div>
+          </div>
+        </div>
+        <div class="min-w-[85%] md:min-w-[calc(33.333%-1rem)] snap-center group cursor-pointer">
+          <div class="relative aspect-[4/5] rounded-xl overflow-hidden mb-4">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaQgD0JqhUYX-UJPajsqRsEhA-9UwrtvFdn3Eq86bmGAtIrTh-ccfv0bDqKICjFSAKvdjjduWiJFeQNNtjF-_OmBYRqlBLgJAT7ypYmLKCZt-ZAEuTQvraO-7mpxjUmSULSc5IzSbgLCf0cTtLQBKZPruqF7JQz_BxLf_zz-_MYrxfSNs3ExvC6oFHDfzoZIewmjMHmhobCkiFiXyAZGKz0MgI_LwpG23zmY0C1bS8ogUOdo9ndWq0OEprK7rUd8V3eqByGacNsyPI');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="bg-primary/20 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest mb-2 inline-block">Ambient</span>
+              <h3 style="color: whitesmoke !important;" class="text-xl font-bold">Neon Dreams</h3>
+            </div>
+          </div>
+        </div>
+        <div class="min-w-[85%] md:min-w-[calc(33.333%-1rem)] snap-center group cursor-pointer">
+          <div class="relative aspect-[4/5] rounded-xl overflow-hidden mb-4">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaQgD0JqhUYX-UJPajsqRsEhA-9UwrtvFdn3Eq86bmGAtIrTh-ccfv0bDqKICjFSAKvdjjduWiJFeQNNtjF-_OmBYRqlBLgJAT7ypYmLKCZt-ZAEuTQvraO-7mpxjUmSULSc5IzSbgLCf0cTtLQBKZPruqF7JQz_BxLf_zz-_MYrxfSNs3ExvC6oFHDfzoZIewmjMHmhobCkiFiXyAZGKz0MgI_LwpG23zmY0C1bS8ogUOdo9ndWq0OEprK7rUd8V3eqByGacNsyPI');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="bg-primary/20 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest mb-2 inline-block">Ambient</span>
+              <h3 style="color: whitesmoke !important;" class="text-xl font-bold">Neon Dreams</h3>
+            </div>
+          </div>
+        </div>
+        <div class="min-w-[85%] md:min-w-[calc(33.333%-1rem)] snap-center group cursor-pointer">
+          <div class="relative aspect-[4/5] rounded-xl overflow-hidden mb-4">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaQgD0JqhUYX-UJPajsqRsEhA-9UwrtvFdn3Eq86bmGAtIrTh-ccfv0bDqKICjFSAKvdjjduWiJFeQNNtjF-_OmBYRqlBLgJAT7ypYmLKCZt-ZAEuTQvraO-7mpxjUmSULSc5IzSbgLCf0cTtLQBKZPruqF7JQz_BxLf_zz-_MYrxfSNs3ExvC6oFHDfzoZIewmjMHmhobCkiFiXyAZGKz0MgI_LwpG23zmY0C1bS8ogUOdo9ndWq0OEprK7rUd8V3eqByGacNsyPI');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="bg-primary/20 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest mb-2 inline-block">Ambient</span>
+              <h3 style="color: whitesmoke !important;" class="text-xl font-bold">Neon Dreams</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEC1: EYE ANIMATION ========== -->
+  <section class="main reel">
+    <div class="fixed right-10 top-1/2 -translate-y-1/2 z-[100] flex flex-col gap-6">
+      <div class="dot active" data-index="0"></div>
+      <div class="dot" data-index="1"></div>
+      <div class="dot" data-index="2"></div>
+      <div class="dot" data-index="3"></div>
+    </div>
+    <div class="stage">
+      <canvas id="eye3d"></canvas>
+      <div id="eyeContainer">
+        <div id="eyeball">
+          <div id="eyeInner">
+            <div id="iris">
+              <div id="pupil">
+                <span id="pupilLetter">A</span>
+              </div>
+            </div>
+          </div>
+          <div id="eyelidTop"></div>
+        </div>
+      </div>
+      <div id="brand">
+        <h1 class="glowing-outline-text text-7xl md:text-9xl">
+          ALIVE INDIA
+        </h1>
+        <p id="interactiveText" class="text-white mt-6 interactive-p opacity-90 md:text-3xl">
+          Revolutionising India's non-film music landscape
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEC2: UNIVERSE / SOLAR SYSTEM ========== -->
+  <section class="main universe-reel" id="universe">
+    <div class="stage" style="background: #000;">
+      <canvas id="auroraCanvas"></canvas>
+      <div id="universeContent">
+        <h2 class="uni-title"><span class="red-text">ALIVE</span><br>UNIVERSE</h2>
+        <p class="uni-p">With a well-knit self-sustainable system of infrastructure, talent, resources, IPs, and
+          nationwide network of artists and studios, we make our partners shine</p>
+      </div>
+      <div id="solarSystem">
+        <div class="central-star">
+          <div>ALIVE INDIA</div>
+          <div class="star-label">Core Hub</div>
+        </div>
+        <div class="orbit-ring" id="orbit1">
+          <div class="planet" data-label="Media Amplification"></div>
+          <div class="planet" data-label="Music Foundation and Academy"></div>
+          <div class="planet" data-label="Studio and Residency"></div>
+        </div>
+        <div class="orbit-ring" id="orbit2">
+          <div class="planet" data-label="Artist and Brand Network"></div>
+          <div class="planet" data-label="Music IPs and Formats"></div>
+          <div class="planet" data-label="Music Label"></div>
+        </div>
+        <div class="orbit-ring" id="orbit3">
+          <div class="planet" data-label="Multimedia Campaigns"></div>
+          <div class="planet" data-label="Digital Distribution"></div>
+          <div class="planet" data-label="Live Events"></div>
+          <div class="planet" data-label="Content Production"></div>
+        </div>
+      </div>
+      <div id="labelContainer"></div>
+    </div>
+  </section>
+
+  <!-- ========== SEC3: STUDIO / DARK SECTION ========== -->
+  <section class="darksec">
+    <section class="hero-section">
+      <div class="dots-nav">
+        <div class="dot-indicator"></div>
+        <div class="dot-indicator active"></div>
+        <div class="dot-indicator"></div>
+        <div class="dot-indicator"></div>
+        <div class="dot-indicator"></div>
+      </div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="text-primary">ALIVE</span> 1 <br>
+            <span class="dark:text-slate-100">STUDIO</span>
+          </h1>
+          <div class="hero-text">
+            <p>A creative sanctuary where we cook creativity.
+              Fully equipped audio-video production house featuring
+              an open air amphitheater, world-class recording studios
+              and artist residencies.</p>
+            <p>From the initial spark to the final product,
+              <span style="color: var(--primary); font-weight: 700;">holistic production solutions.</span>
+            </p>
+          </div>
+          <div class="hero-buttons">
+            <button class="btn-primary">EXPLORE SPACE <i class="fa-solid fa-location-arrow"></i> </button>
+            <button class="btn-secondary">VIEW GALLERY <i class="fa-solid fa-location-arrow"></i> </button>
+            
+          </div>
+        </div>
+
+        
+
+        <div class="collage-container">
+          <img alt="Professional studio recording setup with red lighting" class="collage-img w-64 h-80 top-24 left-1/4 z-30 border-primary-20" style="width:16rem;height:20rem;top:6rem;left:25%;z-index:30;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDGyNKMTS9CAuWiLiMcjNH3OPrhZ4ocXLlC637scPKoKdaCaDbAGxkfraTF1qpehuTdvKOEQeyZAJuJCEfso1V7pZfF-jRPEasCzHhLwfbedK0SJPfzO_ZHzv5S8E1vnrNIrjr19-yFU95y1VDUXp18sx3jNrwAwMTxDFUp99Vcu5AYIvftAi4scMiLN4O38M1mEea4wWO1rKMMjXWRfW4T3IzzT6EDQt0zO-qzqWBbTIZ6M5pFBOdad_FKZCpTfCwE7P-3-Ne0Tue">
+          <img alt="Sound engineer working at a console" class="collage-img w-60 h-44 -top-8 right-12 z-20 grayscale grayscale-transition opacity-80" style="width:15rem;height:11rem;top:-2rem;right:3rem;z-index:20;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsG9s3o9S5EXg2OuXuhBwp0oA9TCLTQZo5cLQTMWdxQZhP10UXKyb2kfHOmW586H7b6P5Dy4QWSMbutRahjO2kh9QUCNTarwcdeQ5ZiT2MXcNwR9f-dUlASG9RDsNfvBtfZRPM5XudkXVt9MGALb5aMNoBdjXsF_ThIM4UcFpmkFLmniR9r0KksQ2DpR3C3hvyyJM4_HrPnPxdj-eufFSusPOmPWCLuk1Kxo1wNEse-nAi9kNHfw4JY9kOMj5Rnscz9x_2AwQexr_P">
+          <img alt="Drummer in a recording booth" class="collage-img w-56 h-64 top-40 -left-4 z-10 opacity-80" style="width:14rem;height:16rem;top:10rem;left:-1rem;z-index:10;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2FesdIyjOKf4TjPpwjf6T76Gr33F4opyV9vYZmGroJAJytSprQLl-zRobm-oAroUfbBPTfnYNLsdd4sWhMsvYJmN_oNTYMcM8UKZDUo6nMaIl9K6691vdyAaEMwsw4EI4GNcDehXTMuYEzodQFX3YvObKn1yfjYtaOlQgXyiZt4Pz7yCprpFqAaKqOF6z4ZqQdVtyz_7p4hvtbkZx1yT8YaK2KHF2wOwLpooiMGqOEPpaQ11KUync-mRe43RFY5RoG2tPXOdAgmsV">
+          <img alt="Musician with neon lighting on stage" class="collage-img w-52 h-40 bottom-12 left-16 z-40" style="width:13rem;height:10rem;bottom:3rem;left:4rem;z-index:40;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbMsnU6fNYitlS3yVkJE06j51L8vZ2MQ_QDTfrZjVcbCBZs6vzcogJFSsn8kO09cktAtefs2qlxAftEig4a2bHFZjBK5cme1tnfIWzFiB18T0U5nyme20KBYjQ2oN8TQjGnBNN__8Wt3GkNIsIED_2hyBaq4YM0q4ZS3S2fmxy_JOcCVqsvdoPrfDIXzq67z2KGax5WC6Elrlu-9Ht6mpDB5_se7mTUiWSPq0TCBpfvBtbtSmB9gTKdyZi3sE0mGE8X_AQcScM4hZu">
+          <img alt="Cinematographer setting up lights" class="collage-img w-60 h-48 bottom-0 right-4 z-20" style="width:15rem;height:12rem;bottom:0;right:1rem;z-index:20;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf2S_WU2NSOpbiFxbgtyQuRO5F71amXYhEKwlpEbxgJLa9QETZCKN3Kx3NGSq8nfrPXb9GeAl96h04vpZLTydNwH0rD7JI-ku8ZXETs4y0QaRo73jr8j2udsXV_FarSkubA1uRuP0OU0u3KLpRqb3_5f-ZaMFEWcnmn4MU05Ix0ogsGsQwrq9gCCYiYcyBX1YoiPvz2MWiQ3DCNm2NQzwEyNE9pIVftrt6Ve97DGtHMoABCcnUza4-s99mwbFlFBjfrG8LESpt1KZU">
+          <img alt="Close up of music production equipment" class="collage-img w-40 h-40 top-1/2 right-0 z-10 opacity-60" style="width:10rem;height:10rem;top:50%;transform:translateY(-50%);right:0;z-index:10;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgZH797XRz-QPCYCiaVuEBSs83TETPGMDGhohM3F7_i4yblNO1yvhgM53aSibpOopkQv28jrkQZ_oBEZ5bIQkAdqZBUyPPncWZQsWVU3GqW58vnmaFhEx1EKmhOsPt2IKAPshXn7xAqpQqsIsftfXhHPxR8hJjsvhSMMrkOcZOplzFCHumKQgTm7xaa9QnYJnvPa3xXfC0HWZ6wgxzrpWDIG9-0vgMEQU8P9AKrhqxHOwZ87zNRg2ezfbpFKp1Sf-JX91v-iU8T0cB">
+        </div>
+        <div class="mobile-images">
+          <img alt="Studio 1" class="mobile-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-HMDdC8stMekOwrz0hFtwpuHodRtScgGrEZSIJhUd_PrQYM1ypQC5qDZaAUn4aBo3JPf8BGOMpMFHPVVx1EKM3lTG_xAPhRZv9wJD9EeJAsKtxmujFlajqFTonXSza4rpX7u7sZCWL5wQ8p1LsiKBQZmy_weftYW3zYLDiuZ1v1VJNZaPmZkVmQsjidmIIuTdAN5hxDGFicQeftcI8UbX9fsBH-EuASIKzMxcw8VCH6qSvA1eyrpzuAFAQb8x2GNz2fU2P1x30oqk">
+          <img alt="Studio 2" class="mobile-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu-vtX8JyMzpYdECuptseZIut5jdwWp-NFvrF2BH1GKh2k1o3BRxVRnnNqzBTaXW-gf3g5asNEQLfJktxilSQr3K4XLpDvCU3gMY2OsMJzGNs3t_YqJPm2-JZ-J5xTgg6kmRXtYhhgUzIJnMB8UAGm85qgokh4P9DDYxxhH7XODk7yKMXFnQqGGEkoJSBVRed-jMv2cebyk5cJ0B3X03TtTXBkleVGlmR36wBtj-MX4cGYsSpLo4aWQ0Thv6ycqOnNoZxWSJ-G1Ib8">
+        </div>
+      </div>
+      <div class="blur-effect"></div>
+    </section>
+
+    <!-- Gallery Section (inside darksec) -->
+    <section class="gallery-section">
+      <nav class="progress-bar"></nav>
+      <div class="tile tile-1">
+        <div class="overflow-hidden rounded-sm shadow-2xl">
+          <img alt="Musician in recording studio" class="tile-img h-48" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDszSguowu87bWkUs6umR5wal1n4vAO4xImLLAGwBPE2gCA2cM-S2vK8GVEbggkFEgdAnA5amyExQEkhEvsrydQ_XCMGBKB_I8CGqK7Go73aeTERpE7xxrgYTQDl01nzc1P5dv9-3J37cDFhf_GtqDNOfB2x1jzU9UJA0zUsrguq5-Vik29AFULmcJlyQ0reLLY6aZimO-zv261hdAZfPL8OA0yDtiyYg5JZegNiI1hPdOb2_ybk5lgoS0zEcQNrf7G6ZBi8B-Ts_hd">
+        </div>
+        <div class="tile-label justify-center"><div class="label-pill">Studio ABC</div></div>
+      </div>
+      <div class="tile tile-2">
+        <div class="overflow-hidden rounded-sm shadow-2xl">
+          <img alt="Producer working at control desk" class="tile-img h-56" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7O7UFX0te4RcsFVJ-a8-4Matvsd0AJolfGRXYNSrNKQVOw0GjBRMk0yrjAOvoMO1oyZ_cDwjDIkDdW3NBKJbhYmR-v4Gpg9Yn2cxX6jBiPGoOWSm5fH2jlu0Dsd3z7NyN2AEqcS21Ch29IiOwSpeLdHo8sRZ8W7GijPzweSGHV6LV05cRVTEi00k7_h-Thm0ZVJ7If5oqLdyKXH6HyunXzoVPcebOy-Zl_b8fgMsPwNWTWca0F5pwt4j4n-aBoeenwxYwO-8AbmPq">
+        </div>
+        <div class="tile-label justify-center"><div class="label-pill">Studio ABC</div></div>
+      </div>
+      <div class="tile tile-3">
+        <div class="overflow-hidden rounded-sm shadow-2xl">
+          <img alt="Neon lit studio equipment" class="tile-img h-52" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKWELVfT4VAMP6cPDIWPmZH5JI3SaPM0jxzZftzzC4H6hfGLL853ywIt9ehaVzFJ6ElDyNHvKIijM0gMHqvXWJvi68L5UT6zHCG_qekJpf4wTKT30xG5oDCzChz1vzVeYz9TrCowoD36V4Yg_2ZoEzCod2KfHE4hBQkm6RWLvfvp5Gt7wHDbGb8jujagSHJqtXz5VyPtcAWVwFZ8FRtcnx2DxmYf-o4VFhqkfQTnFJjIfyZfi0iSuCP1Jn-sAq08QMSN3YmE_S2g_C">
+        </div>
+        <div class="tile-label justify-end mr-10"><div class="label-pill">Studio ABC</div></div>
+      </div>
+      <div class="tile tile-4">
+        <div class="overflow-hidden rounded-sm shadow-2xl">
+          <img alt="Concert stage with neon lights" class="tile-img h-44" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKo6ST3LWTCumP5_NcYTMkGDVEzv0-Tog3laAuDS1DVX5i1ULBYUkoaA_07SOhA7HMLJCqr30IIMFRmxEeoSeAcpiD-6PqC7LCIpWY72ZkipX1lBRP_f5fxLFQzt_mb5vy0oXa7Mpqcz5UY_fCPkORDhZSzy8apMioDBScjYB8lmfSEV2akjhSdcv3FZbvELswxaishoRIkAAAkR4McDd2GOd5emkuY52zw_fLs5mc18_yLPR9Vka5pEDumR-Ngvh1dDYN5Fyt2ida">
+        </div>
+        <div class="tile-label justify-end mr-4"><div class="label-pill">Amphitheatre</div></div>
+      </div>
+      <div class="tile tile-5">
+        <div class="overflow-hidden rounded-sm shadow-2xl">
+          <img alt="Vintage music studio interior with red door" class="tile-img h-400" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5jnwFD24sPNWDWq7r4vLa7TOXIS8DhT_KxDx79kMdmUSocX42wH0DoPSQPhGuyeTipAvAxGt6YiXDlmk7NTFFL6p7mfy7ul4V_JswYPOaJY2S5iPSgsW2FWITc5XSClT3WqJr20TLHS7S5JRfqJjQdo9gQYbHfM16aCRzXfewc4OtyZFi14HsRox32XthIxlu1Hh7jkTD4h-Z9nrsUu2D_pQeraoERg4q90RtRMK7bEce4af7dz4CGvrE7iDHvpdvbfgp6TtspF4i">
+        </div>
+        <div class="tile-label justify-center"><div class="label-pill">Studio ABC</div></div>
+      </div>
+      <div class="tile tile-6">
+        <div class="overflow-hidden rounded-sm shadow-2xl">
+          <img alt="Film set with production lights" class="tile-img h-48" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7NshP_ah7RiJrkBKadR1mnaZvJrT53mBVUIR29pkIwRePOZyTLttz1V-GyOnEQbE7W3kNq293VhtmrxSal0UYEgmCrPvt_pz8eaG5mYi2Ss9lDMxhTwIxxzm2p96SyEVudjwDnbusrLtq_K13-drceWSFy4wUTwXF0PR33i0vHWwB0rlO34AqA7lP933GtwroMCGfwjLewJiuQ3rimsKBOGAYvSBxMC-MksJ4zlZMSvRhBNmuPS5nvgT8jai8eWRGb9LCilVjQpNE">
+        </div>
+        <div class="tile-label justify-end mr-6"><div class="label-pill">Shoot Floor</div></div>
+      </div>
+      <div class="gallery-dots">
+        <div class="gallery-dot"></div>
+        <div class="gallery-dot"></div>
+        <div class="gallery-dot active"></div>
+        <div class="gallery-dot"></div>
+        <div class="gallery-dot"></div>
+        <div class="gallery-dot"></div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="testimonials-dots">
+        <div class="testimonial-dot active"></div>
+        <div class="testimonial-dot inactive"></div>
+        <div class="testimonial-dot inactive"></div>
+        <div class="testimonial-dot large active"></div>
+        <div class="testimonial-dot inactive"></div>
+        <div class="testimonial-dot inactive"></div>
+      </div>
+      <div class="side-image-left">
+        <img alt="Drummer performing in a music studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL_duGrTyEEqYmw5uUjl0lqHKANy-TDvxW0K8rs7k9LXdghB6Tu75cLEXeBRZmb2wpFR1TAbn2iJbkBQhI0I9U5lHTtkJDeb031KwzRc-Qd_madTDc0U5hT7SPNeuXJUXi7p8JSmDe8ArzuyLpv9TOVlDGHrS4jhL_9o_anXnGNXJlTbMXZQfdEblvpQNzgnjGtaiwOfWytOqi6PGMN3G8u-1doHi44zT6ATuFMTTPPLPQNubu57Ih6hhyCQWDv-sNQwpzqODEOSM3">
+      </div>
+      <div class="decoration-image-1">
+        <img alt="Audio mixer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5pqxDNHW6KSwxQA32hfwR6es6xoqIw7UIX1QSNyJLlTpuIsmazdgEFKBUt7HAu_JCIO9wglWE_e3XPDZ_MCNEvqsckVgJwoG4ZBXf7toVx_eEBprnMXbO5tvNNaY8_M_bvnykKHq1vw56HHG4Z86Rp1zOVSK5zgTG5O063PmxQ9O9vHvMQKkipGQgQNNyVQLjKIv5iqxNiUgrChIYzf7W5PeZmDvdVJoFMZGA96CpQ2U2p7TtPdnF29H8JJ32tKXIOUFHqlto4_Sl">
+      </div>
+      <div class="decoration-image-2">
+        <img alt="Studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvYvDBqVovlZrC19mZNFHPyJ0q4pZxDn497tSCpJf1LC7uaEUv8FohTXMTMcIPWs24Af9eA7-2yN5-7JhfRqVG09MxavVIGpD_HpJqrcV6KZMuBzonl4lhogKIfD_Bhmm67SUJKN4yZlZKdQCXjN_ym2ESK_fSnykMEZrXRti2sPl-SpJwZa_Fn49uu2SXbcKiqFaE6oT1JGNPxrH2DxMoxxhSyXAusoBRlQUrqFt0kSXUloy_KXUME1ZxfNTKG-T7T6iDzn5IdxmD">
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Recording & mixing to video production, music management to post-production, under one roof"</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"State-of-the-art facility, designed with artists in mind"</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Audio-Video content creation hub"</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"An atmosphere where artists can connect, inspire, and grow together"</p>
+        </div>
+      </div>
+      <div class="explore-btn-container">
+        <button class="explore-btn">Explore Infrastructure <i class="fa-solid fa-location-arrow"></i></button>
+      </div>
+      <div class="bottom-gallery">
+        <div class="bottom-gallery-item">
+          <img alt="Music studio setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGTNosJYw_V-MWZuHTmcxM2amcLhXXo1X1yALJgwPUdIMq4jO08H_9zjn-3Wn8WNAld2kECXKunx86OuXKbmPiYs8pq921ZcZbAXPVByn83bXhFRK6qiE9ldZ2QYOyz33nWWMakeTmmASv3qBQg4d-9DtNPyVfd76W1FE63vL0kQDXM9hY-ApVxOlScwzC-WWyfN6u9porsJvclIjv7fE7qZPHZjDcW7IyRHdwuOnXplZTYuBMWuoG_dTztNt_nvxg0o4RzQ6z8kDM">
+        </div>
+        <div class="bottom-gallery-item">
+          <img alt="Recording room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUtSIRI36WC42999SXAlAVhC8qvncykxlDP3CsirblRuDZ-8Zvlcj6Hm9uNEPzo5KVFL4ZNsmgHPmCywNvKBfZOjgcrC1d1sTfeav4ginoXp2QXAE7W7NxDzfn-4NfYk2EgMGx0wgdJqc6UjoSnCIszxP0p9Umnxhh-oJ08RMa90KeCiBMPrywZuWnD1AuVj0AGjOLGAE1q8DzDMhGpEW5ST08JIeJDDdfIVSr4LvNcQRBeCsyPNXpd7KccL-1TRVJoIMqK4USxqMD">
+        </div>
+        <div class="bottom-gallery-item">
+          <img alt="DJ equipment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzFwNZyC22s9JAHe4Sc_iE9edP8yN0EFyr-pe04DgP0brPEQwSjKzvKvuozczUVQYbPhZavLr8SmRAruR0fYosa8hAYvbQtLI6WDYutC0lr1aNDru_5cmVf9R4i2HaZQaTuPjEsopFoNdNs-WKTLJT1hBvynUc1Ux86J-IrTDcA-cuYRiFTUQfixEMn6N2XXGTSxqY29WEXRf932P_PyYQcDxMlz17Zd5tmK4ZLHwZLKgN0F6TlYKDLrqS1E3abt1RWdBKGbipvl4H">
+        </div>
+      </div>
+    </section>
+  </section>
+  <!-- end darksec -->
+
+  <!-- ========== GALLERY (Artist Showcase - Horizontal Scroll) ========== -->
+
+  <div class="gallerymain gallery-main-wrapper" id="gallery-wrapper">
+    <canvas id="gallery-background-canvas"></canvas>
+
+    <div class="gallery-scroll-container">
+      <div class="gallery-horizontal-sections">
+        <!-- Fold 1 - Pink/Magenta -->
+        <section class="gallery-artist-section gallery-section-pink-magenta" id="gallery-fold-section-1">
+          <div class="gallery-content-wrapper-fold1">
+            <div class="gallery-text-content-fold1">
+              <h1 class="gallery-heading-fold1">We Love Your Favorite Artists, And They Love Us Back</h1>
+              <p class="gallery-description-fold1">We Celebrate Music With The Performers Who Add Magic In Your Life</p>
+            </div>
+            <div class="gallery-image-grid-fold1 gallery-clippath-animate">
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/kk.png" alt="KK and Hariharan">
+                <div class="gallery-artist-label">KK • HARIHARAN</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Group 25 (1).png" alt="Shaan and Sukhwinder Singh">
+                <div class="gallery-artist-label">SHAAN • SUKHWINDER SINGH</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Group 32.png" alt="Mohit Chauhan and Kailash Kher">
+                <div class="gallery-artist-label">MOHIT CHAUHAN • KAILASH KHER</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Group 31.png" alt="Artists">
+                <div class="gallery-artist-label">FEATURED ARTISTS</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Fold 2 - Orange -->
+        <section class="gallery-artist-section gallery-section-orange" id="gallery-fold-section-2">
+          <div class="gallery-content-wrapper-fold2">
+            <div class="gallery-text-content-fold2">
+              <h1 class="gallery-heading-fold2">Music That Touches Your Heart</h1>
+              <p class="gallery-description-fold2">Discover The Artists Who Create Melodies That Resonate With Your Soul</p>
+            </div>
+            <div class="gallery-image-grid-fold2 gallery-clippath-animate">
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/kk.png" alt="KK and Hariharan">
+                <div class="gallery-artist-label">KK • HARIHARAN</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Group 30.png" alt="Shaan and Sukhwinder Singh">
+                <div class="gallery-artist-label">SHAAN • SUKHWINDER SINGH</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Group 32.png" alt="Mohit Chauhan and Kailash Kher">
+                <div class="gallery-artist-label">MOHIT CHAUHAN • KAILASH KHER</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Group 15.png" alt="Artists">
+                <div class="gallery-artist-label">FEATURED ARTISTS</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Group 25.png" alt="Shaan and Sukhwinder Singh">
+                <div class="gallery-artist-label">SHAAN • SUKHWINDER SINGH</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Mask group.png" alt="Artists">
+                <div class="gallery-artist-label">FEATURED ARTISTS</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Fold 3 - Yellow -->
+        <section class="gallery-artist-section gallery-section-yellow" id="gallery-fold-section-3">
+          <div class="gallery-content-wrapper-fold3">
+            <div class="gallery-text-content-fold3">
+              <h1 class="gallery-heading-fold3">Celebrating Musical Legends</h1>
+              <p class="gallery-description-fold3">Join Us In Honoring The Voices That Define Generations Of Music Lovers</p>
+            </div>
+            <div class="gallery-image-grid-fold3 gallery-clippath-animate">
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Group 20.png" alt="Artists">
+                <div class="gallery-artist-label">FEATURED ARTISTS</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Mask group.png" alt="Shaan and Sukhwinder Singh">
+                <div class="gallery-artist-label">SHAAN • SUKHWINDER SINGH</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Group 18.png" alt="Artists">
+                <div class="gallery-artist-label">FEATURED ARTISTS</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Group 21.png" alt="Abhijeet and Fenny Dayal">
+                <div class="gallery-artist-label">ABHIJEET • FENNY DAYAL</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Group 26.png" alt="Artists">
+                <div class="gallery-artist-label">FEATURED ARTISTS</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Group 93.png" alt="Kunal Ganjawala and Usha Uthup">
+                <div class="gallery-artist-label">KUNAL GANJAWALA • USHA UTHUP</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Group 27.png" alt="Rabbi Shergill">
+                <div class="gallery-artist-label">RABBI SHERGILL</div>
+              </div>
+              <div class="gallery-artist-card-item">
+                <img src="assest/img/Group 29.png" alt="Artists">
+                <div class="gallery-artist-label">FEATURED ARTISTS</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="gallery-navigation-dots">
+      <div class="gallery-nav-dot active"></div>
+      <div class="gallery-nav-dot"></div>
+      <div class="gallery-nav-dot"></div>
+    </div>
+
+    <!-- Progress Indicator -->
+    <div class="gallery-progress-indicator">
+      <div class="gallery-progress-segment active"></div>
+      <div class="gallery-progress-segment"></div>
+      <div class="gallery-progress-segment"></div>
+    </div>
+  </div>
+  <!-- end gallery -->
+
+  <!-- contact -->
+    <div class="socialmain">
+ <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ========== SOCIAL MEDIA SECTION (Horizontal Scroll with GSAP) ========== -->
+  <div class="social-main-wrapper" id="social-wrapper">
+    <div class="social-scroll-container">
+      <div class="social-horizontal-sections">
+        
+        <!-- Fold 1 - Gradient Background -->
+        <section class="social-fold-section social-fold-1" id="social-fold-1">
+          <div class="social-content-wrapper">
+            <h2 class="social-heading">Catch Us On:</h2>
+            
+            <div class="social-icons-container">
+              <!-- Facebook -->
+              <a href="#" class="social-icon-link social-facebook" aria-label="Facebook">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              
+              <!-- Instagram -->
+              <a href="#" class="social-icon-link social-instagram" aria-label="Instagram">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                </svg>
+              </a>
+              
+              <!-- YouTube -->
+              <a href="#" class="social-icon-link social-youtube" aria-label="YouTube">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" stroke="currentColor" stroke-width="2"/>
+                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
+                </svg>
+              </a>
+              
+              <!-- X (Twitter) -->
+              <a href="#" class="social-icon-link social-twitter" aria-label="X (Twitter)">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Navigation Dots (right side) -->
+          <div class="social-nav-dots">
+            <div class="social-dot active" data-index="0"></div>
+            <div class="social-dot" data-index="1"></div>
+          </div>
+        </section>
+
+        <!-- Fold 2 - Solid Color Blocks -->
+        <section class="social-fold-section social-fold-2" id="social-fold-2">
+          <div class="social-content-wrapper">
+            <h2 class="social-heading">Lets Connect</h2>
+            
+            <div class="social-cards-container">
+              <!-- Facebook Card -->
+              <a href="#" class="social-card social-card-facebook" aria-label="Facebook">
+                <svg class="social-card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              
+              <!-- Instagram Card -->
+              <a href="#" class="social-card social-card-instagram" aria-label="Instagram">
+                <svg class="social-card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                </svg>
+              </a>
+              
+              <!-- YouTube Card -->
+              <a href="#" class="social-card social-card-youtube" aria-label="YouTube">
+                <svg class="social-card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" stroke="currentColor" stroke-width="2"/>
+                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
+                </svg>
+              </a>
+              
+              <!-- X (Twitter) Card -->
+              <a href="#" class="social-card social-card-twitter" aria-label="X (Twitter)">
+                <svg class="social-card-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Navigation Dots (right side) -->
+          <div class="social-nav-dots">
+            <div class="social-dot" data-index="0"></div>
+            <div class="social-dot active" data-index="1"></div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+  <!-- end social media section -->
+   </div>
+  <!-- contact -->
+
+  <!-- brand -->
+   <section class="premium-partners-wrapper premium-partners-section">
+    <div class="premium-partners-radial-glow"></div>
+    <div class="premium-partners-container">
+      <div class="premium-partners-header">
+        <h2 class="premium-partners-subtitle">
+          Partnered with 500+ Premium Brands
+        </h2>
+        <h1 class="premium-partners-title">
+          Our Premium Partners
+        </h1>
+        <div class="premium-partners-divider">
+          <div class="premium-partners-divider-line premium-partners-divider-line-left"></div>
+          <div class="premium-partners-divider-dot"></div>
+          <div class="premium-partners-divider-line premium-partners-divider-line-right"></div>
+        </div>
+      </div>
+
+      <div class="premium-partners-grid">
+        <div class="premium-partners-card">
+          <span class="brand-reliance premium-partners-brand-text">RELIANCE</span>
+        </div>
+        <div class="premium-partners-card">
+          <span class="brand-tata premium-partners-brand-text">TATA</span>
+        </div>
+        <div class="premium-partners-card">
+          <span class="brand-fabindia premium-partners-brand-text">fabindia</span>
+        </div>
+        <div class="premium-partners-card">
+          <span class="brand-hdfc premium-partners-brand-text">HDFC</span>
+        </div>
+        <div class="premium-partners-card">
+          <div class="brand-itc-container">
+            <div class="brand-itc-diamond"></div>
+            <span class="brand-itc-text premium-partners-brand-text">ITC LIMITED</span>
+          </div>
+        </div>
+        <div class="premium-partners-card">
+          <span class="brand-titan premium-partners-brand-text">TITAN</span>
+        </div>
+        <div class="premium-partners-card">
+          <div class="brand-sbi-container">
+            <div class="brand-sbi-circle">
+              <div class="brand-sbi-dot"></div>
+            </div>
+            <span class="brand-sbi-text premium-partners-brand-text">SBI</span>
+          </div>
+        </div>
+        <div class="premium-partners-card">
+          <span class="brand-godrej premium-partners-brand-text">Godrej</span>
+        </div>
+        <div class="premium-partners-card">
+          <span class="brand-mahindra premium-partners-brand-text">Mahindra</span>
+        </div>
+        <div class="premium-partners-card">
+          <span class="brand-pvr premium-partners-brand-text">PVR</span>
+        </div>
+        <div class="premium-partners-card">
+          <span class="brand-airtel premium-partners-brand-text">AIRTEL</span>
+        </div>
+        <div class="premium-partners-card">
+          <span class="brand-jio premium-partners-brand-text">Jio</span>
+        </div>
+        <div class="premium-partners-card">
+          <span class="brand-nykaa premium-partners-brand-text">Nykaa</span>
+        </div>
+        <div class="premium-partners-card">
+          <span class="brand-inox premium-partners-brand-text">Inox</span>
+        </div>
+        <div class="premium-partners-card">
+          <span class="brand-zomato premium-partners-brand-text">Zomato</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- brand -->
+
+  <!-- footer -->
+     <footer>
+        <div class="alive-footer-wrapper">
+        <div class="alive-footer-container">
+            <div class="alive-footer-content">
+                <div class="alive-footer-main">
+                    <div class="alive-footer-cta">
+                        <h2 class="alive-footer-cta-heading">Want To Stay Connected?</h2>
+                        <p class="alive-footer-cta-text">Join our WhatsApp community to stay connected, get latest news
+                            and updates</p>
+                        <a href="#" class="alive-whatsapp-btn">
+                            <span class="alive-btn-text">Join WhatsApp Community</span>
+                            <span class="alive-btn-arrow">→</span>
+                        </a>
+                    </div>
+
+                    <div class="alive-footer-address alive-footer-section">
+                        <h3 class="alive-footer-section-heading underline">Visit Us</h3>
+                        <div class="alive-address-text">
+                            <span class="alive-address-line">219, 8th Main Maruthi Layout</span>
+                            <span class="alive-address-line">Dasarahalli, Hebbal, Kempapura</span>
+                            <span class="alive-address-line">Bengaluru</span>
+                            <span class="alive-address-line">Karnataka 560024</span>
+                        </div>
+                        <a href="https://maps.google.com" class="alive-map-link" target="_blank">
+                            <span class="alive-map-icon">📍</span>
+                            <span>Google Maps</span>
+                        </a>
+                    </div>
+
+                    <div class="alive-footer-links alive-footer-section">
+                        <h3 class="alive-footer-section-heading underline">Quick Links</h3>
+                        <ul class="alive-links-list">
+                            <li class="alive-link-item"><a href="#downloads" class="alive-link-anchor">Downloads</a>
+                            </li>
+                            <li class="alive-link-item"><a href="#career" class="alive-link-anchor">Career</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alive-footer-bottom">
+                    <div class="alive-footer-logo">
+                        <svg class="alive-logo-img" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="4" fill="#4f87ff" />
+                            <path d="M15 12L25 28M25 12L15 28" stroke="white" stroke-width="3" stroke-linecap="round" />
+                            <text x="48" y="28" font-family="Orbitron" font-weight="700" font-size="20"
+                                fill="white">ALIVE</text>
+                            <text x="48" y="36" font-family="Orbitron" font-weight="700" font-size="8"
+                                fill="#4f87ff">INDIA</text>
+                        </svg>
+                    </div>
+
+                    <nav>
+                        <ul class="alive-footer-nav">
+                            <li class="alive-nav-item"><a href="#about" class="alive-nav-link">About</a></li>
+                            <li class="alive-nav-item"><a href="#offerings" class="alive-nav-link">Offerings</a></li>
+                            <li class="alive-nav-item"><a href="#infrastructure"
+                                    class="alive-nav-link">Infrastructure</a></li>
+                            <li class="alive-nav-item"><a href="#responsibility" class="alive-nav-link">Social
+                                    responsibility</a></li>
+                            <li class="alive-nav-item"><a href="#announcements" class="alive-nav-link">Announcements</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+     </footer>
+  <!-- footer -->
+
+  <!-- ========== ALL SCRIPTS ========== -->
+
+  <!-- SECTION 1: EYE ANIMATION -->
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".reel",
+        start: "top top",
+        end: "+=4000",
+        scrub: 1,
+        pin: true
+      }
+    });
+
+    tl.to("#eyelidTop", { yPercent: -110, borderRadius: "0 0 50% 50% / 0 0 10% 10%", ease: "power2.inOut" }, 0);
+    tl.to(".stage", { background: "#000", duration: 1, ease: "power2.inOut" }, 0);
+    tl.to("#iris", { scale: 15, duration: 2, ease: "power2.in" }, 0.5);
+    tl.to("#pupil", { backgroundColor: "transparent", duration: 0.5 }, 1);
+    tl.to("#pupilLetter", { opacity: 1, scale: 1, duration: 1 }, 1.2);
+    tl.to("#eyeContainer", { scale: 15, opacity: 0, duration: 1.5, ease: "power3.in" }, 2);
+    tl.to(".stage", { background: "linear-gradient(135deg, #800000, #000)", duration: 1 }, 2.5);
+    tl.to("#brand", { opacity: 1, y: 0, duration: 1, ease: "power2.out" }, 3);
+
+    const pTag = document.getElementById('interactiveText');
+    if (pTag) {
+      const text = pTag.textContent.trim();
+      pTag.innerHTML = text.split('').map(char =>
+        `<span class="char">${char === ' ' ? '&nbsp;' : char}</span>`
+      ).join('');
+
+      tl.from(".char", { opacity: 0, y: 20, stagger: 0.02, duration: 0.8, ease: "back.out(1.7)" }, 3.5);
+    }
+  </script>
+
+  <!-- THREE.JS BACKGROUND (Eye section) -->
+  <script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('eye3d'), alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const globeGeo = new THREE.SphereGeometry(5, 32, 32);
+    const globeMat = new THREE.MeshBasicMaterial({ color: 0xff1f3c, wireframe: true, transparent: true, opacity: 0.15 });
+    const globe = new THREE.Mesh(globeGeo, globeMat);
+    scene.add(globe);
+
+    function createWrappingWires() {
+      const wires = [];
+      const wireCount = 3;
+      const colors = [0x00ff88, 0x0088ff, 0xff8800];
+      for (let w = 0; w < wireCount; w++) {
+        const points = [];
+        const radius = 5.5;
+        const segments = 150;
+        const wireOffset = w * Math.PI * 2 / wireCount;
+        for (let i = 0; i <= segments; i++) {
+          const t = i / segments * Math.PI * 6;
+          const phase = wireOffset + t;
+          points.push(new THREE.Vector3(radius * Math.cos(phase), radius * Math.sin(t * 0.5), radius * Math.sin(phase)));
+        }
+        const curve = new THREE.CatmullRomCurve3(points);
+        const tubeGeometry = new THREE.TubeGeometry(curve, segments * 2, 0.08, 12, false);
+        const wireMaterial = new THREE.MeshBasicMaterial({ color: colors[w], transparent: true, opacity: 0.7 });
+        const wire = new THREE.Mesh(tubeGeometry, wireMaterial);
+        scene.add(wire);
+        wires.push(wire);
+      }
+      return wires;
+    }
+
+    function createWireParticles() {
+      const particles = [];
+      const particleGeometry = new THREE.SphereGeometry(0.1, 8, 8);
+      const particleMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.8 });
+      for (let i = 0; i < 50; i++) {
+        const particle = new THREE.Mesh(particleGeometry, particleMaterial);
+        particle.userData = {
+          speed: 0.001 + Math.random() * 0.002,
+          offset: Math.random() * Math.PI * 2,
+          radius: 5.5 + Math.random() * 0.5,
+          heightOffset: Math.random() * 2 - 1
+        };
+        scene.add(particle);
+        particles.push(particle);
+      }
+      return particles;
+    }
+
+    camera.position.z = 12;
+    camera.position.y = 4;
+    const wires = createWrappingWires();
+    const particles = createWireParticles();
+
+    function animateEye3D() {
+      requestAnimationFrame(animateEye3D);
+      globe.rotation.y += 0.004;
+      globe.rotation.x += 0.001;
+      const time = Date.now() * 0.001;
+      particles.forEach((particle, index) => {
+        const data = particle.userData;
+        const angle = time * data.speed * 10 + data.offset;
+        particle.position.x = Math.cos(angle) * data.radius;
+        particle.position.y = Math.sin(time * data.speed * 5 + data.offset) * 3 + data.heightOffset;
+        particle.position.z = Math.sin(angle) * data.radius;
+        particle.material.opacity = (Math.sin(time * 2 + index) * 0.3 + 0.7) * 0.8;
+      });
+      wires.forEach((wire, index) => { wire.rotation.y += 0.001 * (index + 1); });
+      const cameraTime = Date.now() * 0.0003;
+      camera.position.x = Math.sin(cameraTime) * 2;
+      camera.position.y = 4 + Math.cos(cameraTime * 0.7) * 0.5;
+      camera.lookAt(0, 0, 0);
+      const pulseValue = Math.sin(time) * 0.1 + 0.7;
+      wires.forEach(wire => { wire.material.opacity = pulseValue * 0.7; });
+      renderer.render(scene, camera);
+    }
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    scene.add(new THREE.AmbientLight(0x222222));
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+    directionalLight.position.set(5, 10, 7);
+    scene.add(directionalLight);
+    animateEye3D();
+  </script>
+
+  <!-- AURORA CANVAS (Universe section) -->
+  <script>
+    const auroraCanvas = document.getElementById('auroraCanvas');
+    const auroraCtx = auroraCanvas.getContext('2d');
+    auroraCanvas.width = window.innerWidth;
+    auroraCanvas.height = window.innerHeight;
+
+    const waves = [];
+    for (let i = 0; i < 3; i++) {
+      waves.push({
+        y: Math.random() * auroraCanvas.height,
+        length: 0.01 + Math.random() * 0.01,
+        amplitude: 100 + Math.random() * 100,
+        frequency: 0.01 + Math.random() * 0.02,
+        phase: Math.random() * Math.PI * 2
+      });
+    }
+
+    function animateAurora() {
+      auroraCtx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      auroraCtx.fillRect(0, 0, auroraCanvas.width, auroraCanvas.height);
+      waves.forEach((wave, index) => {
+        auroraCtx.beginPath();
+        auroraCtx.moveTo(0, wave.y);
+        for (let x = 0; x < auroraCanvas.width; x++) {
+          auroraCtx.lineTo(x, wave.y + Math.sin(x * wave.length + wave.phase) * wave.amplitude);
+        }
+        const gradient = auroraCtx.createLinearGradient(0, 0, auroraCanvas.width, 0);
+        gradient.addColorStop(0, `rgba(138, 43, 226, ${0.3 - index * 0.1})`);
+        gradient.addColorStop(0.5, `rgba(0, 191, 255, ${0.3 - index * 0.1})`);
+        gradient.addColorStop(1, `rgba(255, 31, 60, ${0.3 - index * 0.1})`);
+        auroraCtx.strokeStyle = gradient;
+        auroraCtx.lineWidth = 3;
+        auroraCtx.stroke();
+        wave.phase += wave.frequency;
+      });
+      requestAnimationFrame(animateAurora);
+    }
+    animateAurora();
+
+    window.addEventListener('resize', () => {
+      auroraCanvas.width = window.innerWidth;
+      auroraCanvas.height = window.innerHeight;
+    });
+  </script>
+
+  <!-- SOLAR SYSTEM ANIMATION -->
+  <script>
+    const labelContainer = document.getElementById('labelContainer');
+    const planets = document.querySelectorAll('.planet');
+    const labelElements = [];
+
+    planets.forEach((planet) => {
+      const label = document.createElement('div');
+      label.className = 'planet-label';
+      label.innerHTML = planet.dataset.label.replace(/ /g, '<br>');
+      labelContainer.appendChild(label);
+      labelElements.push({ planet, label });
+    });
+
+    function updateLabels() {
+      labelElements.forEach(({ planet, label }) => {
+        const rect = planet.getBoundingClientRect();
+        label.style.left = (rect.left + rect.width / 2) + 'px';
+        label.style.top = (rect.top + rect.height / 2 + 60) + 'px';
+        label.style.transform = 'translateX(-50%)';
+      });
+    }
+    gsap.ticker.add(updateLabels);
+
+    const universeTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".universe-reel",
+        start: "top top",
+        end: "+=3000",
+        scrub: 1,
+        pin: true
+      }
+    });
+
+    universeTl
+      .to("#universeContent", { x: "200%", opacity: 0.3, duration: 2 })
+      .to("#solarSystem", { bottom: "15%", left: "35%", duration: 2.5, ease: "power2.out" }, "<")
+      .to("#orbit1", { scale: 1, opacity: 1, duration: 1, ease: "back.out(1.2)" })
+      .to("#orbit2", { scale: 1, opacity: 1, duration: 1, ease: "back.out(1.2)" }, "-=0.5")
+      .to("#orbit3", { scale: 1, opacity: 1, duration: 1, ease: "back.out(1.2)" }, "-=0.5")
+      .to(".central-star", {
+        boxShadow: "0 0 150px #ff1f3c, inset 0 0 50px #ff1f3c", duration: 1,
+        onComplete: () => { document.querySelector('.central-star').classList.add('show-badge'); }
+      }, "-=0.5")
+      .to(".planet", {
+        scale: 1.3, duration: 1.5, stagger: 0.15,
+        onComplete: () => { labelElements.forEach(({ label }) => label.classList.add('show')); }
+      })
+      .to("#solarSystem", { rotation: 15, duration: 4, ease: "none" });
+
+    gsap.to("#orbit1", { rotation: 360, duration: 40, repeat: -1, ease: "none" });
+    gsap.to("#orbit2", { rotation: -360, duration: 60, repeat: -1, ease: "none" });
+    gsap.to("#orbit3", { rotation: 360, duration: 80, repeat: -1, ease: "none" });
+  </script>
+
+  <!-- CAROUSEL AUTO-SCROLL -->
+  <script>
+    const carousel = document.getElementById('auto-carousel');
+    const progress = document.getElementById('scroll-progress');
+
+    function autoScroll() {
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      if (carousel.scrollLeft >= maxScroll - 10) {
+        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        carousel.scrollBy({ left: 300, behavior: 'smooth' });
+      }
+      const percentage = (carousel.scrollLeft / maxScroll) * 100;
+      progress.style.width = `${percentage}%`;
+    }
+
+    let scrollInterval = setInterval(autoScroll, 3000);
+    carousel.addEventListener('mouseenter', () => clearInterval(scrollInterval));
+    carousel.addEventListener('mouseleave', () => scrollInterval = setInterval(autoScroll, 3000));
+  </script>
+
+  <!-- GALLERY SECTION SCRIPT (IIFE - isolated) -->
+  <!-- FIX 4: Uses a SEPARATE Three.js renderer scoped to gallery canvas only -->
+  <script>
+    (function () {
+      'use strict';
+
+      // ScrollTrigger already registered globally above — no need to re-register
+
+      const isMobile = window.innerWidth <= 767;
+      const galleryWrapper = document.getElementById('gallery-wrapper');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          galleryWrapper.classList.toggle('gallery-active', entry.isIntersecting);
+        });
+      }, { threshold: 0.1 });
+      observer.observe(galleryWrapper);
+
+      // --- Gallery Three.js (scoped variables, separate renderer) ---
+      let gScene, gCamera, gRenderer, gParticles;
+
+      function initGalleryThree() {
+        gScene = new THREE.Scene();
+        gCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        gCamera.position.z = 5;
+
+        gRenderer = new THREE.WebGLRenderer({
+          canvas: document.getElementById('gallery-background-canvas'),
+          alpha: true,
+          antialias: true
+        });
+        gRenderer.setSize(window.innerWidth, window.innerHeight);
+        gRenderer.setPixelRatio(window.devicePixelRatio);
+
+        const geometry = new THREE.BufferGeometry();
+        const vertices = [];
+        for (let i = 0; i < 1000; i++) {
+          vertices.push(Math.random() * 20 - 10, Math.random() * 20 - 10, Math.random() * 20 - 10);
+        }
+        geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+
+        gParticles = new THREE.Points(geometry, new THREE.PointsMaterial({
+          color: 0xffffff, size: 0.05, transparent: true, opacity: 0.6
+        }));
+        gScene.add(gParticles);
+        animateGallery3D();
+      }
+
+      function animateGallery3D() {
+        requestAnimationFrame(animateGallery3D);
+        gParticles.rotation.y += 0.001;
+        gParticles.rotation.x += 0.0005;
+        gRenderer.render(gScene, gCamera);
+      }
+
+      window.addEventListener('resize', () => {
+        if (gCamera && gRenderer) {
+          gCamera.aspect = window.innerWidth / window.innerHeight;
+          gCamera.updateProjectionMatrix();
+          gRenderer.setSize(window.innerWidth, window.innerHeight);
+        }
+      });
+
+      initGalleryThree();
+
+      // --- Gallery Scroll Logic ---
+      if (!isMobile) {
+        const sections = gsap.utils.toArray('.gallery-artist-section');
+
+        const horizontalScroll = gsap.to('.gallery-horizontal-sections', {
+          x: () => -(sections.length - 1) * window.innerWidth,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.gallery-scroll-container',
+            start: 'top top',
+            end: () => `+=${window.innerWidth * (sections.length - 1)}`,
+            scrub: 1,
+            pin: true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            id: 'gallery-horizontal'
+          }
+        });
+
+        // Fold 1
+        gsap.to('.gallery-image-grid-fold1', {
+          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+          scrollTrigger: {
+            trigger: '#gallery-fold-section-1',
+            containerAnimation: horizontalScroll,
+            start: 'left center', end: 'center center', scrub: 1
+          }
+        });
+        gsap.utils.toArray('#gallery-fold-section-1 .gallery-artist-card-item').forEach((card, i) => {
+          gsap.from(card, {
+            scale: 0.8, opacity: 0, rotation: -10, duration: 0.8, delay: i * 0.1,
+            scrollTrigger: {
+              trigger: '#gallery-fold-section-1', containerAnimation: horizontalScroll,
+              start: 'left 80%', toggleActions: 'play none none reverse'
+            }
+          });
+        });
+
+        // Fold 2
+        gsap.from('.gallery-text-content-fold2 .gallery-heading-fold2', {
+          x: -100, opacity: 0, duration: 1,
+          scrollTrigger: { trigger: '#gallery-fold-section-2', containerAnimation: horizontalScroll, start: 'left 70%', toggleActions: 'play none none reverse' }
+        });
+        gsap.from('.gallery-text-content-fold2 .gallery-description-fold2', {
+          x: -80, opacity: 0, duration: 1, delay: 0.2,
+          scrollTrigger: { trigger: '#gallery-fold-section-2', containerAnimation: horizontalScroll, start: 'left 70%', toggleActions: 'play none none reverse' }
+        });
+        gsap.to('.gallery-image-grid-fold2', {
+          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+          scrollTrigger: { trigger: '#gallery-fold-section-2', containerAnimation: horizontalScroll, start: 'left 80%', end: 'left 30%', scrub: 1 }
+        });
+        gsap.utils.toArray('#gallery-fold-section-2 .gallery-artist-card-item').forEach((card, i) => {
+          gsap.from(card, {
+            scale: 0.9, y: 50, opacity: 0, rotation: 5, delay: i * 0.08,
+            scrollTrigger: { trigger: '#gallery-fold-section-2', containerAnimation: horizontalScroll, start: 'left 70%', toggleActions: 'play none none reverse' }
+          });
+          gsap.to(card, { y: -10, duration: 1 + (i * 0.1), repeat: -1, yoyo: true, ease: 'sine.inOut' });
+        });
+
+        // Fold 3
+        gsap.from('.gallery-text-content-fold3 .gallery-heading-fold3', {
+          x: 100, opacity: 0, duration: 1,
+          scrollTrigger: { trigger: '#gallery-fold-section-3', containerAnimation: horizontalScroll, start: 'left 70%', toggleActions: 'play none none reverse' }
+        });
+        gsap.from('.gallery-text-content-fold3 .gallery-description-fold3', {
+          x: 80, opacity: 0, duration: 1, delay: 0.2,
+          scrollTrigger: { trigger: '#gallery-fold-section-3', containerAnimation: horizontalScroll, start: 'left 70%', toggleActions: 'play none none reverse' }
+        });
+        gsap.to('.gallery-image-grid-fold3', {
+          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+          scrollTrigger: { trigger: '#gallery-fold-section-3', containerAnimation: horizontalScroll, start: 'left 80%', end: 'left 30%', scrub: 1 }
+        });
+        gsap.utils.toArray('#gallery-fold-section-3 .gallery-artist-card-item').forEach((card, i) => {
+          gsap.from(card, {
+            scale: 0.85, opacity: 0, x: -50, rotation: -15, delay: i * 0.1,
+            scrollTrigger: { trigger: '#gallery-fold-section-3', containerAnimation: horizontalScroll, start: 'left 70%', toggleActions: 'play none none reverse' }
+          });
+        });
+
+        // WebGL canvas fade
+        gsap.to('#gallery-background-canvas', {
+          opacity: 0.3,
+          scrollTrigger: { trigger: '.gallery-scroll-container', start: 'top top', end: 'bottom bottom', scrub: true }
+        });
+
+        // Progress indicators
+        ScrollTrigger.create({
+          trigger: '.gallery-scroll-container',
+          start: 'top top',
+          end: () => `+=${window.innerWidth * (sections.length - 1)}`,
+          onUpdate: (self) => {
+            const currentSection = Math.round(self.progress * 2);
+            document.querySelectorAll('.gallery-nav-dot').forEach((dot, i) => dot.classList.toggle('active', i === currentSection));
+            document.querySelectorAll('.gallery-progress-segment').forEach((dot, i) => dot.classList.toggle('active', i === currentSection));
+          }
+        });
+
+        // Dot click navigation
+        document.querySelectorAll('.gallery-nav-dot').forEach((dot, i) => {
+          dot.addEventListener('click', () => {
+            const container = document.querySelector('.gallery-scroll-container');
+            const containerTop = container.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({ top: containerTop + (i * window.innerWidth), behavior: 'smooth' });
+          });
+        });
+
+      } else {
+        // Mobile fallback
+        gsap.set('.gallery-clippath-animate', { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' });
+
+        gsap.utils.toArray('.gallery-artist-section').forEach((section) => {
+          gsap.from(section.querySelectorAll('.gallery-artist-card-item'), {
+            opacity: 0, y: 30, stagger: 0.1, duration: 0.6,
+            scrollTrigger: { trigger: section, start: 'top 80%', toggleActions: 'play none none reverse' }
+          });
+        });
+
+        ScrollTrigger.create({
+          trigger: '.gallery-main-wrapper', start: 'top top', end: 'bottom bottom',
+          onUpdate: (self) => {
+            let cs = self.progress < 0.33 ? 0 : self.progress < 0.66 ? 1 : 2;
+            document.querySelectorAll('.gallery-progress-segment').forEach((dot, i) => dot.classList.toggle('active', i === cs));
+          }
+        });
+      }
+    })();
+  </script>
+
+  <!-- contact -->
+   
+  <script>
+    // ===== SOCIAL MEDIA SECTION - GSAP HORIZONTAL SCROLL WITH BLUR TRANSITION =====
+    
+    let isDesktop = window.innerWidth > 767;
+
+    function initSocialScroll() {
+      // Check if GSAP and ScrollTrigger are available
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        console.error('GSAP or ScrollTrigger not found. Please include GSAP library.');
+        return;
+      }
+
+      // Register ScrollTrigger plugin
+      gsap.registerPlugin(ScrollTrigger);
+
+      if (!isDesktop) {
+        // Mobile fallback
+        document.querySelectorAll('.social-fold-section').forEach(fold => {
+          fold.style.opacity = '1';
+        });
+        return;
+      }
+
+      const socialWrapper = document.querySelector('.social-main-wrapper');
+      const socialSections = document.querySelector('.social-horizontal-sections');
+      const fold1 = document.getElementById('social-fold-1');
+      const fold2 = document.getElementById('social-fold-2');
+      const cardsContainer = document.querySelector('.social-cards-container');
+      const scrollProgress = document.getElementById('scrollProgress');
+
+      if (!socialWrapper || !socialSections) {
+        console.warn('Social media section elements not found');
+        return;
+      }
+
+      // Calculate total scroll width
+      const totalWidth = socialSections.scrollWidth;
+      const viewportWidth = window.innerWidth;
+
+      // ========== HORIZONTAL SCROLL ANIMATION ==========
+      const horizontalScroll = gsap.to(socialSections, {
+        x: () => -(totalWidth - viewportWidth),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: socialWrapper,
+          start: 'top top',
+          end: () => `+=${totalWidth * 2.5}`,
+          pin: true,
+          scrub: 2,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            updateScrollEffects(self.progress);
+            updateProgressBar(self.progress);
+          }
+        }
+      });
+
+      // ========== SCROLL EFFECTS FUNCTION ==========
+      function updateScrollEffects(progress) {
+        // Update navigation dots
+        const dots = document.querySelectorAll('.social-nav-dots .social-dot');
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        if (progress < 0.5) {
+          dots[0]?.classList.add('active');
+        } else {
+          dots[1]?.classList.add('active');
+        }
+
+        // Fold 1 heading and icons animation - fade out completely
+        if (progress < 0.6) {
+          const heading1 = fold1.querySelector('.social-heading');
+          const icons = fold1.querySelectorAll('.social-icon-link');
+          
+          if (heading1) {
+            gsap.to(heading1, {
+              opacity: Math.max(0, 1 - (progress * 2.5)),
+              y: -80 * progress,
+              scale: 1 - (progress * 0.3),
+              duration: 0.3
+            });
+          }
+
+          icons.forEach((icon, index) => {
+            gsap.to(icon, {
+              opacity: Math.max(0, 1 - (progress * 2.5)),
+              y: -100 * progress,
+              scale: Math.max(0.5, 1 - (progress * 0.5)),
+              rotation: progress * 45,
+              duration: 0.3,
+              delay: index * 0.05
+            });
+          });
+        }
+
+        // Add gradient fade effect on Fold 1
+        if (fold1) {
+          const gradientOpacity = Math.max(0, 1 - (progress * 1.5));
+          fold1.style.opacity = gradientOpacity;
+        }
+
+        // Blur to Solid Transition for Fold 2
+        if (cardsContainer) {
+          if (progress < 0.2) {
+            // Initial blurred state
+            gsap.to(cardsContainer, {
+              filter: 'blur(100px)',
+              opacity: 0,
+              scale: 0.4,
+              rotationX: 30,
+              duration: 0.3
+            });
+          } else if (progress >= 0.2 && progress < 0.9) {
+            // Gradual deblur - longer transition
+            const transitionProgress = (progress - 0.2) / 0.7;
+            const blurAmount = 100 - (transitionProgress * 100);
+            const opacityValue = transitionProgress;
+            const scaleValue = 0.4 + (transitionProgress * 0.6);
+            const rotationValue = 30 - (transitionProgress * 30);
+            
+            gsap.to(cardsContainer, {
+              filter: `blur(${blurAmount}px)`,
+              opacity: opacityValue,
+              scale: scaleValue,
+              rotationX: rotationValue,
+              duration: 0.3
+            });
+          } else {
+            // Fully solid
+            gsap.to(cardsContainer, {
+              filter: 'blur(0px)',
+              opacity: 1,
+              scale: 1,
+              rotationX: 0,
+              duration: 0.3
+            });
+          }
+        }
+
+        // Fold 2 background fade in
+        if (fold2) {
+          const fold2Opacity = Math.min(1, Math.max(0, (progress - 0.3) * 2));
+          fold2.style.opacity = fold2Opacity;
+        }
+
+        // Fold 2 heading animation - fade in with scale
+        if (progress > 0.3) {
+          const heading2 = fold2.querySelector('.social-heading');
+          if (heading2) {
+            const headingProgress = Math.min(1, (progress - 0.3) / 0.5);
+            gsap.to(heading2, {
+              opacity: headingProgress,
+              y: 50 - (50 * headingProgress),
+              scale: 0.8 + (0.2 * headingProgress),
+              duration: 0.3
+            });
+          }
+        }
+      }
+
+      // ========== PROGRESS BAR ==========
+      function updateProgressBar(progress) {
+        if (scrollProgress) {
+          scrollProgress.style.width = `${progress * 100}%`;
+        }
+      }
+
+      // ========== INITIAL ANIMATIONS ==========
+      gsap.to(fold1.querySelector('.social-heading'), {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: 0.3,
+        ease: 'power3.out'
+      });
+
+      const icons = fold1.querySelectorAll('.social-icon-link');
+      icons.forEach((icon, index) => {
+        gsap.to(icon, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          delay: 0.5 + (index * 0.1),
+          ease: 'back.out(1.7)'
+        });
+      });
+
+      // ========== NAVIGATION DOT CLICKS ==========
+      document.querySelectorAll('.social-nav-dots .social-dot').forEach((dot) => {
+        dot.addEventListener('click', () => {
+          const index = parseInt(dot.dataset.index);
+          const targetProgress = index === 0 ? 0 : 1;
+          const scrollTriggerInstance = horizontalScroll.scrollTrigger;
+          
+          if (scrollTriggerInstance) {
+            const targetScroll = scrollTriggerInstance.start + 
+              (scrollTriggerInstance.end - scrollTriggerInstance.start) * targetProgress;
+            
+            gsap.to(window, {
+              scrollTo: targetScroll,
+              duration: 1.5,
+              ease: 'power2.inOut'
+            });
+          }
+        });
+      });
+
+      // ========== REFRESH ON WINDOW RESIZE ==========
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          isDesktop = window.innerWidth > 767;
+          ScrollTrigger.refresh();
+        }, 250);
+      });
+    }
+
+    // ========== FALLBACK FOR MOBILE ==========
+    function initSocialMobileFallback() {
+      if (window.innerWidth <= 767) {
+        const socialFolds = document.querySelectorAll('.social-fold-section');
+        socialFolds.forEach(fold => fold.classList.add('active'));
+      }
+    }
+
+    // ========== INITIALIZE ON DOM READY ==========
+    document.addEventListener('DOMContentLoaded', () => {
+      initSocialScroll();
+      initSocialMobileFallback();
+    });
+
+    window.addEventListener('load', initSocialMobileFallback);
+    window.addEventListener('resize', initSocialMobileFallback);
+  </script>
+
+  <!-- contact -->
+  
+
+</body>
+</html>

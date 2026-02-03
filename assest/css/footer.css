@@ -1,0 +1,387 @@
+/* Scoped CSS Variables for Footer Only */
+.alive-footer-wrapper {
+    --alive-footer-bg: #0a0a0a;
+    --alive-text-primary: #ffffff;
+    --alive-text-secondary: #9ca3af;
+    --alive-accent-blue: #4f87ff;
+    --alive-accent-glow: rgba(79, 135, 255, 0.15);
+    --alive-border-subtle: rgba(255, 255, 255, 0.08);
+}
+
+.underline{
+ text-decoration: underline;
+   text-decoration-color: #ff3c90; 
+ text-underline-offset: 14px;
+ text-decoration-thickness: 2px;
+}
+
+/* Footer Wrapper - Use this as the main container */
+.alive-footer-wrapper {
+    font-family: 'DM Sans', sans-serif;
+    background: #000;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+.alive-footer-container {
+    background: var(--alive-footer-bg);
+    border-top: 1px solid var(--alive-border-subtle);
+    position: relative;
+    overflow: hidden;
+}
+
+.alive-footer-container::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--alive-accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+    animation: alive-glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes alive-glow-pulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+.alive-footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 40px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.alive-footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
+.alive-footer-cta {
+    animation: alive-fade-in-up 0.6s ease-out;
+}
+
+@keyframes alive-fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alive-footer-cta-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--alive-text-primary);
+    margin-bottom: 16px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-top: 0;
+}
+
+.alive-footer-cta-text {
+    color: var(--alive-text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 400px;
+    margin-top: 0;
+}
+
+.alive-whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--alive-accent-blue);
+    color: var(--alive-text-primary);
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.alive-whatsapp-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.alive-whatsapp-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.alive-whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(79, 135, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.alive-btn-text {
+    position: relative;
+    z-index: 1;
+}
+
+.alive-btn-arrow {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.alive-whatsapp-btn:hover .alive-btn-arrow {
+    transform: translateX(4px);
+}
+
+.alive-footer-address {
+    animation: alive-fade-in-up 0.6s ease-out 0.1s backwards;
+}
+
+.alive-footer-section-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--alive-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 24px;
+    margin-top: 0;
+}
+
+.alive-address-text {
+    color: var(--alive-text-primary);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.alive-address-text .alive-address-line {
+    display: block;
+}
+
+.alive-map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--alive-accent-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.alive-map-link:hover {
+    gap: 12px;
+    color: #6b9fff;
+}
+
+.alive-map-icon {
+    font-size: 1rem;
+}
+
+.alive-footer-links {
+    animation: alive-fade-in-up 0.6s ease-out 0.2s backwards;
+}
+
+.alive-links-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.alive-links-list .alive-link-item {
+    margin-bottom: 16px;
+}
+
+.alive-links-list .alive-link-anchor {
+    color: var(--alive-text-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.alive-links-list .alive-link-anchor::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--alive-accent-blue);
+    transition: width 0.3s ease;
+}
+
+.alive-links-list .alive-link-anchor:hover {
+    color: var(--alive-accent-blue);
+    transform: translateX(4px);
+}
+
+.alive-links-list .alive-link-anchor:hover::after {
+    width: 100%;
+}
+
+.alive-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    border-top: 1px solid var(--alive-border-subtle);
+    animation: alive-fade-in 0.8s ease-out 0.3s backwards;
+}
+
+@keyframes alive-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.alive-footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.alive-logo-img {
+    width: 120px;
+    height: auto;
+    filter: brightness(1.2);
+}
+
+.alive-footer-nav {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.alive-footer-nav .alive-nav-item {
+    margin: 0;
+}
+
+.alive-footer-nav .alive-nav-link {
+    color: var(--alive-text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.alive-footer-nav .alive-nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--alive-accent-blue);
+    transition: width 0.3s ease;
+}
+
+.alive-footer-nav .alive-nav-link:hover {
+    color: var(--alive-text-primary);
+}
+
+.alive-footer-nav .alive-nav-link:hover::before {
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .alive-footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+
+    .alive-footer-cta {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .alive-footer-content {
+        padding: 60px 24px 24px;
+    }
+
+    .alive-footer-main {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .alive-footer-cta-heading {
+        font-size: 2rem;
+    }
+
+    .alive-footer-bottom {
+        flex-direction: column;
+        gap: 32px;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .alive-footer-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .alive-footer-cta-heading {
+        font-size: 1.75rem;
+    }
+
+    .alive-whatsapp-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .alive-footer-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}

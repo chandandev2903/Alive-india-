@@ -1,0 +1,60 @@
+/* Z-INDEX HIERARCHY FIX */
+.alove-nav-wrapper .navbar {
+  z-index: 10000 !important;
+}
+
+.main.reel {
+  position: relative;
+  z-index: 2;
+}
+
+.main.universe-reel {
+  position: relative;
+  z-index: 3;
+}
+
+.darksec {
+  position: relative;
+  z-index: 4;
+  isolation: isolate;
+}
+
+.horizontal-scroll-container {
+  position: relative;
+  z-index: 5;
+  isolation: isolate;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Fix overlapping navigation dots */
+.darksec .dots-nav,
+.darksec .gallery-dots,
+.darksec .testimonials-dots {
+  z-index: 50;
+}
+
+.horizontal-scroll-container .navigation-dots,
+.horizontal-scroll-container .progress-indicator-wrapper {
+  z-index: 100;
+}
+
+/* Mobile fix */
+@media screen and (max-width: 767px) {
+  .horizontal-scroll-container {
+    height: auto;
+    overflow: visible;
+  }
+  
+  .horizontal-scroll-container .horizontal-scroll-sections {
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+  }
+  
+  .horizontal-scroll-container .artist-section {
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+  }
+}
