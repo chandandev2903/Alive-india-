@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&family=Material+Icons&display=swap"
         rel="stylesheet" />
-
+    <link rel="stylesheet" href="assest/css/footer.css">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
      <script src="https://kit.fontawesome.com/b70e1ac393.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assest/css/navbar.css">
@@ -181,72 +181,111 @@
 
 <body class="bg-background-dark font-display text-white antialiased overflow-x-hidden">
    
-     <nav class="fixed w-full top-0 left-0 z-50 px-6 py-4">
-        <div class="max-w-7xl mx-auto bg-white/10 backdrop-blur-md rounded-full px-8 py-3 shadow-lg border border-white/20">
-            <div class="flex items-center justify-between">
-                
-                <!-- Left Side - Logo -->
-                <div class="flex items-center">
-                    <a href="#" class="text-white font-bold text-2xl">
-                        ALIVE INDIA
+      <nav class="fixed w-full top-0 left-0 z-50 px-4 sm:px-6 py-3 sm:py-4">
+    <div class="max-w-7xl mx-auto bg-white/10 backdrop-blur-md rounded-full px-4 sm:px-6 lg:px-8 py-3 shadow-lg border border-white/20">
+        <div class="flex items-center justify-between">
+            
+            <!-- Left Side - Logo -->
+            <div class="flex items-center">
+                <a href="#" class="text-white font-bold text-xl sm:text-2xl">
+                    ALIVE INDIA
+                </a>
+            </div>
+
+            <!-- Center - Menu Items (Desktop & Tablet) -->
+            <div class="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8">
+                <a href="index.html" class="text-white text-sm lg:text-base xl:text-lg font-medium hover:text-blue-300 transition-colors duration-300 relative group">
+                    Home
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="aboutus.html" class="text-white text-sm lg:text-base xl:text-lg font-medium hover:text-blue-300 transition-colors duration-300 relative group">
+                    About
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="service.html" class="text-white text-sm lg:text-base xl:text-lg font-medium hover:text-blue-300 transition-colors duration-300 relative group">
+                    Service
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#" class="text-white text-sm lg:text-base xl:text-lg font-medium hover:text-blue-300 transition-colors duration-300 relative group">
+                    Gallery
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="contact.html" class="text-white text-sm lg:text-base xl:text-lg font-medium hover:text-blue-300 transition-colors duration-300 relative group">
+                    Contact
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
+                </a>
+            </div>
+
+            <!-- Right Side - Social Media + Contact Button -->
+            <div class="flex items-center gap-3 lg:gap-4">
+                <!-- Social Media Icons (Desktop only) -->
+                <div class="hidden xl:flex items-center gap-2 xl:gap-3">
+                    <a href="#" class="w-9 h-9 xl:w-10 xl:h-10 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-instagram text-white text-base xl:text-lg"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 xl:w-10 xl:h-10 rounded-full bg-gradient-to-r from-red-500 to-orange-500 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-youtube text-white text-base xl:text-lg"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 xl:w-10 xl:h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-linkedin-in text-white text-base xl:text-lg"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 xl:w-10 xl:h-10 rounded-full bg-gray-800/70 backdrop-blur-sm flex items-center justify-center hover:scale-110 transition-transform duration-300 border border-white/20">
+                        <i class="fab fa-x-twitter text-white text-base xl:text-lg"></i>
                     </a>
                 </div>
 
-                <!-- Center - Menu Items -->
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="finalll.html" class="text-white text-[18px] font-medium hover:text-blue-300 transition-colors duration-300 relative group">
-                        Home
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    <a href="aboutus.html" class="text-white text-[18px] font-medium hover:text-blue-300 transition-colors duration-300 relative group">
-                        About
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    <a href="service.html" class="text-white text-[18px] font-medium hover:text-blue-300 transition-colors duration-300 relative group">
-                        Service
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    <a href="#" class="text-white text-[18px] font-medium hover:text-blue-300 transition-colors duration-300 relative group">
-                        Gallery
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    <a href="#" class="text-white text-[18px] font-medium hover:text-blue-300 transition-colors duration-300 relative group">
-                        Contact
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                </div>
-
-                <!-- Right Side - Social Media + Contact Button -->
-                <div class="flex items-center gap-4">
-                    <!-- Social Media Icons -->
-                    <div class="hidden md:flex items-center gap-3">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                            <i class="fab fa-instagram text-white text-lg"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-r from-red-500 to-orange-500 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                            <i class="fab fa-youtube text-white text-lg"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                            <i class="fab fa-linkedin-in text-white text-lg"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800/70 backdrop-blur-sm flex items-center justify-center hover:scale-110 transition-transform duration-300 border border-white/20">
-                            <i class="fab fa-x-twitter text-white text-lg"></i>
-                        </a>
-                    </div>
-
-                    <!-- Contact Button -->
-                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105">
-                        Contact Us
-                    </a>
-                </div>
+                <!-- Contact Button (All screens) -->
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 lg:px-6 py-2 rounded-full text-sm lg:text-base font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105">
+                    Contact Us
+                </a>
 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden text-white">
+                <button id="mobile-menu-btn" class="md:hidden text-white">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
-    </nav>
+    </div>
+
+    <!-- Mobile Menu Dropdown (Only for mobile) -->
+    <div id="mobile-menu" class="md:hidden hidden mt-4 mx-4">
+        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/20">
+            <div class="flex flex-col gap-4">
+                <a href="index.html" class="text-white text-lg font-medium hover:text-blue-300 transition-colors duration-300 py-2 border-b border-white/10">
+                    Home
+                </a>
+                <a href="aboutus.html" class="text-white text-lg font-medium hover:text-blue-300 transition-colors duration-300 py-2 border-b border-white/10">
+                    About
+                </a>
+                <a href="service.html" class="text-white text-lg font-medium hover:text-blue-300 transition-colors duration-300 py-2 border-b border-white/10">
+                    Service
+                </a>
+                <a href="#" class="text-white text-lg font-medium hover:text-blue-300 transition-colors duration-300 py-2 border-b border-white/10">
+                    Gallery
+                </a>
+                <a href="contact.html" class="text-white text-lg font-medium hover:text-blue-300 transition-colors duration-300 py-2">
+                    Contact
+                </a>
+                
+                <!-- Social Media Icons (Mobile) -->
+                <div class="flex items-center justify-center gap-3 pt-4 border-t border-white/10">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-instagram text-white text-lg"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-r from-red-500 to-orange-500 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-youtube text-white text-lg"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-linkedin-in text-white text-lg"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800/70 backdrop-blur-sm flex items-center justify-center hover:scale-110 transition-transform duration-300 border border-white/20">
+                        <i class="fab fa-x-twitter text-white text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
     <section
         class=" lg:mt-10 relative min-h-[85vh] flex flex-col justify-start overflow-hidden bg-black bg-[url('./about.png')] bg-cover bg-center ">
         <div class="absolute inset-0 pointer-events-none select-none flex justify-around items-start pt-[-10%] z-0 ">
@@ -1611,6 +1650,76 @@
             </div>
         </div>
     </section>
+     <!-- footer -->
+     <footer>
+        <div class="alive-footer-wrapper">
+        <div class="alive-footer-container">
+            <div class="alive-footer-content">
+                <div class="alive-footer-main">
+                    <div class="alive-footer-cta">
+                        <h2 class="alive-footer-cta-heading">Want To Stay Connected?</h2>
+                        <p class="alive-footer-cta-text">Join our WhatsApp community to stay connected, get latest news
+                            and updates</p>
+                        <a href="#" class="alive-whatsapp-btn">
+                            <span class="alive-btn-text">Join WhatsApp Community</span>
+                            <span class="alive-btn-arrow">→</span>
+                        </a>
+                    </div>
+
+                    <div class="alive-footer-address alive-footer-section">
+                        <h3 class="alive-footer-section-heading underline">Visit Us</h3>
+                        <div class="alive-address-text">
+                            <span class="alive-address-line">219, 8th Main Maruthi Layout</span>
+                            <span class="alive-address-line">Dasarahalli, Hebbal, Kempapura</span>
+                            <span class="alive-address-line">Bengaluru</span>
+                            <span class="alive-address-line">Karnataka 560024</span>
+                        </div>
+                        <a href="https://maps.google.com" class="alive-map-link" target="_blank">
+                            <span class="alive-map-icon">📍</span>
+                            <span>Google Maps</span>
+                        </a>
+                    </div>
+
+                    <div class="alive-footer-links alive-footer-section">
+                        <h3 class="alive-footer-section-heading underline">Quick Links</h3>
+                        <ul class="alive-links-list">
+                            <li class="alive-link-item"><a href="#downloads" class="alive-link-anchor">Downloads</a>
+                            </li>
+                            <li class="alive-link-item"><a href="#career" class="alive-link-anchor">Career</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alive-footer-bottom">
+                    <div class="alive-footer-logo">
+                        <svg class="alive-logo-img" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="4" fill="#4f87ff" />
+                            <path d="M15 12L25 28M25 12L15 28" stroke="white" stroke-width="3" stroke-linecap="round" />
+                            <text x="48" y="28" font-family="Orbitron" font-weight="700" font-size="20"
+                                fill="white">ALIVE</text>
+                            <text x="48" y="36" font-family="Orbitron" font-weight="700" font-size="8"
+                                fill="#4f87ff">INDIA</text>
+                        </svg>
+                    </div>
+
+                    <nav>
+                        <ul class="alive-footer-nav">
+                            <li class="alive-nav-item"><a href="#about" class="alive-nav-link">About</a></li>
+                            <li class="alive-nav-item"><a href="#offerings" class="alive-nav-link">Offerings</a></li>
+                            <li class="alive-nav-item"><a href="#infrastructure"
+                                    class="alive-nav-link">Infrastructure</a></li>
+                            <li class="alive-nav-item"><a href="#responsibility" class="alive-nav-link">Social
+                                    responsibility</a></li>
+                            <li class="alive-nav-item"><a href="#announcements" class="alive-nav-link">Announcements</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+     </footer>
+  <!-- footer -->
 
 
 

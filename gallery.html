@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Celebrity Live Stream Player Studio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee2b4b",
+              "background-light": "#f8f6f6",
+              "background-dark": "#221013",
+              "accent-gold": "#D4AF37",
+            },
+            fontFamily: {
+              "display": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #221013;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #482329;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-10 py-3 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined text-3xl">movie_filter</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Celebrity Studio</h2>
+</div>
+<nav class="flex items-center gap-9">
+<a class="text-white/70 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Dashboard</a>
+<a class="text-white text-sm font-medium leading-normal border-b-2 border-primary pb-1" href="#">Live Control</a>
+<a class="text-white/70 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Content</a>
+<a class="text-white/70 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Analytics</a>
+<a class="text-white/70 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Library</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-white/5 border border-white/10">
+<div class="text-white/50 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 text-white placeholder:text-white/30 text-base font-normal px-2" placeholder="Search stars, events..." value=""/>
+</div>
+</label>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-white/5 hover:bg-white/10 text-white transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-white/5 hover:bg-white/10 text-white transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="Profile picture of studio moderator" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOtKR3mmgp1tpUvB1xy6cjTwxyg3UMPbXEbrYQ_021FqFLh_VO51Jnf2jcx8N6O6YKr6ecE-ueO9mJmxe0L4H3CJjRVL68LZCSoAtCy1_uSUviOeNUlbUT2vjoVUdvR2pGpWZt2ytNkifo0kTE_eLUEDFmUk0MrM4UM6rEBcKbhjm2p9hK_tMIOim1CdF6Ss9Ompe8SLjSccfk-5voqIjO9UXQLViS8reICpiLzJUYNJmTYltENvRWT3ZN_AQ6kKCikhlz3FCxK1Q");'></div>
+</div>
+</header>
+<div class="flex w-full max-w-[1600px] mx-auto min-h-[calc(100vh-64px)]">
+<!-- Left Sidebar: Mini Navigation -->
+<aside class="w-20 flex flex-col items-center py-6 border-r border-white/10 gap-8">
+<div class="flex flex-col gap-6">
+<div class="flex flex-col items-center gap-1 group cursor-pointer text-primary">
+<span class="material-symbols-outlined fill-icon">sensors</span>
+<span class="text-[10px] font-medium">Live</span>
+</div>
+<div class="flex flex-col items-center gap-1 group cursor-pointer text-white/50 hover:text-white">
+<span class="material-symbols-outlined">video_library</span>
+<span class="text-[10px] font-medium">Videos</span>
+</div>
+<div class="flex flex-col items-center gap-1 group cursor-pointer text-white/50 hover:text-white">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium">Guests</span>
+</div>
+<div class="flex flex-col items-center gap-1 group cursor-pointer text-white/50 hover:text-white">
+<span class="material-symbols-outlined">monetization_on</span>
+<span class="text-[10px] font-medium">Revenue</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<div class="flex h-full">
+<!-- Center Workspace -->
+<div class="flex-1 flex flex-col p-6 overflow-y-auto custom-scrollbar">
+<!-- Breadcrumbs / Stream Status -->
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-primary font-bold text-xs uppercase tracking-widest">Live Now</span>
+<span class="text-white/40 mx-2">/</span>
+<span class="text-white/60 text-sm">Exclusive Interview Series</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-white/5 px-3 py-1 rounded flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-white/50">visibility</span>
+<span class="text-xs font-medium">142.5K Watching</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 rounded-lg text-sm font-bold transition-colors">END STREAM</button>
+</div>
+</div>
+<!-- Media Player Component -->
+<div class="relative w-full aspect-video rounded-xl overflow-hidden group border border-white/5 bg-black shadow-2xl shadow-primary/5">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Main live stream frame of a famous Indian actor in an interview" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-TkkoO5Jd90N3LsFb53JqfnWVPvcL_YczR1ObXVqyPXJKbrmvqcZ391rxJxK06Sa1LFibHjhEyonOPxVip1Iif7-3q14TVPhtsRIpRs6TXOxqM8-EW8HzXIqRoBOv8EwQq0sAXTmsgfz-LmMPlZtXJsPi01Uoj2E65-bN4QD80deymLcRO9pDvxcWAgVcbg7DkznRBYEMkUzXINESZFI2UE69Ms773KefC0KJQGpnNTq03_WNScHZRjdHio3uQE5-tOClI55ohFM");'></div>
+<!-- Overlay UI -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<div class="flex items-center gap-4 mb-4">
+<button class="size-12 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined fill-icon text-2xl">pause</span>
+</button>
+<div class="flex-1">
+<div class="h-1.5 w-full bg-white/20 rounded-full relative">
+<div class="absolute inset-y-0 left-0 w-3/4 bg-primary rounded-full"></div>
+<div class="absolute top-1/2 left-3/4 -translate-y-1/2 size-4 bg-white rounded-full shadow-lg border-2 border-primary"></div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="text-xs text-white">45:12 / 1:20:00</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-sm">volume_up</span>
+<span class="material-symbols-outlined text-sm">settings</span>
+<span class="material-symbols-outlined text-sm">fullscreen</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Left Tag -->
+<div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2">
+<div class="size-2 rounded-full bg-primary"></div>
+<span class="text-[10px] font-bold tracking-tighter uppercase">Ultra HD 4K</span>
+</div>
+</div>
+<!-- Stream Details -->
+<div class="mt-6">
+<div class="flex justify-between items-start">
+<div class="flex-1">
+<h1 class="text-2xl font-bold text-white mb-2 leading-tight">Shah Rukh Khan - The Pathaan Journey: Live Exclusive Q&amp;A</h1>
+<div class="flex items-center gap-4 text-white/60 text-sm">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-accent-gold flex items-center justify-center text-black font-bold text-xs">VIP</div>
+<span class="text-white font-medium">Verified Stream Studio</span>
+</div>
+<span>•</span>
+<span>Streaming started 45 mins ago</span>
+</div>
+</div>
+<!-- Actions Bar -->
+<div class="flex gap-2">
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-white/5 hover:bg-white/10 min-w-16 border border-white/5">
+<span class="material-symbols-outlined text-primary">thumb_up</span>
+<span class="text-xs font-medium mt-1">42K</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-white/5 hover:bg-white/10 min-w-16 border border-white/5">
+<span class="material-symbols-outlined">share</span>
+<span class="text-xs font-medium mt-1">Share</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-white/5 hover:bg-white/10 min-w-16 border border-white/5">
+<span class="material-symbols-outlined">content_cut</span>
+<span class="text-xs font-medium mt-1">Clip</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-white/5 hover:bg-white/10 min-w-16 border border-white/5">
+<span class="material-symbols-outlined">more_horiz</span>
+<span class="text-xs font-medium mt-1">More</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Live Highlights Section -->
+<div class="mt-10 border-t border-white/10 pt-8">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+                                Live Highlights &amp; Chapters
+                            </h3>
+<button class="text-primary text-sm font-medium hover:underline">Manage All Markers</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Highlight Card -->
+<div class="bg-white/5 border border-white/10 rounded-xl p-3 flex gap-4 hover:border-primary/50 cursor-pointer group transition-all">
+<div class="w-24 aspect-video rounded-lg bg-cover bg-center shrink-0 relative" data-alt="Thumbnail of the grand entry moment" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5n7M655mIxFMGnNprg-F8kMjakkcG5CYqVFiLVTTOhDCU1R4caQPsN2LfHr_9kXZBzJP4ao3hu2JnRhSiT8_WSTik0AbGKf2w5l2NI_8-YwRsdmx2JjUaTEcK8_IAYD8jDT082c8_kfgaAXCmIU87nZNajtEvLGlggCjHlnmOkdH1Gnt4h0_N8OoBQoer9XafjrOF2oZNkCFSIy2ZF73xT9BB4sd-wB_XN4Uy8Z2FRxGWBD4vHBp8asyLktch1JMLMdUm59KIw4M");'>
+<div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white">play_arrow</span>
+</div>
+<div class="absolute bottom-1 right-1 bg-black/80 px-1 rounded text-[10px]">05:22</div>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-sm font-bold line-clamp-1">Grand Entry Sequence</p>
+<p class="text-xs text-white/50 mt-1 line-clamp-1">Audience reactions &amp; pyro</p>
+</div>
+</div>
+<!-- Highlight Card -->
+<div class="bg-white/5 border border-white/10 rounded-xl p-3 flex gap-4 hover:border-primary/50 cursor-pointer group transition-all">
+<div class="w-24 aspect-video rounded-lg bg-cover bg-center shrink-0 relative" data-alt="Thumbnail of fan interaction moment" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDc2wT7YvCIorT8KBV7eH6J9vvf2SCNTF5dxLBd77URnKPJRsxekrH6J52DGAbyDRns1jrP8_ZSu0OTJrdNUTjNWl4vpchaNNKgtQ7Nj3Ky1N4FeXg1ce1khTYJuwrybWzIaIAp62CL6NUsCnRKaJdLAY8nDJ79kC_i7AwKkYQUWNsu-7Y4yjdjCXz6w8B3DpQguhmE-fi1YLG2VEGDjGd0Fd1BH343y5MsXa1DwVGT3gkJk-8j6BGCKMttrO8d9-RQG3c6QNgpiqQ");'>
+<div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white">play_arrow</span>
+</div>
+<div class="absolute bottom-1 right-1 bg-black/80 px-1 rounded text-[10px]">12:10</div>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-sm font-bold line-clamp-1">Fan Q&amp;A Session</p>
+<p class="text-xs text-white/50 mt-1 line-clamp-1">Touching moment with lucky fan</p>
+</div>
+</div>
+<!-- Highlight Card Active -->
+<div class="bg-primary/10 border border-primary/50 rounded-xl p-3 flex gap-4 cursor-pointer">
+<div class="w-24 aspect-video rounded-lg bg-cover bg-center shrink-0 relative" data-alt="Thumbnail of the current segment" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCnRzh04K-4inDYcxPvuhkEh8gzbnV0uc4C5cGyjavCN16f57P4i5u4iWqPMwZgT2wNyIkjUH7N_mh4bPb68BDSc3riWQMPiG7xbkQaMKNhZnDIxi-xlEa7oLJwYVsiTLLDdbJymLpdKQ5FLXWndiFxY5gQBuHJizm12kjZgrpu6olYKwX8c3XwM_rUI6SzZtC8gKcz65Ttt0bB_90_0Xmx8TVqvsiOK3ZbNoeXAUE1vno_o6p-TT28C8QK7EIPAt9Prs3ENk5W2JA");'>
+<div class="absolute inset-0 flex items-center justify-center bg-black/20">
+<div class="flex gap-1">
+<div class="w-1 h-3 bg-white animate-bounce"></div>
+<div class="w-1 h-3 bg-white animate-bounce" style="animation-delay: 0.1s"></div>
+<div class="w-1 h-3 bg-white animate-bounce" style="animation-delay: 0.2s"></div>
+</div>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary px-1 rounded text-[10px]">Now</div>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-sm font-bold line-clamp-1 text-primary">Success Stories</p>
+<p class="text-xs text-white/70 mt-1 line-clamp-1">Discussing his first film...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Celebrity Lineup -->
+<aside class="w-[380px] border-l border-white/10 bg-background-dark/50 flex flex-col">
+<div class="p-6 border-b border-white/10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-lg">Star Lineup</h3>
+<div class="flex gap-2">
+<button class="text-white/40 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl">filter_list</span>
+</button>
+</div>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 custom-scrollbar">
+<span class="px-3 py-1 bg-primary text-white text-xs font-bold rounded-full whitespace-nowrap">All Streams</span>
+<span class="px-3 py-1 bg-white/5 text-white/60 text-xs font-bold rounded-full whitespace-nowrap hover:bg-white/10 cursor-pointer transition-colors">Interviews</span>
+<span class="px-3 py-1 bg-white/5 text-white/60 text-xs font-bold rounded-full whitespace-nowrap hover:bg-white/10 cursor-pointer transition-colors">Red Carpet</span>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-4 flex flex-col gap-4">
+<!-- Celeb Card: Active -->
+<div class="group relative rounded-xl overflow-hidden border-2 border-primary bg-white/5 p-2">
+<div class="flex gap-3">
+<div class="relative w-28 h-20 rounded-lg overflow-hidden shrink-0">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Portrait of Shah Rukh Khan live" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrhGnPItVKYLEoit1wKpyKyG477mQXDEOmtzUTZo1ZWRQQjdQSbOS0dVkU_J4AJ8zvt4KsX3H6p3xOzOiIXeBtysA7BEKpbMfYYO6xW-K8kMLnIzvD6MZDW-f7LA48g8FEDxOkKy6k15Wqus680TnBIayzn_HOkT-i_YZEYs_B90fUhkUJ6-Q5bJxgurXYUD4b0LOdfV0mnG4RECoHdalUFhw8ZpEfI47ibgiOyu5xhmTlZ6O28m5wNgK3DKGKr0DbW7OYQ4wlMCg");'></div>
+<div class="absolute top-1 left-1 bg-primary text-[8px] font-black px-1.5 py-0.5 rounded uppercase">Live</div>
+</div>
+<div class="flex flex-col justify-center pr-2">
+<h4 class="text-sm font-bold text-white group-hover:text-primary transition-colors">Shah Rukh Khan</h4>
+<p class="text-[11px] text-white/50 mt-1 leading-snug">The Pathaan Journey Exclusive</p>
+<p class="text-[10px] text-primary font-medium mt-1">142K Viewers</p>
+</div>
+</div>
+</div>
+<!-- Celeb Card -->
+<div class="group relative rounded-xl overflow-hidden border border-white/5 bg-white/5 p-2 hover:border-white/20 transition-all cursor-pointer">
+<div class="flex gap-3">
+<div class="relative w-28 h-20 rounded-lg overflow-hidden shrink-0">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Portrait of Deepika Padukone" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBqqq3SuRRlc6WbRyWHvigfmooOh5oCNRml_gkBrLiczblnleZLOZSbUBY4cKzWRfG9X5C1tKUkeqKNYk-mRjfF1hnpEY48IP6Q8_nzyXvMoSN-2fKMGhi2cP54mbQqCUj0NV-kJGJpukYuuvlWp4goK0mZkiGtbD4vKftD3j5DcYWKOo_tKYQ63DBKCrhTDv0KGAR-ffH87Rqm8vKgSHZXBPF-XJADHij1ZSfIozV0EdSBIlVB296XQF0XmhNCienlKMvdeTkClN8");'></div>
+<div class="absolute top-1 left-1 bg-blue-500 text-[8px] font-black px-1.5 py-0.5 rounded uppercase">Upcoming</div>
+</div>
+<div class="flex flex-col justify-center pr-2">
+<h4 class="text-sm font-bold text-white group-hover:text-primary transition-colors">Deepika Padukone</h4>
+<p class="text-[11px] text-white/50 mt-1 leading-snug">Global Fashion Icons Panel</p>
+<p class="text-[10px] text-white/30 font-medium mt-1">Starts in 15m</p>
+</div>
+</div>
+</div>
+<!-- Celeb Card -->
+<div class="group relative rounded-xl overflow-hidden border border-white/5 bg-white/5 p-2 hover:border-white/20 transition-all cursor-pointer">
+<div class="flex gap-3">
+<div class="relative w-28 h-20 rounded-lg overflow-hidden shrink-0 grayscale opacity-60">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Portrait of Virat Kohli" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDU7LR-zcqnDZzPJwO3eoCaaAR1JdjU7Gqc9S7O77hrnHjWh5pSxaFh4Dlx4fMzjdodTPbAepcPpBgHWiC4_k7Fv8dpWS_NRiTDqwvuWsY6ATOypzwzo_CTKRVkDRs_uvsjFN3rWM0-4eVveqUyWGonA66JEX3v38OhMfdnwjzast7dix5uPKTfXoJrAe4K0UGFx1Y4HlLchUwSqt19L9hMPWLivYyMJue6fK2PIBlz1BleBCNoP4R2bgWPsHMghtYd-EZecuAgO4A");'></div>
+<div class="absolute top-1 left-1 bg-white/20 text-[8px] font-black px-1.5 py-0.5 rounded uppercase">Offline</div>
+</div>
+<div class="flex flex-col justify-center pr-2">
+<h4 class="text-sm font-bold text-white group-hover:text-primary transition-colors">Virat Kohli</h4>
+<p class="text-[11px] text-white/50 mt-1 leading-snug">Fielding Excellence Masterclass</p>
+<p class="text-[10px] text-white/30 font-medium mt-1">Recorded 2h ago</p>
+</div>
+</div>
+</div>
+<!-- Celeb Card -->
+<div class="group relative rounded-xl overflow-hidden border border-white/5 bg-white/5 p-2 hover:border-white/20 transition-all cursor-pointer">
+<div class="flex gap-3">
+<div class="relative w-28 h-20 rounded-lg overflow-hidden shrink-0">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Portrait of Alia Bhatt" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrezknzlOFNK6DN-vSYNdXAGY9-0la_1LKHrS0vBMWE6o8xTnPWlQYlzU_h1NPSciaKb2FHKWKw3vGXpkPiNn_ogphWw01j8UrsMPhs0f30JcIUhmcce5Jj2cLOzbpA6CBuAEeKtVf-BP03scJAsQY9W9pXtdvgG1WS4Bl9eVsWKmsQz9qDZr2C4yAGCDU173StXcJczN58NWlVjNQQ5QENkZ6qzB4zesXJ3elBixr51O8WeS0NSpILZ5ykRed-EYnhM0MBpYs21w");'></div>
+<div class="absolute top-1 left-1 bg-accent-gold text-black text-[8px] font-black px-1.5 py-0.5 rounded uppercase">VIP Replay</div>
+</div>
+<div class="flex flex-col justify-center pr-2">
+<h4 class="text-sm font-bold text-white group-hover:text-primary transition-colors">Alia Bhatt</h4>
+<p class="text-[11px] text-white/50 mt-1 leading-snug">Behind the Scenes: Gangubai</p>
+<p class="text-[10px] text-accent-gold font-medium mt-1">Premium Access</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat Console Sneak Peak -->
+<div class="h-40 bg-black/40 border-t border-white/10 p-4">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold text-white/50 uppercase tracking-tighter">Live Studio Chat</span>
+<span class="material-symbols-outlined text-sm text-white/30">expand_less</span>
+</div>
+<div class="space-y-2">
+<p class="text-[10px]"><span class="font-bold text-primary">Moderator:</span> Please keep the chat respectful.</p>
+<p class="text-[10px]"><span class="font-bold text-white/70">Amit K:</span> OMG he looks amazing today!</p>
+<p class="text-[10px]"><span class="font-bold text-white/70">Sana_88:</span> Love from Dubai! ❤️</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</body></html>

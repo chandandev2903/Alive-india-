@@ -1,0 +1,713 @@
+<!doctype html>
+<html class="dark scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact | Refined Cinematic Experience</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&amp;family=Inter:wght@300;400;600&amp;family=Space+Grotesk:wght@300;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "#000000",
+              accentBlue: "#304FFE",
+              accentPink: "#ff2d8c",
+            },
+            fontFamily: {
+              display: ["Montserrat", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+              avant: ["Space Grotesk", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+      <script src="https://kit.fontawesome.com/b70e1ac393.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="assest/css/footer.css">
+    <style type="text/tailwindcss">
+      @keyframes liquid-pulse {
+        0% {
+          transform: translate(-10%, -10%) scale(1);
+          opacity: 0.4;
+        }
+        50% {
+          transform: translate(5%, 5%) scale(1.1);
+          opacity: 0.6;
+        }
+        100% {
+          transform: translate(-10%, -10%) scale(1);
+          opacity: 0.4;
+        }
+      }
+      @keyframes float-orb {
+        0% {
+          transform: translateY(0) translateX(0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.3;
+        }
+        100% {
+          transform: translateY(-100vh) translateX(20px);
+          opacity: 0;
+        }
+      }
+      @keyframes neon-pulse {
+        0%,
+        100% {
+          filter: drop-shadow(0 0 5px #ff2d8c) drop-shadow(0 0- 10px #ff2d8c);
+        }
+        50% {
+          filter: drop-shadow(0 0 15px #ff2d8c) drop-shadow(0 0 25px #ff2d8c);
+        }
+      }
+      @keyframes neon-pulse-blue {
+        0%,
+        100% {
+          filter: drop-shadow(0 0 5px #304ffe) drop-shadow(0 0 10px #304ffe);
+        }
+        50% {
+          filter: drop-shadow(0 0 15px #304ffe) drop-shadow(0 0 25px #304ffe);
+        }
+      }
+      @keyframes gradient-flow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      @keyframes wave-mini {
+        0%,
+        100% {
+          transform: scaleY(1);
+        }
+        50% {
+          transform: scaleY(0.4);
+        }
+      }
+      @keyframes ripple {
+        0% {
+          transform: scale(1);
+          opacity: 0.4;
+        }
+        100% {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+      @keyframes pulse-soft {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 1;
+        }
+      }
+      .liquid-smoke {
+        filter: blur(60px);
+        mix-blend-mode: screen;
+        animation: liquid-pulse 12s ease-in-out infinite;
+      }
+      .orb {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: float-orb linear infinite;
+      }
+      .glass-card-premium {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(40px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow:
+          0 0 0 1px rgba(255, 255, 255, 0.03),
+          inset 0 0 20px rgba(255, 45, 140, 0.05),
+          0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+      .text-neon-outline {
+        -webkit-text-stroke: 1px #ff2d8c;
+        color: transparent;
+        animation: neon-pulse 3s ease-in-out infinite;
+      }
+      .text-outline-magenta {
+        -webkit-text-stroke: 1.5px #ff2d8c;
+        color: transparent;
+        text-shadow: 0 0 15px rgba(255, 45, 140, 0.4);
+      }
+      .glitch-offset {
+        position: relative;
+        text-shadow:
+          2px 0 #ff2d8c,
+          -2px 0 #304ffe;
+      }
+      .input-gradient-focus:focus-within {
+        background:
+          linear-gradient(black, black) padding-box,
+          linear-gradient(to right, #ff2d8c, #304ffe) border-box;
+        border-color: transparent;
+      }
+      .animated-gradient-btn {
+        background: linear-gradient(-45deg, #304ffe, #ff2d8c, #304ffe, #ff2d8c);
+        background-size: 300% 300%;
+      }
+      .animated-gradient-btn:hover {
+        animation: gradient-flow 3s ease infinite;
+      }
+      .mini-wave span {
+        display: inline-block;
+        width: 2px;
+        background: currentColor;
+        margin: 0 1px;
+        animation: wave-mini 1s ease-in-out infinite;
+      }
+      .social-button {
+        @apply relative flex items-center justify-center w-16 h-16 rounded-full glass-card-premium transition-all duration-500 hover:scale-110;
+      }
+      .social-button::before {
+        content: "";
+        @apply absolute inset-0 rounded-full opacity-0 transition-all duration-500;
+        background: currentColor;
+        z-index: -1;
+      }
+      .social-button:hover::before {
+        animation: ripple 1.2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+      .pulse-magenta {
+        animation:
+          pulse-soft 3s infinite,
+          neon-pulse 3s infinite;
+      }
+      .pulse-blue {
+        animation:
+          pulse-soft 3s infinite 1.5s,
+          neon-pulse-blue 3s infinite 1.5s;
+      }
+    </style>
+  </head>
+  <body class="font-body bg-background text-white m-0 p-0 overflow-x-hidden">
+     <nav class="fixed w-full top-0 left-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto bg-white/10 backdrop-blur-md rounded-full px-8 py-3 shadow-lg border border-white/20">
+            <div class="flex items-center justify-between">
+                
+                <!-- Left Side - Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="text-white font-bold text-2xl">
+                        ALIVE INDIA
+                    </a>
+                </div>
+
+                <!-- Center - Menu Items -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="text-white text-[18px] font-medium hover:text-blue-300 transition-colors duration-300 relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="aboutus.html" class="text-white text-[18px] font-medium hover:text-blue-300 transition-colors duration-300 relative group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="service.html" class="text-white text-[18px] font-medium hover:text-blue-300 transition-colors duration-300 relative group">
+                        Service
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#" class="text-white text-[18px] font-medium hover:text-blue-300 transition-colors duration-300 relative group">
+                        Gallery
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="contact.html" class="text-white text-[18px] font-medium hover:text-blue-300 transition-colors duration-300 relative group">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-300 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </div>
+
+                <!-- Right Side - Social Media + Contact Button -->
+                <div class="flex items-center gap-4">
+                    <!-- Social Media Icons -->
+                    <div class="hidden md:flex items-center gap-3">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                            <i class="fab fa-instagram text-white text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-r from-red-500 to-orange-500 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                            <i class="fab fa-youtube text-white text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                            <i class="fab fa-linkedin-in text-white text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800/70 backdrop-blur-sm flex items-center justify-center hover:scale-110 transition-transform duration-300 border border-white/20">
+                            <i class="fab fa-x-twitter text-white text-lg"></i>
+                        </a>
+                    </div>
+
+                    <!-- Contact Button -->
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105">
+                        Contact Us
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <section
+      class="relative h-screen w-full flex items-center justify-between overflow-hidden px-6 lg:px-24"
+    >
+      <div class="absolute inset-0 z-0 overflow-hidden bg-black">
+        <div
+          class="orb w-1 h-1 left-[10%]"
+          style="animation-duration: 8s; animation-delay: 1s"
+        ></div>
+        <div
+          class="orb w-2 h-2 left-[30%]"
+          style="animation-duration: 12s; animation-delay: 3s"
+        ></div>
+        <div
+          class="orb w-1 h-1 left-[55%]"
+          style="animation-duration: 10s; animation-delay: 0s"
+        ></div>
+        <div
+          class="orb w-1.5 h-1.5 left-[80%]"
+          style="animation-duration: 15s; animation-delay: 5s"
+        ></div>
+        <div
+          class="liquid-smoke absolute top-[-10%] left-[-10%] w-[120%] h-[120%] opacity-40"
+        >
+          <svg
+            class="w-full h-full"
+            viewBox="0 0 1000 1000"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M785,618.5Q684,737,537,787.5Q390,838,285.5,728Q181,618,172,467Q163,316,275,206Q387,96,543.5,123Q700,150,793,325Q886,500,785,618.5Z"
+              fill="#ff2d8c"
+            ></path>
+            <path
+              d="M728.5,632.5Q618,765,463,781Q308,797,222.5,671.5Q137,546,191,401.5Q245,257,381.5,188Q518,119,642,197.5Q766,276,802.5,438Q839,600,728.5,632.5Z"
+              fill="#304FFE"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="absolute left-[-10%] top-0 h-full w-2/3 pointer-events-none z-10 opacity-60"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-orange-600/20 via-purple-900/40 to-transparent mix-blend-color-dodge"
+        ></div>
+        <img
+          alt="Musician silhouette"
+          class="w-full h-full object-cover blur-sm brightness-75 contrast-125 origin-left"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_cKhkNYPTVHlwD2T26KlMDL1ds-yO3hn-ICREf0uo10pIXFvLEThmor2y-wT9MhY_g5UnughHw6syrn0A1NuN_5EUdWMiuDT93AJhCT4j2BYS4PBgfQ5nQkwOLxRcRGNOVwcVw_yws3SqBD5eJNrAooCfMJ0t3SA8oKrJYN0iv6QHZc4t6XM_ZKe72Vyoqbcj9M4WSiIxEMsxeXV2sXfR9Xg0qs9OnWuJ1MJG9C3zjdmA56gHTLGmuN7TkhpHrr6IWkCMh0iDMCQ"
+        />
+      </div>
+      <div
+        class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none"
+      >
+        <h1
+          class="text-[18vw] font-display font-black tracking-tighter flex leading-none select-none opacity-90"
+        >
+          <span class="text-neon-outline">CON</span
+          ><span class="text-white drop-shadow-2xl">TACT</span>
+        </h1>
+      </div>
+      <div
+        class="absolute inset-0 z-30 pointer-events-none flex items-center justify-center overflow-hidden"
+      >
+        <div class="flex items-end gap-1.5 h-[40vh] opacity-60">
+          <div
+            class="w-1 bg-accentPink animate-[bounce_1.2s_infinite]"
+            style="height: 60%"
+          ></div>
+          <div
+            class="w-1 bg-accentBlue animate-[bounce_1.5s_infinite]"
+            style="height: 80%"
+          ></div>
+          <div
+            class="w-1 bg-white animate-[bounce_1.1s_infinite]"
+            style="height: 40%"
+          ></div>
+          <div
+            class="w-1 bg-accentPink animate-[bounce_1.8s_infinite]"
+            style="height: 90%"
+          ></div>
+          <div
+            class="w-1 bg-accentBlue animate-[bounce_1.4s_infinite]"
+            style="height: 55%"
+          ></div>
+          <div
+            class="w-1 bg-accentPink animate-[bounce_1.3s_infinite]"
+            style="height: 75%"
+          ></div>
+          <div
+            class="w-1 bg-white animate-[bounce_1.6s_infinite]"
+            style="height: 35%"
+          ></div>
+          <div
+            class="w-1 bg-accentBlue animate-[bounce_1.2s_infinite]"
+            style="height: 85%"
+          ></div>
+        </div>
+      </div>
+      <div class="relative z-40 w-full lg:w-[480px] ml-auto">
+        <div class="glass-card-premium p-12 rounded-3xl">
+          <div class="mb-10">
+            <span
+              class="text-xs font-avant font-bold uppercase tracking-[0.4em] text-accentPink mb-2 block"
+              >Electronic Post</span
+            >
+            <h2 class="text-4xl font-avant font-bold tracking-tight mb-2">
+              Send a Note
+            </h2>
+            <div
+              class="w-12 h-[2px] bg-gradient-to-r from-accentPink to-accentBlue"
+            ></div>
+          </div>
+          <form action="#" class="space-y-6">
+            <div class="space-y-1.5">
+              <label
+                class="text-[10px] uppercase tracking-widest text-white/40 ml-1"
+                for="name"
+                >Identity</label
+              >
+              <div
+                class="input-gradient-focus rounded-xl border border-white/10 transition-all duration-300 overflow-hidden"
+              >
+                <input
+                  class="w-full bg-white/5 px-5 py-4 text-white focus:ring-0 border-0 transition-all placeholder-white/20 text-sm"
+                  id="name"
+                  placeholder="YOUR NAME"
+                  required=""
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="space-y-1.5">
+              <label
+                class="text-[10px] uppercase tracking-widest text-white/40 ml-1"
+                for="email"
+                >Digital Frequency</label
+              >
+              <div
+                class="input-gradient-focus rounded-xl border border-white/10 transition-all duration-300 overflow-hidden"
+              >
+                <input
+                  class="w-full bg-white/5 px-5 py-4 text-white focus:ring-0 border-0 transition-all placeholder-white/20 text-sm"
+                  id="email"
+                  placeholder="EMAIL ADDRESS"
+                  required=""
+                  type="email"
+                />
+              </div>
+            </div>
+            <div class="space-y-1.5">
+              <label
+                class="text-[10px] uppercase tracking-widest text-white/40 ml-1"
+                for="message"
+                >Transmission</label
+              >
+              <div
+                class="input-gradient-focus rounded-xl border border-white/10 transition-all duration-300 overflow-hidden"
+              >
+                <textarea
+                  class="w-full bg-white/5 px-5 py-4 text-white focus:ring-0 border-0 transition-all placeholder-white/20 resize-none text-sm"
+                  id="message"
+                  placeholder="HOW CAN WE HELP?"
+                  required=""
+                  rows="4"
+                ></textarea>
+              </div>
+            </div>
+            <button
+              class="animated-gradient-btn w-full py-5 mt-4 rounded-xl font-avant font-bold uppercase tracking-[0.25em] text-xs shadow-2xl transition-all hover:scale-[1.02] active:scale-95 group overflow-hidden"
+              type="submit"
+            >
+              <span class="relative z-10">Initiate Contact</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <main
+      class="relative bg-black py-40 px-6 lg:px-24 border-t border-white/5 overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <svg
+          class="w-full h-full"
+          preserveAspectRatio="none"
+          viewBox="0 0 100 100"
+        >
+          <path
+            d="M0 50 Q 25 40, 50 50 T 100 50"
+            fill="none"
+            stroke="url(#wave-grad)"
+            stroke-width="0.1"
+          >
+            <animate
+              attributeName="d"
+              dur="5s"
+              repeatCount="indefinite"
+              values="M0 50 Q 25 40, 50 50 T 100 50; M0 50 Q 25 60, 50 50 T 100 50; M0 50 Q 25 40, 50 50 T 100 50"
+            ></animate>
+          </path>
+          <defs>
+            <linearGradient id="wave-grad" x1="0%" x2="100%" y1="0%" y2="0%">
+              <stop offset="0%" stop-color="#304FFE"></stop>
+              <stop offset="100%" stop-color="#ff2d8c"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 relative z-10 mb-32"
+      >
+        <div class="flex flex-col justify-center">
+          <div class="mb-20">
+            <p
+              class="text-[10px] font-avant font-bold tracking-[0.8em] text-white/40 mb-4 uppercase"
+            >
+              Direct Access
+            </p>
+            <h2 class="font-avant font-bold tracking-tighter leading-none">
+              <span class="text-xs block tracking-[0.5em] text-white/60 mb-2"
+                >THE</span
+              >
+              <span class="text-5xl md:text-8xl block text-outline-magenta mb-2"
+                >FREQUENCY</span
+              >
+              <span
+                class="text-5xl md:text-8xl block text-accentBlue glitch-offset"
+                >CONNECTION</span
+              >
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div
+              class="glass-card-premium p-8 rounded-2xl group transition-all hover:bg-white/[0.05]"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div class="mini-wave text-accentPink h-4 flex items-end">
+                  <span style="height: 100%; animation-delay: 0.1s"></span>
+                  <span style="height: 60%; animation-delay: 0.3s"></span>
+                  <span style="height: 80%; animation-delay: 0.2s"></span>
+                  <span style="height: 40%; animation-delay: 0.4s"></span>
+                </div>
+                <p
+                  class="text-white/40 text-[10px] uppercase tracking-widest font-bold"
+                >
+                  Collaborations
+                </p>
+              </div>
+              <p
+                class="text-xl font-light tracking-tight group-hover:text-accentPink transition-colors"
+              >
+                collab@sonic-vibe.studio
+              </p>
+            </div>
+            <div
+              class="glass-card-premium p-8 rounded-2xl group transition-all hover:bg-white/[0.05]"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div class="mini-wave text-accentBlue h-4 flex items-end">
+                  <span style="height: 100%; animation-delay: 0.4s"></span>
+                  <span style="height: 60%; animation-delay: 0.1s"></span>
+                  <span style="height: 80%; animation-delay: 0.3s"></span>
+                  <span style="height: 40%; animation-delay: 0.2s"></span>
+                </div>
+                <p
+                  class="text-white/40 text-[10px] uppercase tracking-widest font-bold"
+                >
+                  Press &amp; Media
+                </p>
+              </div>
+              <p
+                class="text-xl font-light tracking-tight group-hover:text-accentBlue transition-colors"
+              >
+                press@sonic-vibe.studio
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-wrap justify-center gap-8 md:gap-12">
+            <a
+              aria-label="Facebook"
+              class="social-button text-accentPink pulse-magenta"
+              href="#"
+            >
+              <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              aria-label="Instagram"
+              class="social-button text-accentBlue pulse-blue"
+              href="#"
+            >
+              <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.332 3.608 1.308.975.975 1.245 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.332 2.633-1.308 3.608-.975.975-2.242 1.245-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.332-3.608-1.308-.975-.975-1.245-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.332-2.633 1.308-3.608.975-.975 2.242-1.245 3.608-1.308 1.266-.058 1.646-.07 4.85-.07M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              aria-label="YouTube"
+              class="social-button text-accentPink pulse-magenta"
+              href="#"
+            >
+              <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              aria-label="X"
+              class="social-button text-accentBlue pulse-blue"
+              href="#"
+            >
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              aria-label="WhatsApp"
+              class="social-button text-accentPink pulse-magenta"
+              href="#"
+            >
+              <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.63 1.438h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="aspect-square rounded-3xl overflow-hidden glass-card-premium p-1 group"
+          >
+            <img
+              alt="Atmospheric studio setup"
+              class="w-full h-full object-cover rounded-[1.4rem] opacity-60 grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpGq71nrAktuYOn8OnIaS93DAmgOWNPjjkhxdbE90oqQbiF-ucEc2EDQvnW3uSSd1J0q_0lC5RR-bZxoxQyytxBdCe2XFqq-1ImR1jHTI1QyZVLCqUKs8hikUrVjOBPzeWKrbavTgcnk69DJcnRT4XzUz-j2BpxTq0kJajdSmM7VG45A55QkvrhqcVLDSdr8vs-H2F4-lfBypxOxI6WRyIkDcVfK2rCIlt8KOwOcMYMVhY_9ALRrjzfJbB4l_ubk9BDTDV2ZelnGY"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"
+            ></div>
+            <div class="absolute bottom-12 left-12">
+              <div class="flex items-center gap-6">
+                <div
+                  class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md border border-white/20"
+                >
+                  <span class="material-symbols-outlined text-accentPink"
+                    >location_on</span
+                  >
+                </div>
+                <div>
+                  <p
+                    class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/50 mb-1"
+                  >
+                    Global Base
+                  </p>
+                  <p class="text-xl font-avant">Berlin / Remote / Metaverse</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+     <footer>
+        <div class="alive-footer-wrapper">
+        <div class="alive-footer-container">
+            <div class="alive-footer-content">
+                <div class="alive-footer-main">
+                    <div class="alive-footer-cta">
+                        <h2 class="alive-footer-cta-heading">Want To Stay Connected?</h2>
+                        <p class="alive-footer-cta-text">Join our WhatsApp community to stay connected, get latest news
+                            and updates</p>
+                        <a href="#" class="alive-whatsapp-btn">
+                            <span class="alive-btn-text">Join WhatsApp Community</span>
+                            <span class="alive-btn-arrow">→</span>
+                        </a>
+                    </div>
+
+                    <div class="alive-footer-address alive-footer-section">
+                        <h3 class="alive-footer-section-heading underline">Visit Us</h3>
+                        <div class="alive-address-text">
+                            <span class="alive-address-line">219, 8th Main Maruthi Layout</span>
+                            <span class="alive-address-line">Dasarahalli, Hebbal, Kempapura</span>
+                            <span class="alive-address-line">Bengaluru</span>
+                            <span class="alive-address-line">Karnataka 560024</span>
+                        </div>
+                        <a href="https://maps.google.com" class="alive-map-link" target="_blank">
+                            <span class="alive-map-icon">📍</span>
+                            <span>Google Maps</span>
+                        </a>
+                    </div>
+
+                    <div class="alive-footer-links alive-footer-section">
+                        <h3 class="alive-footer-section-heading underline">Quick Links</h3>
+                        <ul class="alive-links-list">
+                            <li class="alive-link-item"><a href="#downloads" class="alive-link-anchor">Downloads</a>
+                            </li>
+                            <li class="alive-link-item"><a href="#career" class="alive-link-anchor">Career</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alive-footer-bottom">
+                    <div class="alive-footer-logo">
+                        <svg class="alive-logo-img" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="4" fill="#4f87ff" />
+                            <path d="M15 12L25 28M25 12L15 28" stroke="white" stroke-width="3" stroke-linecap="round" />
+                            <text x="48" y="28" font-family="Orbitron" font-weight="700" font-size="20"
+                                fill="white">ALIVE</text>
+                            <text x="48" y="36" font-family="Orbitron" font-weight="700" font-size="8"
+                                fill="#4f87ff">INDIA</text>
+                        </svg>
+                    </div>
+
+                    <nav>
+                        <ul class="alive-footer-nav">
+                            <li class="alive-nav-item"><a href="#about" class="alive-nav-link">About</a></li>
+                            <li class="alive-nav-item"><a href="#offerings" class="alive-nav-link">Offerings</a></li>
+                            <li class="alive-nav-item"><a href="#infrastructure"
+                                    class="alive-nav-link">Infrastructure</a></li>
+                            <li class="alive-nav-item"><a href="#responsibility" class="alive-nav-link">Social
+                                    responsibility</a></li>
+                            <li class="alive-nav-item"><a href="#announcements" class="alive-nav-link">Announcements</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+     </footer>
+  <!-- footer -->
+  </body>
+</html>
